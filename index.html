@@ -2,8 +2,8 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#127d80">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <meta name="theme-color" content="#176b57">
   <meta name="description" content="ورقة: مساحة عربية سهلة لكتابة أسئلة الامتحان، توزيع الدرجات ومعاينة ورقة A4 وطباعتها.">
   <title>ورقة — استوديو الامتحانات</title>
   <style>
@@ -166,6 +166,77 @@ This Font Software is licensed under the SIL Open Font License, Version 1.1. Thi
 Copyright 2022 The Noto Project Authors (https://github.com/notofonts/arabic)
 This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org
 -->
+<style id="waraqa-android-ui">
+/* Waraqa — spacious, touch-first application shell. */
+@media screen {
+  :root {--canvas:#f5f7f6;--surface:#ffffff;--input:#f9fbfa;--ink:#203a35;--muted:#6b7e77;--green:#176b57;--green-dark:#10503f;--mint:#e0f1e9;--line:#e0e8e3;--radius:22px;--shadow:0 3px 16px #173e2e04;--app-nav-height:84px}
+  :root[data-theme=dark] {--canvas:#101916;--surface:#19251f;--input:#1d2b24;--ink:#e4eee7;--muted:#a5b9ac;--green:#91d5b3;--green-dark:#b1e7ca;--mint:#294537;--line:#304238;--shadow:none}
+  html {scroll-padding-top:100px}
+  body {font-size:14px;line-height:1.8;-webkit-tap-highlight-color:transparent}
+  button,a,input,textarea,select,summary {touch-action:manipulation}
+  button:focus-visible,a:focus-visible,summary:focus-visible {outline:3px solid var(--green);outline-offset:3px}
+  .btn {min-height:46px;border-radius:14px;font-size:13px;padding:10px 17px;transition:background .18s,box-shadow .18s,transform .18s}
+  .btn.primary {background:var(--green);color:#fff;box-shadow:none}
+  :root[data-theme=dark] .btn.primary {color:#102a1d}
+  .btn.secondary {background:var(--surface)}
+  .btn.small {min-height:42px;font-size:12px}
+  .icon-btn {min-width:44px!important;width:44px!important;height:44px!important;border-radius:50%}
+  .btn:active,.icon-btn:active {transform:scale(.97)}
+  .topbar {position:sticky;top:0;z-index:45;height:80px;padding:0 32px;background:var(--surface);border-bottom:1px solid var(--line)}
+  .brand {gap:12px}.brand-icon {transform:none;border-radius:15px;width:44px;height:44px;background:var(--mint);color:var(--green)}.brand-icon .icon {transform:none;width:25px;height:25px}.brand-name {font-size:25px;letter-spacing:0}.brand-desc {font-size:10px}
+  .topbar-actions {gap:10px}.topbar-actions .save-status {font-size:11px}.v5-theme {border:0!important;background:transparent!important;min-width:46px!important}.topbar .theme-label {display:none}
+  .topbar #moreButton {border:0;background:transparent;min-width:46px;padding:10px}
+  .workspace {max-width:1640px;padding:28px 32px 44px}.workspace-head {margin:0 0 25px}.workspace-head h1 {font-size:24px;margin:0}.workspace-head p {font-size:12px}.workspace-head .eyebrow {display:none}.workspace-head .head-meta {font-size:12px;border:0;background:var(--mint);color:var(--green);border-radius:14px}
+  .studio-grid {grid-template-columns:192px minmax(0,1fr) minmax(320px,.85fr);gap:28px}
+  .sidebar {top:106px}.sidebar-label {font-size:11px;margin:0 16px 15px}.nav-tabs {gap:8px}.nav-tab,.nav-tab:nth-child(n+4) {min-height:52px;border:0;border-radius:18px;font-size:12px;gap:12px;padding:12px 16px}.nav-tab.active {box-shadow:none;background:var(--mint);color:var(--green)}.nav-tab .nav-num {width:26px;height:26px;border-radius:9px;background:transparent}.nav-tab.active .nav-num {background:var(--green);color:var(--surface)}.nav-tab:nth-child(4) {margin-top:22px}
+  .exam-summary {margin-top:28px;border-radius:22px;padding:22px;background:var(--surface);box-shadow:none}.summary-grade {font-size:38px}.sidebar-tip {font-size:11px;margin:22px 14px}.sidebar-help {min-height:44px}
+  .editor-column {min-width:0}.section-bar {height:auto;min-height:44px;margin:0 2px 15px;gap:14px}.section-bar h2 {font-size:20px}.section-bar .counter {font-size:11px;white-space:nowrap}.editor-scroll {max-height:calc(100dvh - 296px);min-height:360px;padding:0 1px 16px;overscroll-behavior-y:contain;scrollbar-gutter:stable}
+  .app-section-tabs {display:none}.app-editor-tools {display:flex;align-items:center;gap:7px;margin:0 0 18px}.app-editor-tools .history-actions {display:flex;gap:5px}.app-editor-tools .btn {border:0;min-height:44px;background:var(--surface);font-size:12px}.app-editor-tools>.btn {margin-inline-start:auto;color:var(--green);background:var(--mint)}
+  .panel-card,.question-card,.empty-editor {border:1px solid var(--line);border-radius:22px;box-shadow:none;background:var(--surface)}.panel-card {padding:24px}.panel-card h3 {font-size:16px}.panel-description {font-size:12px!important;line-height:2!important}
+  .question-card {margin-bottom:18px;overflow:visible}.question-card.selected {border-color:var(--line);box-shadow:0 4px 24px #174f3606}.question-card.selected:before {display:none}.card-top {padding:20px;gap:12px;flex-wrap:wrap}.question-number {width:40px;height:40px;border-radius:14px;font-size:14px}.question-heading strong {font-size:14px}.question-heading .subtitle {font-size:11px;max-width:260px}.collapse-icon {min-width:44px;height:44px;display:grid;place-items:center;border-radius:50%;color:var(--muted)}.card-content {padding:0 22px 22px}.grade-chip {font-size:11px;border-radius:10px}.card-actions {order:5;flex-basis:100%;justify-content:flex-end;gap:6px;border-top:1px solid var(--line);padding-top:12px;margin-top:3px;max-width:none!important}.card-actions .icon-btn {background:var(--canvas);color:var(--muted)}.card-actions .danger {color:#b64d55}.collapsed .card-actions {display:none}
+  .field {margin-bottom:22px}.field-label {font-size:12px!important;color:var(--muted);margin-bottom:8px;line-height:1.9}.field input,.field select,.field textarea,.branch-text,.branch-score,.choice-text {font-size:15px;min-height:52px;padding:12px 14px;border-radius:13px;background:var(--input);border-color:var(--line);line-height:1.9}.field textarea {min-height:130px;resize:vertical}.form-row {grid-template-columns:minmax(0,1fr) 88px;gap:16px}.form-row.equal {grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.field input:focus,.field textarea:focus,.field select:focus {box-shadow:0 0 0 3px var(--mint)}
+  .textarea-toolbar {display:flex;flex-wrap:wrap;gap:10px;margin-bottom:10px}.textarea-toolbar .field-label {margin:0}.format-buttons {gap:5px}.format-button {min-height:40px;border-radius:10px;padding:6px 11px;font-size:11px}.type-row {padding:14px 0;gap:12px;font-size:12px;flex-wrap:wrap}.type-select {min-height:48px;font-size:13px;padding:10px 12px;border-radius:12px;flex:1;min-width:120px}
+  .language-status {background:transparent;border:0;border-radius:0;font-size:11px;padding:2px 2px 16px;margin-bottom:0;gap:8px}.language-status button {min-height:40px;padding:6px 9px;border-radius:10px}
+  .branch-row {grid-template-columns:22px minmax(0,1fr) 62px 44px;gap:8px;padding:10px 0}.branch-text {padding:11px;min-height:64px}.branch-score {padding:10px 3px;font-size:14px;min-height:52px}.branch-tools {gap:3px}.choice-row {grid-template-columns:22px minmax(0,1fr) 44px;gap:8px;margin-bottom:10px}.branch-add {font-size:12px;min-height:48px}.checkbox {min-height:46px;font-size:12px;align-items:center}.checkbox input {width:20px;height:20px;accent-color:var(--green)}
+  .card-content>details,.app-extra-content {margin:14px 0 0;border:1px solid var(--line)!important;border-radius:14px;background:transparent!important;padding:0 14px!important}.card-content>details>summary {min-height:52px;display:flex;align-items:center;gap:10px;font-size:12px!important;color:var(--muted);padding:10px 0!important;cursor:pointer;list-style:none}.card-content>details>summary:after {content:'+';margin-inline-start:auto;font:20px Arial;color:var(--green)}.card-content>details[open]>summary:after {content:'−'}.card-content>details[open] {padding-bottom:14px!important}.card-content>details>summary::-webkit-details-marker {display:none}.question-bank-save {margin-top:18px;min-height:44px}
+  .app-extra-content .v5-content-tools {margin:0 0 10px}.v5-content-tools .btn {font-size:12px;min-height:44px}.app-group {margin:0 0 18px;padding:0!important;overflow:hidden}.app-group>summary {display:flex;align-items:center;gap:12px;list-style:none;padding:20px 22px;min-height:76px;cursor:pointer}.app-group>summary::-webkit-details-marker {display:none}.app-group-number {display:grid;place-items:center;background:var(--mint);color:var(--green);border-radius:12px;width:36px;height:36px;flex:none;font-size:12px}.app-group-label {font-size:14px;font-weight:700;flex:1}.app-group>summary>.icon {color:var(--muted);transition:transform .2s;width:18px}.app-group[open]>summary>.icon {transform:rotate(180deg)}.app-group-body {padding:0 22px 8px}.app-group[open]>summary {padding-bottom:18px}.app-group-body .panel-description {margin:0 0 22px}.app-group-body>.field:last-child {margin-bottom:16px}
+  .empty-editor {padding:44px 24px;text-align:center;min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center}.empty-editor>.icon {width:42px;height:42px;padding:9px;box-sizing:content-box;background:var(--mint);border-radius:23px;color:var(--green)}.empty-editor h3 {font-size:21px;margin:20px 0 8px}.empty-editor p {font-size:13px;line-height:2.1;margin:0 0 24px;max-width:340px}.empty-editor .btn {min-height:52px}.add-question {min-height:52px;margin-top:4px;border:0;border-radius:16px;background:var(--mint);font-size:14px}.editor-bottom {margin-top:18px;font-size:10px}
+  .preview-panel {border-radius:24px;box-shadow:none;background:#e8eeea}.preview-top {padding:20px;background:var(--surface)}.preview-top h2 {font-size:14px}.preview-top small {font-size:10px}.preview-stage {max-height:calc(100dvh - 300px);min-height:370px;padding:24px 20px;background:#e8eeea}.v5-preview-tools {padding:12px 15px;gap:8px}.v5-preview-tools .btn {min-height:42px;font-size:11px;border-radius:12px}.preview-bottom {padding:14px 18px}.preview-notice {line-height:2;font-size:11px;margin-top:15px}:root[data-theme=dark] .preview-stage {background:#0c1610}
+  .header-field-row {grid-template-columns:minmax(60px,1fr) minmax(80px,1fr) 44px 44px;gap:6px}.header-field-row select {min-width:0;min-height:48px;font-size:12px}.header-group {border-radius:16px;padding:14px}.header-group-title {align-items:center}
+  .book-grid {grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.book-card {padding:20px;min-height:174px;border:1px solid var(--line);border-radius:20px}.book-card strong {font-size:15px}.book-card .book-number {font-size:12px}.book-open {font-size:11px}.collection-toolbar,.collection-actions {gap:10px}.collection-item {border-radius:18px;padding:20px;margin-top:16px;box-shadow:none}.filter-grid {gap:14px}.frame-choice {min-height:74px;border-radius:14px}.period-card,.model-card {border-radius:18px;padding:18px}.model-grid {gap:14px}.model-actions {gap:9px}.model-actions .btn {white-space:normal}.catalog-heading {gap:16px}.catalog-heading h3 {font-size:18px}.catalog-count {font-size:10px;white-space:normal}.bank-model-bar {border-radius:18px;padding:18px;margin-bottom:22px}
+  .dialog {border-radius:28px;background:var(--surface);color:var(--ink);padding:30px;max-height:88dvh;width:min(560px,calc(100vw - 40px));box-shadow:0 24px 100px #13271c30;border:1px solid var(--line);overscroll-behavior-y:contain}.dialog::backdrop {background:#10241b66;backdrop-filter:blur(3px)}.dialog h2 {font-size:21px;margin:4px 0 12px;padding-inline-end:36px}.dialog p {font-size:13px;line-height:2;color:var(--muted)}.dialog-close {top:20px;left:18px;background:var(--canvas);font-size:25px}.dialog-actions {gap:10px}.dialog-actions .btn {min-height:48px}.wide-dialog {width:min(780px,calc(100vw - 40px))}
+  .app-tools-intro {margin-bottom:24px!important}.app-tools-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:24px}.app-tool {text-align:right;border:1px solid var(--line);background:var(--input);border-radius:18px;padding:17px;min-height:100px;display:flex;flex-direction:column;gap:10px;font-size:12px;font-weight:700}.app-tool .icon {width:24px;height:24px;color:var(--green)}.app-tool small {font-size:10px;font-weight:400;color:var(--muted)}.app-tool:hover {background:var(--mint)}.app-tool-heading {font-size:12px;color:var(--muted);margin:22px 0 12px}.app-tool-list {display:grid;grid-template-columns:1fr 1fr;gap:10px}.app-tool-list .btn {white-space:normal;justify-content:flex-start;font-size:12px;border:1px solid var(--line);background:var(--surface);min-height:54px}.app-tools-dialog .utility-bar {display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0}.app-tools-dialog .utility-bar .btn {display:flex!important;white-space:normal;min-height:54px;margin:0;justify-content:flex-start;font-size:12px}.app-tools-dialog .v5-start {display:none}
+  .more-menu {border-radius:20px;width:265px;padding:10px;background:var(--surface);max-height:calc(100dvh - 110px);overflow:auto;box-shadow:0 16px 50px #172e1f22}.menu-item {min-height:50px;font-size:13px;padding:12px;border-radius:12px}.account-menu {overflow-wrap:anywhere}.toast {border-radius:18px;bottom:25px;max-width:calc(100vw - 32px);padding:14px 20px}
+  .login-screen {background:var(--canvas);padding:36px 20px;min-height:100dvh}.login-card {padding:36px;border-radius:30px;box-shadow:0 20px 80px #173e2e08;border-color:var(--line)}.login-card:before {display:none}.login-brand {margin-bottom:28px}.login-card h1 {font-size:24px}.login-card .login-description {font-size:13px;line-height:2;margin-bottom:28px}.login-card .field input {min-height:56px}.login-contact-link {border-radius:18px;padding:16px}.login-submit {min-height:56px;border-radius:16px}.v5-login-theme {width:48px;min-height:48px;border-radius:50%;top:18px;left:18px}
+  @keyframes app-enter {from {opacity:.25;transform:translateY(6px)} to {opacity:1;transform:none}}
+  .editor-panel:not([hidden]) {animation:app-enter .2s ease-out}
+  @media(min-width:1021px) {.preview-column {position:sticky;top:106px}.app-section-tabs {display:none!important}}
+  @media(min-width:741px) and (max-width:1020px) {.studio-grid {grid-template-columns:145px minmax(0,1fr);gap:24px}.sidebar {grid-column:auto;position:sticky;top:104px}.nav-tabs {flex-direction:column}.nav-tab,.nav-tab:nth-child(n+4) {justify-content:flex-start;flex:none;font-size:11px;white-space:normal;padding:12px;min-height:52px}.nav-tab .nav-num {display:grid}.sidebar-label,.exam-summary {display:block}.sidebar-tip,.sidebar-help {display:none}.nav-tab:nth-child(4) {margin-top:20px}.preview-column {display:none}.mobile-preview .editor-column {display:none}.mobile-preview .preview-column {display:block;grid-column:2}.mobile-preview .sidebar {display:block}.editor-scroll {max-height:none;min-height:0;overflow:visible}.workspace {padding:24px}.app-tablet-preview {display:inline-flex!important}.workspace-head .head-meta {max-width:260px;white-space:normal}.topbar .new-button {display:none}}
+  .app-tablet-preview {display:none}
+  @media(max-width:740px) {
+    :root {--app-nav-height:82px}
+    html {scroll-padding-top:88px}.topbar {height:72px;padding:0 18px;gap:12px}.brand {gap:10px}.brand-icon {width:40px;height:40px;border-radius:14px}.brand-name {font-size:25px}.brand-desc {font-size:9px}.topbar-actions {gap:3px}.topbar-actions .btn {min-height:44px;padding:10px;min-width:44px;font-size:12px;border-radius:50%}.topbar-actions .btn[data-action=print] span {display:none}.topbar-actions .btn[data-action=print] {background:var(--mint);color:var(--green)}.topbar-actions .btn .icon {width:21px;height:21px}.v5-theme {min-width:44px!important;padding:10px!important}.topbar-actions .new-button,.topbar-actions .save-status {display:none}
+    .workspace {padding:22px 18px calc(var(--app-nav-height) + 108px + env(safe-area-inset-bottom))}.workspace-head {display:none}.studio-grid {display:block}.sidebar {display:none!important}.editor-column {width:100%}.section-bar {margin:0 0 18px;min-height:37px;gap:10px}.section-bar h2 {font-size:23px;letter-spacing:-.3px}.section-bar .counter {font-size:11px}.editor-scroll {overflow:visible;max-height:none;min-height:0;padding:0;scrollbar-gutter:auto;overscroll-behavior:auto}
+    .app-section-tabs {display:flex;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:5px;gap:4px;margin:0 0 20px}.app-section-tabs button {flex:1;min-width:0;min-height:46px;border-radius:13px;font-size:12px;color:var(--muted);font-weight:700;padding:8px 4px}.app-section-tabs button.active {background:var(--mint);color:var(--green)}.app-editor-tools {margin-bottom:18px;gap:8px}.app-editor-tools .btn {min-height:44px;padding:8px 12px;font-size:11px}.app-editor-tools .history-actions .btn {min-width:44px}.app-editor-tools>.btn {padding:8px 15px}
+    body[data-app-tab=bank] .app-section-tabs,body[data-app-tab=archive] .app-section-tabs,body[data-app-tab=versions] .app-section-tabs {display:none}
+    body[data-app-tab=bank] .app-editor-tools,body[data-app-tab=archive] .app-editor-tools,body[data-app-tab=versions] .app-editor-tools {display:none}
+    .question-card {border-radius:22px;margin-bottom:18px}.card-top {padding:18px 16px;gap:10px}.question-heading strong {font-size:14px}.question-heading .subtitle {max-width:190px;font-size:11px}.question-number {width:36px;height:38px;border-radius:12px}.collapse-icon {min-width:40px;width:40px;height:44px}.grade-chip {padding:5px 8px}.card-content {padding:0 16px 18px}.card-actions {max-width:none!important;gap:7px}.card-actions .icon-btn {min-width:44px!important;width:44px!important;height:44px!important}.form-row {grid-template-columns:minmax(0,1fr) 76px;gap:12px}.form-row.equal {grid-template-columns:1fr;gap:0}.field {margin-bottom:20px}.field input,.field textarea,.field select,.branch-text,.choice-text {font-size:16px}.field-label {font-size:12px!important}.textarea-toolbar {gap:10px;align-items:center}.textarea-toolbar .format-buttons {margin-inline-start:auto}.format-button {min-height:40px;padding:6px 9px;font-size:11px}.field textarea {min-height:148px}.type-row {gap:10px}.branch-row {grid-template-columns:19px minmax(0,1fr) 54px 44px;gap:5px}.branch-score {font-size:16px}.branch-text {min-height:76px;font-size:15px;padding:10px}.choice-row {grid-template-columns:19px minmax(0,1fr) 44px;gap:6px}.branch-tools .icon-btn {height:44px!important}.card-content>details {margin-top:14px}.v5-content-tools .btn {min-height:44px;font-size:11px}
+    .app-group>summary {padding:18px;min-height:76px;gap:12px}.app-group-label {font-size:14px}.app-group-body {padding:0 18px 4px}.app-group-body .field textarea {min-height:110px}.panel-card {padding:20px}.panel-card.app-group {padding:0}.empty-editor {padding:35px 22px;min-height:330px}.empty-editor p {font-size:13px}.language-status {font-size:10px;padding-bottom:12px}.language-status button {font-size:11px;flex:none}.editor-bottom {font-size:10px;gap:12px;margin-top:22px}.editor-bottom>span:first-child {display:none}
+    .header-field-row {grid-template-columns:minmax(0,1fr) 44px 44px;padding:12px 0;row-gap:8px}.header-field-row>span {grid-column:1/-1;font-size:12px}.header-field-row select {width:100%;font-size:14px}.header-group {padding:12px}
+    .add-question:not([hidden]) {display:flex;position:fixed;inset-inline-end:20px;bottom:calc(var(--app-nav-height) + 18px + env(safe-area-inset-bottom));z-index:35;width:auto;min-width:148px;min-height:56px;border-radius:18px;padding:14px 20px;background:var(--green);color:var(--surface);box-shadow:0 6px 22px #163c2c24;border:0;font-size:13px}.add-question .icon {width:23px;height:23px}:root[data-theme=dark] .add-question {color:#102a1d}
+    .mobile-switch {display:flex!important;align-items:flex-start;gap:0;position:fixed;inset: auto 0 0;min-height:var(--app-nav-height);padding:8px 6px calc(8px + env(safe-area-inset-bottom));background:var(--surface);border-top:1px solid var(--line);box-shadow:0 -4px 28px #193a2505;z-index:46}.mobile-switch button {display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;flex:1;min-width:0;min-height:64px;border-radius:0;font-size:10px;line-height:1.5;color:var(--muted);padding:0 2px;background:transparent!important}.app-nav-icon {height:32px;width:56px;display:grid;place-items:center;border-radius:18px;transition:background .18s,color .18s}.mobile-switch button .icon {width:22px;height:22px}.mobile-switch button.active {color:var(--green);font-weight:700}.mobile-switch button.active .app-nav-icon {background:var(--mint)}
+    .mobile-preview .editor-column {display:none}.mobile-preview .preview-column {display:block}.mobile-preview .app-section-tabs,.mobile-preview .app-editor-tools,.mobile-preview .add-question {display:none!important}.preview-column {display:none}.preview-panel {border-radius:22px}.preview-top {padding:18px 16px}.preview-top h2 {font-size:13px}.preview-stage {min-height:0;max-height:none;padding:20px 12px}.preview-bottom {padding:14px 12px;font-size:10px;flex-wrap:wrap;gap:10px}.preview-bottom button {font-size:11px;min-height:40px}.preview-notice {font-size:11px;padding:0 4px}.v5-preview-tools {padding:12px;gap:8px}.v5-preview-tools .btn {min-height:44px;font-size:11px}.v5-version {min-height:40px;min-width:40px}.v5-fit {margin-inline-start:auto}
+    .book-grid {gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}.book-card {min-height:170px;padding:16px 13px}.book-card strong {font-size:13px}.book-grade,.book-count {font-size:10px}.book-open {font-size:11px}.catalog-heading {align-items:flex-start;flex-direction:column;gap:4px}.catalog-count {align-self:flex-start}.model-grid {grid-template-columns:1fr}.collection-toolbar {gap:7px}.collection-toolbar .btn {white-space:normal;font-size:11px}.filter-grid {grid-template-columns:1fr 1fr;gap:12px}.filter-grid .field {min-width:0;margin-bottom:14px}.collection-actions .btn {font-size:11px;white-space:normal;min-height:44px}.period-card {padding:16px 12px;gap:10px}.period-content strong {font-size:13px}.period-content span {font-size:11px}.bank-model-bar {margin-bottom:20px;padding:16px}.bank-model-bar .collection-actions {margin-top:14px}
+    .dialog {position:fixed;inset:auto 0 0;margin:0 auto;width:100%;max-width:620px;max-height:91dvh;border:0;border-radius:28px 28px 0 0;padding:30px 22px calc(24px + env(safe-area-inset-bottom));box-shadow:0 -12px 70px #152f2220}.dialog:before {content:'';display:block;position:absolute;top:12px;left:calc(50% - 18px);height:4px;width:36px;border-radius:4px;background:var(--line)}.dialog h2 {font-size:21px;margin:8px 0 10px}.dialog-close {top:24px;left:16px}.dialog-actions {margin-top:22px;flex-wrap:wrap}.dialog-actions .btn {min-height:50px;font-size:12px;flex:1}.dialog .dialog-actions.sticky {bottom:calc(-24px - env(safe-area-inset-bottom));background:var(--surface);padding:14px 0}.app-tools-dialog {max-height:87dvh}.app-tools-grid {gap:12px;margin-bottom:20px}.app-tool {min-height:104px;padding:16px}.app-tool-list .btn {font-size:12px}.equation-fields {grid-template-columns:1fr 1fr}.equation-symbols button {min-width:44px;min-height:44px}.equation-fields input {font-size:16px!important}.v5-poetry-row {grid-template-columns:1fr 1fr 44px}.v5-poetry-row input {min-width:0;font-size:16px;min-height:48px}.table-controls {grid-template-columns:1fr}.toast {bottom:calc(var(--app-nav-height) + 86px + env(safe-area-inset-bottom));font-size:12px}.more-menu {position:fixed;inset:78px 16px auto;width:auto;max-width:420px;margin-inline-start:auto;max-height:calc(100dvh - 180px)}
+    .login-screen {padding:88px 22px 32px;align-items:center}.login-card {padding:28px 22px;border-radius:28px;max-width:430px;width:100%}.login-card h1 {font-size:23px}.login-description {font-size:13px!important}.login-card .field-label {font-size:12px!important}.login-card .field input {font-size:16px}.password-toggle {min-height:44px;min-width:54px}.login-contact-title {font-size:12px}.login-contact-link {padding:14px}.login-card .brand-desc {font-size:10px}
+    body.app-keyboard-open .mobile-switch,body.app-keyboard-open .add-question {visibility:hidden;pointer-events:none}
+  }
+  @media(max-width:360px) {.workspace {padding-inline:12px}.topbar {padding-inline:12px}.question-heading .subtitle {max-width:135px}.card-top {gap:7px;padding-inline:13px}.card-content {padding-inline:13px}.app-tool {padding:13px}.app-tools-grid {gap:9px}.app-section-tabs button {font-size:11px}.topbar-actions .btn {min-width:42px;padding:9px}.brand-desc {font-size:8px}.mobile-switch button {font-size:9px}}
+  @media(prefers-reduced-motion:reduce) {*,*:before,*:after {animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+}
+@media print {.app-editor-tools,.app-section-tabs,.app-tools-dialog {display:none!important}}
+
+</style>
 </head>
 <body class="auth-locked"><button class="btn v5-login-theme" data-theme-toggle aria-label="تفعيل الوضع الليلي" title="الوضع الليلي"><span data-theme-icon>☾</span></button>
   <svg class="icons" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
@@ -237,7 +308,7 @@ This Font Software is licensed under the SIL Open Font License, Version 1.1. Thi
     </header>
     <div id="accountMemoryNotice" class="account-memory-notice" role="status" hidden></div>
     <main class="workspace">
-      <div class="workspace-head"><div><div class="eyebrow">WARAQA / مساحة المعلّم</div><h1>من فكرة السؤال، إلى ورقة جاهزة.</h1><p>خطوات واضحة، أدوات عربية، وطباعة مطمئنة.</p></div><div class="head-meta"><svg class="icon"><use href="#i-paper"/></svg><span id="documentContext">ورقة امتحان جديدة</span></div></div>
+      <div class="workspace-head"><div><div class="eyebrow">WARAQA / مساحة المعلّم</div><h1>مساحة إعداد الامتحان</h1><p>جهّز أسئلتك، ثم راجع الورقة قبل الطباعة.</p></div><div class="head-meta"><svg class="icon"><use href="#i-paper"/></svg><span id="documentContext">ورقة امتحان جديدة</span></div></div>
       <section class="v5-start" id="v5StartBanner" aria-label="بداية سريعة"><div class="v5-start-copy"><span class="v5-start-icon" aria-hidden="true">✦</span><div><strong>أول مرة هنا؟ جرّبها بسؤال جاهز.</strong><p>اختر نموذجًا من مادتك، وعدّل عليه لتكتشف كل الأدوات.</p></div></div><div class="v5-start-actions"><button class="btn primary" data-v5="samples">استكشف النماذج التدريبية ←</button><button class="btn secondary" data-v5="start-metadata">ابدأ ورقة فارغة</button><button class="icon-btn v5-dismiss" data-v5="dismiss-start" aria-label="إخفاء البداية السريعة">×</button></div></section>
       <div class="utility-bar" aria-label="أدوات الامتحان"><div class="history-actions"><button class="btn secondary small" id="historyUndo" data-action="undo" title="Ctrl+Z" disabled>↶ تراجع</button><button class="btn secondary small" id="historyRedo" data-action="redo" title="Ctrl+Shift+Z أو Ctrl+Y" disabled>↷ إعادة</button></div><button class="btn soft small v5-secondary-utility" data-action="archive-save">حفظ في الأرشيف</button><button class="btn secondary small v5-secondary-utility" data-action="version-save">حفظ نسخة</button><button class="btn soft small" data-v5="variants">✦ نماذج A / B / C</button><button class="btn secondary small" data-v5="answers">مفتاح الإجابة</button><button class="btn small utility-help" data-action="features-help">دليل الاستخدام</button></div>
       <section class="bank-model-bar" id="bankModelBar" aria-label="النموذج المفتوح في البنك" hidden></section>
@@ -258,7 +329,12 @@ This Font Software is licensed under the SIL Open Font License, Version 1.1. Thi
         </aside>
         <section class="editor-column" aria-label="محرر الأسئلة">
           <div class="section-bar"><h2 id="editorTitle">الأسئلة والدرجات</h2><span class="counter" id="editorCounter">لا توجد أسئلة بعد</span></div>
-          <div class="editor-scroll" id="editorScroll">
+          <div class="app-section-tabs" id="appSectionTabs" role="group" aria-label="خطوات إعداد الامتحان">
+  <button type="button" data-app-tab="metadata" aria-pressed="false">البيانات</button>
+  <button type="button" data-app-tab="questions" class="active" aria-pressed="true">الأسئلة</button>
+  <button type="button" data-app-tab="format" aria-pressed="false">التنسيق</button>
+</div>
+<div class="editor-scroll" id="editorScroll">
             <div class="editor-panel" id="questionsPanel" role="tabpanel" aria-labelledby="tab-questions"><div id="questionsList"></div></div>
             <div class="editor-panel" id="metadataPanel" role="tabpanel" aria-labelledby="tab-metadata" hidden></div>
             <div class="editor-panel" id="formatPanel" role="tabpanel" aria-labelledby="tab-format" hidden></div>
@@ -279,9 +355,13 @@ This Font Software is licensed under the SIL Open Font License, Version 1.1. Thi
         </section>
       </div>
     </main>
-    <nav class="mobile-switch" aria-label="عرض المحرر أو المعاينة"><button id="mobileEdit" class="active" data-action="mobile-edit"><svg class="icon"><use href="#i-edit"/></svg>التحرير</button><button id="mobilePreview" data-action="mobile-preview"><svg class="icon"><use href="#i-eye"/></svg>المعاينة</button><button data-action="print"><svg class="icon"><use href="#i-print"/></svg>طباعة</button></nav>
+    <nav class="mobile-switch" aria-label="التنقل الرئيسي"><button type="button" data-app-destination="edit" id="mobileEdit" data-action="mobile-edit" class="active" aria-current="page"><span class="app-nav-icon"><svg class="icon" aria-hidden="true"><use href="#i-edit"/></svg></span><span>ورقتي</span></button><button type="button" data-app-destination="bank" ><span class="app-nav-icon"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg></span><span>بنك الأسئلة</span></button><button type="button" data-app-destination="preview" id="mobilePreview" data-action="mobile-preview"><span class="app-nav-icon"><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg></span><span>المعاينة</span></button><button type="button" data-app-destination="archive" ><span class="app-nav-icon"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg></span><span>الأرشيف</span></button><button type="button" data-app-destination="more" data-app-open-tools><span class="app-nav-icon"><svg class="icon" aria-hidden="true"><use href="#i-more"/></svg></span><span>المزيد</span></button></nav>
   </div>
-  <div class="measurement-root" id="measurementRoot" aria-hidden="true"></div>
+  <dialog class="dialog app-tools-dialog" id="appToolsDialog" aria-labelledby="appToolsHeading">
+  <button type="button" class="icon-btn dialog-close" data-close="appToolsDialog" aria-label="إغلاق الأدوات"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+  <h2 id="appToolsHeading">أدوات ورقتك</h2><p class="app-tools-intro">كل ما تحتاجه لإعداد الامتحان، في مكان واحد.</p>
+  <div class="app-tools-grid"><button type="button" class="app-tool" data-app-go="metadata"><svg class="icon" aria-hidden="true"><use href="#i-paper"/></svg><span>بيانات الامتحان</span><small>المادة والصف والترويسة</small></button><button type="button" class="app-tool" data-app-go="format"><svg class="icon" aria-hidden="true"><use href="#i-settings"/></svg><span>تنسيق الورقة</span><small>الخط والإطار والطباعة</small></button><button type="button" class="app-tool" data-v5="samples"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg><span>نماذج جاهزة</span><small>ابدأ من نموذج تدريبي</small></button><button type="button" class="app-tool" data-app-go="versions"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg><span>سجل النسخ</span><small>ارجع إلى نسخة سابقة</small></button></div><h3 class="app-tool-heading">إعداد ومراجعة</h3><div id="appToolActions"></div><h3 class="app-tool-heading">ملف الامتحان</h3><div class="app-tool-list"><button type="button" class="btn" data-action="new"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>امتحان جديد</button><button type="button" class="btn" data-action="export-json"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>تنزيل ملف الأسئلة</button><button type="button" class="btn" data-action="import"><svg class="icon" aria-hidden="true"><use href="#i-upload"/></svg>فتح ملف محفوظ</button><button type="button" class="btn" data-action="help"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>إرشادات الطباعة</button></div></dialog>
+<div class="measurement-root" id="measurementRoot" aria-hidden="true"></div>
   <div id="print-root" aria-hidden="true"></div>
   <div class="toast" id="toast" role="status" aria-live="polite"><span id="toastText"></span><button id="undoButton" hidden>تراجع</button></div>
   <dialog class="dialog" id="confirmDialog" aria-labelledby="confirmTitle" aria-describedby="confirmText"><h2 id="confirmTitle"></h2><p id="confirmText"></p><div class="dialog-actions"><button class="btn primary" id="confirmAccept">متابعة</button><button class="btn secondary" data-close="confirmDialog">إلغاء</button></div></dialog>
@@ -1186,7 +1266,7 @@ globalThis.WaraqaAuth = (() => {
     function renderMetadata(){const m=doc.metadata;$('metadataPanel').innerHTML=
       '<div class="panel-card"><h3>ترويسة ورقة الامتحان</h3><p class="panel-description">الجهة والمدرسة في بداية الترويسة، وعنوان الامتحان في الوسط.</p>'+inputField('الدولة','country',m.country)+inputField('الوزارة','ministry',m.ministry)+inputField('مديرية التربية','directorate',m.directorate)+inputField('اسم المدرسة','school',m.school,{placeholder:'اكتب اسم المدرسة (اختياري)'})+'<div class="divider"></div>'+inputField('البسملة أو العبارة العلوية','basmala',m.basmala)+inputField('عنوان الامتحان','title',m.title)+inputField('العام الدراسي','year',m.year)+'</div>'+
       '<div class="panel-card"><h3>تفاصيل الامتحان</h3><p class="panel-description">تظهر هذه البيانات في الطرف الآخر من الترويسة حسب لغة الورقة.</p><div class="form-row equal">'+inputField('الصف / المرحلة','grade',m.grade)+inputField('المادة','subject',m.subject)+'</div><div class="form-row equal">'+inputField('تاريخ الامتحان','date',m.date,{type:'date'})+inputField('مدة الامتحان','duration',m.duration)+'</div>'+inputField('الدرجة الكلية المطلوبة','expectedScore',m.expectedScore,{type:'number',min:0,max:10000,step:.5})+'</div>'+
-      '<div class="panel-card"><h3>ملاحظة وتوقيع</h3><p class="panel-description">الملاحظة أسفل الترويسة، واسم المدرّس أسفل الصفحة.</p>'+inputField('ملاحظة للطلاب','note',m.note,{multiline:true,rows:2})+inputField('لقب المعلّم في التوقيع','teacherLabel',m.teacherLabel,{placeholder:'مثال: مدرس المادة، معلم المادة، معلم العضو'})+inputField('اسم المعلّم','teacher',m.teacher)+inputField('عبارة ختامية','footer',m.footer)+'</div>';const essentials=$('metadataPanel').children[1];$('metadataPanel').prepend(essentials);renderHeaderTools();}
+      '<div class="panel-card"><h3>ملاحظة وتوقيع</h3><p class="panel-description">الملاحظة أسفل الترويسة، واسم المدرّس أسفل الصفحة.</p>'+inputField('ملاحظة للطلاب','note',m.note,{multiline:true,rows:2})+inputField('لقب المعلّم في التوقيع','teacherLabel',m.teacherLabel,{placeholder:'مثال: مدرس المادة، معلم المادة، معلم العضو'})+inputField('اسم المعلّم','teacher',m.teacher)+inputField('عبارة ختامية','footer',m.footer)+'</div>';const essentials=$('metadataPanel').children[1];$('metadataPanel').prepend(essentials);renderHeaderTools();appGroupPanels('metadata');}
     function renderFormat(){
       const s=doc.settings,activeFrame=s.showFrame?s.frameStyle:'none';
       $('formatPanel').innerHTML='<div class="panel-card"><h3>جاهزة للتسليم؟</h3><p class="panel-description">راجع الدرجات والأسئلة، واحتوِ الزيادة البسيطة في صفحة واحدة قبل الطباعة.</p><div class="collection-actions"><button class="btn primary small" data-v5="review">✓ تدقيق وطباعة</button><button class="btn secondary small" data-v5="fit">↙ احتواء في صفحة</button></div></div>'+
@@ -1199,7 +1279,7 @@ globalThis.WaraqaAuth = (() => {
         '<label class="field"><span class="field-label">طريقة كتابة رقم السؤال</span><select data-setting="questionLabelStyle"><option value="short"'+(s.questionLabelStyle==='short'?' selected':'')+'>'+(s.language==='en'?'Q1/':'س1/')+' — مختصرة (الافتراضي)</option><option value="full"'+(s.questionLabelStyle==='full'?' selected':'')+'>'+(s.language==='en'?'Question 1/':'السؤال 1/')+' — كاملة</option></select></label>'+ 
         '<label class="field"><span class="field-label">طريقة كتابة الدرجات</span><select data-setting="gradeFormat"'+(s.language==='en'?' disabled':'')+'><option value="arabic"'+(s.gradeFormat==='arabic'?' selected':'')+'>بالأرقام العربية — ٢٠ درجة (الافتراضي)</option><option value="words"'+(s.gradeFormat==='words'?' selected':'')+'>بالحروف العربية — عشرون درجة</option><option value="western"'+(s.gradeFormat==='western'?' selected':'')+'>بالأرقام الغربية — 20 درجة</option></select></label>'+(s.language==='en'?'<div class="field-hint">تُكتب درجات الورقة الإنجليزية بالأرقام مع mark / marks.</div>':'<div class="field-hint">يشمل الاختيار درجات الأسئلة والفروع ومجموع الدرجات، ويدعم أنصاف الدرجات وأجزاءها.</div>')+'</div>'+ 
         '<div class="panel-card"><h3>خيارات الورقة</h3><p class="panel-description">مقاس A4 عمودي. تضاف صفحات تلقائيًا عند امتلاء الورقة.</p>'+checkField('إظهار درجات الأسئلة والفروع','showGrades',s.showGrades)+checkField('توزيع المساحة الفارغة بين الأسئلة','distribute',s.distribute)+checkField('إضافة حقل اسم الطالب والشعبة','showStudent',s.showStudent)+checkField('إظهار مجموع الدرجات أسفل الصفحة','showTotal',s.showTotal)+'</div>'+
-        '<div class="panel-card"><h3>نسخة تحفظها عندك</h3><p class="panel-description">احفظ بيانات الامتحان وأسئلته وخياراته في ملف، ثم افتحه لاحقًا لمتابعة التعديل.</p><button class="btn secondary small" data-action="export-json">'+ic('download')+'حفظ الأسئلة</button></div>';
+        '<div class="panel-card"><h3>نسخة تحفظها عندك</h3><p class="panel-description">احفظ بيانات الامتحان وأسئلته وخياراته في ملف، ثم افتحه لاحقًا لمتابعة التعديل.</p><button class="btn secondary small" data-action="export-json">'+ic('download')+'حفظ الأسئلة</button></div>';appGroupPanels('format');
     }
     function slider(label,key,value,min,max,step,unit){return'<label class="field"><span class="field-label">'+label+'</span><div class="setting-slider"><input type="range" data-setting="'+key+'" min="'+min+'" max="'+max+'" step="'+step+'" value="'+value+'"><output>'+value+' '+unit+'</output></div></label>';}
     function renderQuestions(){
@@ -1232,7 +1312,7 @@ globalThis.WaraqaAuth = (() => {
       return'<article class="question-card selected" data-question="'+q.id+'">'+header+body+'</article>';
     }
     function updateSummary(){updateModelContext();const n=doc.questions.length,total=M.total(doc),expected=doc.metadata.expectedScore;$('totalScore').textContent=total;$('expectedScore').textContent=expected;$('questionCount').textContent=n+' أسئلة';$('editorCounter').textContent=activeTab==='questions'?(n?n+' أسئلة':'لا توجد أسئلة بعد'):'تحديث مباشر';$('documentContext').textContent=[doc.metadata.subject,doc.metadata.grade].filter(Boolean).join(' · ')||'ورقة امتحان جديدة';$('addQuestion').hidden=activeTab!=='questions'||n===0;$('scoreMeter').style.width=(expected>0?Math.min(100,total/expected*100):100)+'%';$('scoreMeter').style.background=Math.abs(total-expected)<.001?'#709781':'#c5a06c';$('scoreWarning').hidden=n===0||Math.abs(total-expected)<.001;$('scoreWarning').textContent='مجموع الدرجات '+total+'، والدرجة المطلوبة '+expected+'.';}
-    function setTab(tab,focus=false,record=true){if(tab==='bank'&&activeTab!=='bank')resetCatalogView();activeTab=tab;for(const b of document.querySelectorAll('[data-tab]')){const active=b.dataset.tab===tab;b.classList.toggle('active',active);b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1;if(active&&focus)b.focus();}for(const name of ['questions','metadata','format','archive','bank','versions'])$(name+'Panel').hidden=name!==tab;$('editorTitle').textContent={questions:'الأسئلة والدرجات',metadata:'بيانات الامتحان',format:'التنسيق والطباعة',archive:'أرشيف الامتحانات',bank:'بنك الأسئلة',versions:'سجل النسخ'}[tab];if(tab==='archive')renderArchive();if(tab==='bank')renderBank();if(tab==='versions')renderVersions();$('addQuestion').hidden=tab!=='questions';$('editorScroll').scrollTop=0;updateSummary();if(record)trackView();}
+    function setTab(tab,focus=false,record=true){if(tab==='bank'&&activeTab!=='bank')resetCatalogView();activeTab=tab;for(const b of document.querySelectorAll('[data-tab]')){const active=b.dataset.tab===tab;b.classList.toggle('active',active);b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1;if(active&&focus)b.focus();}for(const name of ['questions','metadata','format','archive','bank','versions'])$(name+'Panel').hidden=name!==tab;$('editorTitle').textContent={questions:'الأسئلة والدرجات',metadata:'بيانات الامتحان',format:'التنسيق والطباعة',archive:'أرشيف الامتحانات',bank:'بنك الأسئلة',versions:'سجل النسخ'}[tab];if(tab==='archive')renderArchive();if(tab==='bank')renderBank();if(tab==='versions')renderVersions();$('addQuestion').hidden=tab!=='questions';$('editorScroll').scrollTop=0;updateSummary();appSyncNavigation();if(record)trackView();}
     function renderEditor(){renderMetadata();renderFormat();renderQuestions();updateSummary();}
     function setDocument(next){v5Active='base';undoAction=null;$('undoButton').hidden=true;doc=M.normalize(next);resetHistory();selected=doc.questions[0]?.id||null;renderEditor();setTab('questions',false,false);trackView(true);queueUpdate();}
     function unitHTML(unit){
@@ -1885,7 +1965,7 @@ globalThis.WaraqaAuth = (() => {
 
     document.addEventListener('input',event=>{const el=event.target;if(el.dataset.meta){const key=el.dataset.meta;doc.metadata[key]=key==='expectedScore'?M.num(el.value):el.value;queueUpdate();return;}if(el.dataset.setting){const key=el.dataset.setting;doc.settings[key]=el.type==='checkbox'?el.checked:el.type==='range'?Number(el.value):el.value;if(el.type==='range')el.nextElementSibling.textContent=el.value+' '+({fontSize:'pt',gap:'mm'}[key]||'');if(key==='language'){renderEditor();$('paperLanguage')?.focus({preventScroll:true});}queueUpdate();return;}const q=qFor(el);if(!q)return;if(el.dataset.q){const key=el.dataset.q;q[key]=el.type==='checkbox'?el.checked:el.type==='number'?M.num(el.value,0,key==='answerLines'?50:key==='blankWidth'?80:10000):el.value;if(key==='answerLines')q[key]=Math.round(q[key]);if(key==='blankWidth')q[key]=M.num(q[key],10,80,28);if(key==='score')q.autoGrade=false;if(key==='title'){const heading=el.closest('[data-question]').querySelector('.question-heading strong');heading.textContent='السؤال '+(bankDraft&&q===bankDraft.question?1:doc.questions.indexOf(q)+1)+(q.title?' · '+q.title:'');}if(key==='type'){if(M.isBranch(q)&&!q.branches.length)q.branches=[{id:M.uid(),text:'',score:10},{id:M.uid(),text:'',score:10}];if(q.type==='blanks'){q.branchStyle='numbers';if(!q.text)q.text=doc.settings.language==='en'?'Fill in the blanks:':'املأ الفراغات الآتية:';q.branches.forEach(b=>{if(!b.text)b.text='[[فراغ]]';});}if(q.type==='choice'&&!q.choices.length){q.choices=['',''];q.choiceIds=q.choices.map(()=>M.uid());q.correctChoiceId='';}if(q.type==='matching'&&!q.pairs.length)q.pairs=[{left:'',right:''},{left:'',right:''}];if(q.type==='ordering'&&!q.ordering.length)q.ordering=['',''];renderQuestions();}if(key==='autoGrade'||key==='branchStyle')renderQuestions();queueUpdate();return;}if(el.dataset.branch!=null){const b=q.branches[Number(el.dataset.branch)];if(!b)return;b[el.dataset.branchField]=el.dataset.branchField==='score'?M.num(el.value):el.value;const parentScore=el.closest('[data-question]').querySelector('[data-q="score"]');if(parentScore&&q.autoGrade)parentScore.value=M.gradeOf(q);queueUpdate();return;}if(el.dataset.choice!=null){q.choices[Number(el.dataset.choice)]=el.value;queueUpdate();}});
     document.addEventListener('change',event=>{if(event.target.matches('input[type=number]')){const el=event.target,q=qFor(el);if(el.dataset.meta==='expectedScore')el.value=doc.metadata.expectedScore;if(q&&el.dataset.q)el.value=q[el.dataset.q];if(q&&el.dataset.branchField==='score')el.value=q.branches[Number(el.dataset.branch)].score;if(q&&el.dataset.assetField==='width')el.value=q.assets.find(a=>a.id===el.dataset.asset)?.width??el.value;if(el.dataset.logo==='width'&&doc.header.logo)el.value=doc.header.logo.width;if(tableDraft&&el.dataset.tableWidth!=null)el.value=tableDraft.widths[Number(el.dataset.tableWidth)];if(tableDraft&&el.id==='tableBorderWidth')el.value=tableDraft.borderWidth;}});
-    document.addEventListener('click',event=>{const close=event.target.closest('[data-close]');if(close){$(close.dataset.close).close();return;}const tab=event.target.closest('[data-tab]');if(tab){setTab(tab.dataset.tab);return;}const button=event.target.closest('[data-action]');if(!button){if(!event.target.closest('.menu-anchor'))closeMenu();const card=event.target.closest('.question-card.collapsed');if(card){selected=card.dataset.question;renderQuestions();trackView();}return;}const action=button.dataset.action,id=button.dataset.id,q=docQuestion(id,interaction.source),index=doc.questions.indexOf(q);if(action!=='menu')closeMenu();
+    document.addEventListener('click',event=>{const close=event.target.closest('[data-close]');if(close){$(close.dataset.close).close();return;}const tab=event.target.closest('[data-tab]');if(tab){document.body.classList.remove('mobile-preview');setTab(tab.dataset.tab);return;}const button=event.target.closest('[data-action]');if(!button){if(!event.target.closest('.menu-anchor'))closeMenu();const card=event.target.closest('.question-card.collapsed');if(card){selected=card.dataset.question;renderQuestions();trackView();}return;}const action=button.dataset.action,id=button.dataset.id,q=docQuestion(id,interaction.source),index=doc.questions.indexOf(q);if(action!=='menu')closeMenu();
       switch(action){
         case'menu':$('moreMenu').hidden=!$('moreMenu').hidden;$('moreButton').setAttribute('aria-expanded',String(!$('moreMenu').hidden));break;
         case'print':print();break;
@@ -1976,8 +2056,8 @@ globalThis.WaraqaAuth = (() => {
     }
     function v5QuestionExtras(q,dir){
       const names={poetry:'أبيات شعرية',quran:'آيات قرآنية',passage:'قطعة خارجية'};
-      let html='<div class="v5-content-tools" aria-label="أدوات النصوص">'+['poetry','quran','passage'].map(kind=>v5Button(({poetry:'≋ شعر',quran:'﴿ آيات ﴾',passage:'▤ قطعة قراءة'})[kind],'block-new','secondary small','data-kind="'+kind+'" data-id="'+q.id+'"')).join('')+'</div>';
-      html+=(q.blocks||[]).map(b=>'<div class="v5-block-card"><div><strong>'+E(b.title||names[b.kind])+'</strong><p>'+E(b.kind==='poetry'?b.lines.map(l=>l.first).join(' • '):b.text)+'</p></div>'+v5Button('تعديل','block-edit','small','data-id="'+q.id+'" data-block="'+b.id+'"')+'<button class="icon-btn danger" aria-label="حذف '+names[b.kind]+'" data-v5="block-delete" data-id="'+q.id+'" data-block="'+b.id+'">×</button></div>').join('');
+      let html='<details class="app-extra-content"><summary>إضافة نص أدبي أو قطعة قراءة</summary><div class="v5-content-tools" aria-label="أدوات النصوص">'+['poetry','quran','passage'].map(kind=>v5Button(({poetry:'≋ شعر',quran:'﴿ آيات ﴾',passage:'▤ قطعة قراءة'})[kind],'block-new','secondary small','data-kind="'+kind+'" data-id="'+q.id+'"')).join('')+'</div>';
+      html+='</details>';html+=(q.blocks||[]).map(b=>'<div class="v5-block-card"><div><strong>'+E(b.title||names[b.kind])+'</strong><p>'+E(b.kind==='poetry'?b.lines.map(l=>l.first).join(' • '):b.text)+'</p></div>'+v5Button('تعديل','block-edit','small','data-id="'+q.id+'" data-block="'+b.id+'"')+'<button class="icon-btn danger" aria-label="حذف '+names[b.kind]+'" data-v5="block-delete" data-id="'+q.id+'" data-block="'+b.id+'">×</button></div>').join('');
       html+='<details class="v5-answers"><summary>مفتاح الإجابة · للمدرّس فقط</summary><p>أدخل الإجابات ليُحدَّث مفتاح التصحيح تلقائيًا عند خلط النماذج. تُطبع الإجابات في ورقة منفصلة.</p>';
       if(q.type==='choice')html+='<label class="field"><span class="field-label">الاختيار الصحيح</span><select data-studio-correct="true"><option value="">اختر الإجابة الصحيحة</option>'+q.choices.map((c,i)=>'<option value="'+q.choiceIds[i]+'"'+(q.correctChoiceId===q.choiceIds[i]?' selected':'')+'>'+E(M.label(i,'letters',doc.settings)+') '+c.slice(0,110))+'</option>').join('')+'</select></label>';
       else if(M.isBranch(q))html+=q.branches.map((b,i)=>'<label class="field"><span class="field-label">إجابة الفرع '+M.label(i,q.branchStyle,doc.settings)+'</span><textarea data-studio-branch-answer="'+i+'" dir="'+dir+'" rows="2" maxlength="6000" placeholder="اكتب الإجابة أو معيار التصحيح">'+E(b.answer||'')+'</textarea></label>').join('');
@@ -2180,7 +2260,106 @@ globalThis.WaraqaAuth = (() => {
       window.addEventListener('afterprint',()=>{v5PrintJob=null;});
     }
 
-    v5Init();renderEditor();setTab('questions',false,false);updateHistoryButtons();
+    // Application navigation and progressive disclosure; exam rendering stays unchanged.
+    let appRememberedEditor='questions';
+    const appOpenGroups={metadata:0,format:0};
+    function appGroupPanels(name){
+      const panel=$(name+'Panel');
+      [...panel.children].forEach((card,index)=>{
+        if(!card.classList.contains('panel-card')||card.tagName==='DETAILS')return;
+        const heading=card.querySelector('h3');if(!heading)return;
+        const group=document.createElement('details');group.className='panel-card app-group';
+        group.dataset.appGroup=name;group.dataset.groupIndex=index;group.name='app-'+name+'-sections';
+        group.open=appOpenGroups[name]===index;
+        const summary=document.createElement('summary');
+        summary.innerHTML='<span class="app-group-number" aria-hidden="true">'+String(index+1).padStart(2,'0')+'</span><span class="app-group-label">'+E(heading.textContent)+'</span>'+ic('down');
+        heading.remove();const body=document.createElement('div');body.className='app-group-body';
+        while(card.firstChild)body.append(card.firstChild);
+        group.append(summary,body);card.replaceWith(group);
+      });
+    }
+    function appSyncNavigation(){
+      const preview=document.body.classList.contains('mobile-preview');
+      document.body.dataset.appTab=activeTab;
+      const core=['questions','metadata','format'].includes(activeTab);
+      if(core&&!preview)appRememberedEditor=activeTab;
+      const current=preview?'preview':activeTab==='bank'?'bank':activeTab==='archive'?'archive':activeTab==='versions'?'more':'edit';
+      document.querySelectorAll('[data-app-destination]').forEach(button=>{
+        const active=button.dataset.appDestination===current;
+        button.classList.toggle('active',active);
+        if(active)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current');
+      });
+      document.querySelectorAll('button[data-app-tab]').forEach(button=>{
+        const active=button.dataset.appTab===activeTab;
+        button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));
+      });
+      $('appSectionTabs').hidden=!core||preview;
+      $('mobilePreview').setAttribute('aria-current',preview?'page':'false');
+      $('mobileEdit').classList.toggle('active',current==='edit');
+    }
+    function appNavigate(tab){
+      document.body.classList.remove('mobile-preview','fullscreen-preview');
+      setTab(tab,false,false);appSyncNavigation();trackView();
+      if(innerWidth<=740)window.scrollTo({top:0,behavior:'instant'});
+    }
+    function appInit(){
+      // Keep undo and redo close to the editor; place secondary actions in the tools sheet.
+      const utility=document.querySelector('.utility-bar');
+      const toolbar=document.createElement('div');toolbar.className='app-editor-tools';
+      toolbar.append(utility.querySelector('.history-actions'));
+      toolbar.insertAdjacentHTML('beforeend','<button class="btn app-tablet-preview" data-action="mobile-preview">'+ic('eye')+'معاينة الورقة</button><button class="btn" data-app-open-tools>'+ic('settings')+'أدوات الامتحان</button>');
+      const editor=document.querySelector('.editor-column');editor.insertBefore(toolbar,$('editorScroll'));
+      $('appToolActions').append(utility);$('appToolActions').append($('v5StartBanner'));
+      document.addEventListener('toggle',event=>{
+        const group=event.target.closest?.('[data-app-group]');
+        if(!group||group!==event.target||!group.open)return;
+        appOpenGroups[group.dataset.appGroup]=Number(group.dataset.groupIndex);
+        group.parentElement.querySelectorAll('.app-group').forEach(other=>{if(other!==group)other.open=false;});
+      },true);
+      // Close this sheet before existing action handlers open another dialog.
+      document.addEventListener('click',event=>{
+        const launch=event.target.closest('#appToolsDialog button:not([data-close])');
+        if(launch&&launch.closest('#appToolActions, .app-tools-grid, .app-tool-list'))$('appToolsDialog').close();
+      },true);
+      document.addEventListener('click',event=>{
+        const opener=event.target.closest('[data-app-open-tools]');
+        if(opener){$('appToolsDialog').showModal();return;}
+        const tab=event.target.closest('button[data-app-tab]');
+        if(tab){appNavigate(tab.dataset.appTab);return;}
+        const destination=event.target.closest('[data-app-destination]');
+        if(destination){
+          const route=destination.dataset.appDestination;
+          if(route==='more')return;
+          if(route==='bank'||route==='archive')appNavigate(route);
+          if(route==='edit')appNavigate(appRememberedEditor);
+        }
+        const launch=event.target.closest('#appToolsDialog button:not([data-close])');
+        if(launch&&launch.closest('#appToolActions, .app-tools-grid, .app-tool-list')){
+          $('appToolsDialog').close();
+          if(launch.dataset.appGo)appNavigate(launch.dataset.appGo);
+        }
+        // Existing handlers run first; sync their navigation and preview state after each click.
+        appSyncNavigation();
+      });
+      $('appToolsDialog').addEventListener('click',event=>{
+        if(event.target!==$('appToolsDialog'))return;
+        const r=event.target.getBoundingClientRect();
+        if(event.clientY<r.top||event.clientY>r.bottom||event.clientX<r.left||event.clientX>r.right)event.target.close();
+      });
+      const viewport=window.visualViewport;
+      if(viewport){
+        let maxHeight=viewport.height;
+        const keyboard=()=>{
+          maxHeight=Math.max(maxHeight,viewport.height);
+          const editing=document.activeElement?.matches('input,textarea,select,[contenteditable=true]');
+          document.body.classList.toggle('app-keyboard-open',innerWidth<=740&&!!editing&&maxHeight-viewport.height>150);
+        };
+        viewport.addEventListener('resize',keyboard);document.addEventListener('focusout',()=>requestAnimationFrame(keyboard));
+      }
+      appGroupPanels('metadata');appGroupPanels('format');appSyncNavigation();
+    }
+
+    v5Init();renderEditor();appInit();setTab('questions',false,false);updateHistoryButtons();
     navigation=WaraqaNavigation.create({env:window,session:M.uid(),getView:captureView,applyView:restoreView,consumeBack:closeTransientViews,beforeExit:async()=>{const saved=await save();if(!saved)toast('تعذّر الحفظ. نزّل ملف الأسئلة قبل المغادرة.');return saved;},requestExit:leave=>{
       save();
       confirm('الخروج من الموقع؟',storageAvailable?'سيُحفظ آخر تعديل قبل المغادرة. هل تريد الخروج؟':'تعذّر الحفظ التلقائي. احفظ ملف الأسئلة من قائمة الخيارات قبل مغادرة الموقع.','الخروج',leave);
