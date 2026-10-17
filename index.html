@@ -237,6 +237,33 @@ This Font Software is licensed under the SIL Open Font License, Version 1.1. Thi
 @media print {.app-editor-tools,.app-section-tabs,.app-tools-dialog {display:none!important}}
 
 </style>
+<style id="waraqa-visual-style">
+/* Question visuals share the existing paper, editor and print pipeline. */
+.wv-question-tools{margin:14px 0;padding:14px;border:1px solid var(--line,#dce4df);border-radius:12px;background:var(--surface,#fff)}
+.wv-tools-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px;font-size:13px}
+.wv-tools-head small{color:var(--muted,#6c7770);font-size:11px}.wv-tools-buttons{display:flex;flex-wrap:wrap;gap:8px}
+.wv-tools-buttons .btn{flex:1;min-width:135px;justify-content:center}.wv-new-chip{font-size:10px;background:#e4f2ea;color:#245e48;border-radius:5px;padding:2px 6px}
+.wv-preview-card{display:grid;grid-template-columns:84px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line,#dce4df)}
+.wv-preview-card:last-child{border-bottom:0}.wv-thumbnail{display:flex;align-items:center;justify-content:center;min-height:54px;max-height:64px;overflow:hidden;border:1px solid #e0e6e2;border-radius:7px;background:white;color:#283b30;font-size:12px}.wv-thumbnail svg{width:80px!important;max-height:60px}.wv-preview-card strong{font-size:12px}.wv-preview-card p{margin:4px 0 0;font-size:11px;color:var(--muted,#65756b)}.wv-card-actions{display:flex;gap:4px;flex-wrap:wrap}
+.wv-dialog{width:min(1170px,calc(100vw - 24px));max-width:1170px;padding:22px;max-height:94dvh;overflow:auto;background:var(--surface,#fff);color:var(--text,#1e2c25)}
+.wv-dialog h2{font-size:20px;margin:0 0 6px}.wv-dialog-intro{font-size:12px;color:var(--muted,#66756a);margin:0 35px 16px 0}
+.wv-editor-layout{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:16px;align-items:start}.wv-stage-column{min-width:0}
+.wv-palette{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin-bottom:12px}.wv-palette button{min-height:63px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;border:1px solid var(--line,#dce4df);border-radius:9px;background:var(--surface,#fff);color:inherit;font:inherit;font-size:11px;cursor:pointer;padding:6px}.wv-palette button:hover{border-color:#48876d;background:#edf5f0;color:#173f2d}.wv-palette svg{width:42px;height:28px}.wv-palette .wv-icon{font-size:24px;line-height:28px}
+.wv-canvas-wrap{padding:14px;background:#e9eeeb;border:1px solid #d6dfd9;border-radius:12px;overflow:hidden}.wv-canvas{width:100%;background:white;box-shadow:0 3px 12px #182e2110;touch-action:none;position:relative;user-select:none}.wv-canvas svg{pointer-events:auto}.wv-canvas g[data-vitem]{cursor:grab}.wv-canvas g[data-vitem]:active{cursor:grabbing}.wv-canvas:focus{outline:2px solid #437b62;outline-offset:3px}.wv-canvas-hint{font-size:11px;color:var(--muted,#6c7770);margin:9px 0}
+.wv-toolbar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0}.wv-toolbar .btn{font-size:11px;padding:7px 9px}.wv-toolbar label{display:flex;align-items:center;gap:5px;font-size:11px;margin-inline-start:auto}.wv-toolbar input[type=checkbox]{accent-color:#2f7658}
+.wv-properties{border:1px solid var(--line,#dce4df);border-radius:11px;padding:14px;max-height:60dvh;overflow:auto}.wv-properties h3{font-size:13px;margin:0 0 12px}.wv-properties .field,.wv-drawing-settings .field{margin-bottom:10px}.wv-properties .field-label,.wv-drawing-settings .field-label{font-size:11px}.wv-properties input,.wv-properties textarea,.wv-properties select,.wv-drawing-settings input,.wv-drawing-settings select{width:100%;min-width:0;font:inherit;font-size:12px;padding:8px;border:1px solid var(--line,#dce4df);border-radius:7px;background:var(--surface,#fff);color:inherit}.wv-properties .form-row{grid-template-columns:1fr 1fr;gap:8px}.wv-properties .checkbox{font-size:11px;margin:9px 0}.wv-empty-properties{font-size:12px;line-height:1.9;color:var(--muted,#65756b)}
+.wv-drawing-settings{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px;margin-top:14px}.wv-elements{display:flex;gap:5px;flex-wrap:wrap;margin-top:9px;max-height:80px;overflow:auto}.wv-elements button{padding:4px 8px;border:1px solid var(--line,#dce4df);border-radius:6px;color:inherit;background:var(--surface,#fff);font:inherit;font-size:10px}.wv-elements button[aria-pressed=true]{background:#e6f1eb;border-color:#367659;color:#204a36}
+.wv-error{min-height:20px;color:#a33d32;font-size:12px;line-height:1.7;margin:9px 0}.wv-dialog-footer{position:sticky;bottom:-22px;background:var(--surface,#fff);border-top:1px solid var(--line,#dce4df);padding:14px 0 3px;display:flex;justify-content:space-between;gap:10px;align-items:center;z-index:4}.wv-dialog-footer p{font-size:11px;color:var(--muted,#65756b);margin:0}.wv-dialog-footer .dialog-actions{margin:0;display:flex;flex-wrap:wrap;gap:7px}
+.wv-template-picker{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:16px 0}.wv-template-choice{border:1px solid var(--line,#dce4df);border-radius:11px;padding:12px 8px;background:var(--surface,#fff);color:inherit;cursor:pointer;font:inherit;font-size:12px}.wv-template-choice[aria-pressed=true]{border:2px solid #3b795d;background:#edf5f0;color:#244b36;padding:11px 7px}.wv-template-choice svg{display:block;width:100%;height:65px;margin-bottom:8px}.wv-template-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(270px,1fr);gap:20px;align-items:start}.wv-template-form{min-width:0}.wv-template-form input,.wv-template-form textarea,.wv-template-form select{font:inherit;font-size:12px;min-width:0;width:100%;border:1px solid var(--line,#dce4df);border-radius:7px;padding:8px;color:inherit;background:var(--surface,#fff)}.wv-template-form .field{margin-bottom:11px}.wv-template-form .field-label{font-size:11px}.wv-template-form .form-row{grid-template-columns:1fr 1fr;gap:8px}.wv-template-row{padding:12px;border:1px solid var(--line,#dce4df);border-radius:9px;margin:9px 0;background:var(--surface,#fff)}.wv-template-row-top{display:flex;align-items:center;justify-content:space-between;font-size:11px;margin-bottom:8px}.wv-template-row .field:last-child{margin-bottom:0}.wv-template-preview-wrap{position:sticky;top:0;border:1px solid #dce3de;background:#edf1ee;border-radius:12px;padding:14px;min-width:0}.wv-preview-label{font-size:11px;margin:0 0 10px;color:var(--muted,#65756b)}.wv-template-preview{background:white;padding:20px;color:#17202a;font-family:'Waraqa Naskh',Arial,sans-serif;font-size:14px;min-height:200px;border-radius:3px;line-height:1.6;overflow-wrap:anywhere}.wv-template-preview .wv-print-template{margin:0}.wv-template-preview .wv-answer-space span{height:20px}
+.wv-demo-banner{margin-bottom:16px;padding:15px;border:1px solid #b8d6c4;border-radius:12px;background:#eef7f1;color:#274635}.wv-demo-banner strong{display:block;font-size:13px}.wv-demo-banner p{font-size:12px;line-height:1.8;margin:6px 0 11px}.wv-demo-banner .wv-tools-buttons{justify-content:flex-start}.wv-demo-banner .btn{flex:none;min-width:0;font-size:11px}.wv-demo-button{font-size:11px!important}
+/* The following classes are used identically in A4 preview and printing. */
+.wv-print-diagram{margin:2mm auto 3mm;break-inside:avoid;page-break-inside:avoid;color:#17202a}.wv-print-diagram svg{max-width:100%;height:auto}.wv-print-diagram figcaption{text-align:center;font-size:.72em;line-height:1.5;margin-top:1mm;color:#39454d;overflow-wrap:anywhere}
+.wv-print-template{margin:2mm 0 3mm;line-height:1.55;color:#17202a;overflow-wrap:anywhere}.wv-template-title{font-size:.85em;font-weight:bold;text-align:center;margin-bottom:1.5mm}.wv-template-table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:.88em;direction:rtl}.wv-template-table th,.wv-template-table td{border:.3mm solid #34434d;padding:1.5mm 2mm;vertical-align:middle;font-weight:normal;overflow-wrap:anywhere}.wv-template-table thead th{background:#f2f4f5;font-weight:bold;text-align:center;print-color-adjust:exact;-webkit-print-color-adjust:exact}.wv-compare .wv-template-table th:first-child{width:25%}.wv-template-table tbody th{text-align:center;background:#fafafa}.wv-template-table thead{display:table-header-group}.wv-template-table tr{break-inside:avoid;page-break-inside:avoid}.wv-answer-space{min-width:0}.wv-answer-space span{display:block;height:6.5mm;border-bottom:.2mm dotted #80908a;margin:0 1mm}.wv-cell-text{white-space:normal;overflow-wrap:anywhere}.wv-flow{break-inside:avoid;page-break-inside:avoid}.wv-flow-root{max-width:64%;min-width:30%;width:max-content;max-width:80%;margin:0 auto;border:.3mm solid #34434d;border-radius:1.8mm;padding:2mm 4mm;text-align:center;font-size:.9em;min-height:10mm;box-sizing:border-box}.wv-flow-connectors{display:block;width:100%;height:9mm;overflow:visible}.wv-flow-nodes{display:grid;gap:2.5mm;direction:rtl}.wv-flow-node{border:.3mm solid #34434d;border-radius:1.8mm;padding:2mm;min-height:12mm;text-align:center;font-size:.84em;min-width:0}.wv-classify{break-inside:avoid;page-break-inside:avoid}.wv-word-bank{display:flex;justify-content:center;flex-wrap:wrap;gap:1mm 3mm;border:.25mm dashed #607169;border-radius:1mm;padding:2mm;margin-bottom:2.5mm;font-size:.87em}.wv-word-bank span+span:before{content:'•';font-size:.65em;margin-inline-end:3mm;color:#849087}.wv-classify-grid{display:grid;border:.3mm solid #34434d;direction:rtl}.wv-classify-col{min-width:0;border-inline-end:.3mm solid #34434d}.wv-classify-col:last-child{border-inline-end:0}.wv-classify-heading{font-size:.88em;font-weight:bold;text-align:center;padding:1.6mm;border-bottom:.3mm solid #34434d;background:#f2f4f5;print-color-adjust:exact;-webkit-print-color-adjust:exact}.wv-classify-content{padding:2mm;font-size:.86em}
+@media(max-width:900px){.wv-editor-layout{grid-template-columns:minmax(0,1fr) 215px}.wv-dialog{padding:16px}.wv-dialog-footer{bottom:-16px}.wv-template-layout{grid-template-columns:1fr 1fr;gap:12px}.wv-template-preview{padding:12px}}
+@media(max-width:640px){.wv-dialog{width:calc(100vw - 12px);padding:14px;max-height:96dvh}.wv-dialog h2{font-size:17px;margin-inline-end:22px}.wv-dialog-intro{margin:0 0 12px;font-size:11px}.wv-editor-layout,.wv-template-layout{grid-template-columns:1fr}.wv-properties{max-height:none}.wv-palette{grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}.wv-palette button{font-size:9px;min-height:56px;padding:5px 2px}.wv-canvas-wrap{padding:6px}.wv-drawing-settings{grid-template-columns:1fr 1fr}.wv-drawing-settings .field:first-child{grid-column:1/-1}.wv-dialog-footer{bottom:-14px;align-items:flex-start}.wv-dialog-footer p{max-width:40%;font-size:10px}.wv-dialog-footer .btn{font-size:12px;padding:8px 12px}.wv-template-picker{gap:5px}.wv-template-choice{font-size:10px;padding:8px 3px}.wv-template-choice[aria-pressed=true]{padding:7px 2px}.wv-template-choice svg{height:45px}.wv-template-preview-wrap{position:static;order:-1}.wv-template-preview{min-height:120px}.wv-preview-card{grid-template-columns:60px minmax(0,1fr)}.wv-card-actions{grid-column:2}.wv-thumbnail{grid-row:span 2}.wv-toolbar{gap:5px}.wv-toolbar .btn{font-size:10px;padding:6px}.wv-tools-head{flex-wrap:wrap}.wv-tools-head small{width:100%}}
+@media print{.wv-dialog,.wv-demo-banner,.wv-question-tools{display:none!important}.wv-print-diagram,.wv-flow,.wv-classify{break-inside:avoid;page-break-inside:avoid}.wv-drawing-svg{overflow:visible!important}.wv-print-template,.wv-print-diagram{color:#17202a!important}}
+
+</style>
 </head>
 <body class="auth-locked"><button class="btn v5-login-theme" data-theme-toggle aria-label="تفعيل الوضع الليلي" title="الوضع الليلي"><span data-theme-icon>☾</span></button>
   <svg class="icons" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
@@ -778,6 +805,159 @@ globalThis.WaraqaModel = (() => {
 
   
 </script>
+  <script id="waraqa-visual-model">
+'use strict';
+// Structured, local-only visuals. No imported SVG markup or executable expressions.
+globalThis.WaraqaVisual = (() => {
+  const E=WaraqaModel.escape,N=WaraqaModel.num,uid=WaraqaModel.uid;
+  const names={rectangle:'مستطيل',circle:'دائرة',triangle:'مثلث',line:'قطعة مستقيمة',arrow:'سهم',axes:'محاور',numberline:'خط أعداد',box:'مربع مخطط',text:'تسمية'};
+  const templateNames={compare:'قارن بين',flow:'أكمل المخطط',cause:'السبب والنتيجة',classify:'صنّف الكلمات'};
+  const text=(v,max=300)=>typeof v==='string'?v.slice(0,max):'';
+  const obj=v=>v&&typeof v==='object'&&!Array.isArray(v);
+  const id=v=>typeof v==='string'&&/^[a-zA-Z0-9_-]{1,100}$/.test(v)?v:uid();
+  const list=(v,max)=>Array.isArray(v)?v.slice(0,max):[];
+  function element(source={}){
+    const kind=Object.hasOwn(names,source.kind)?source.kind:'rectangle';
+    const w=N(source.w,40,740,kind==='axes'?280:kind==='numberline'?440:160),h=N(source.h,30,600,kind==='numberline'||kind==='arrow'||kind==='line'?65:120);
+    const x=N(source.x,18,782-w,60),y=N(source.y,18,622-h,55);
+    return {id:id(source.id),kind,x,y,w,h,label:text(source.label,240),top:text(source.top,80),bottom:text(source.bottom,80),side:text(source.side,80),rotation:N(source.rotation,-180,180,0),stroke:N(source.stroke,1,5,2),fill:['none','white','light'].includes(source.fill)?source.fill:'none',dashed:source.dashed===true,dimensions:source.dimensions===true,min:N(source.min,-100,100,-5),max:N(source.max,-100,100,5),step:N(source.step,.1,100,1),hidden:text(source.hidden,200),xLabel:text(source.xLabel,30)||'س',yLabel:text(source.yLabel,30)||'ص',grid:source.grid!==false};
+  }
+  function normalize(source){
+    if(!obj(source)||!['diagram','template'].includes(source.kind))return null;
+    const base={id:id(source.id),kind:source.kind,title:text(source.title,200),position:['before-text','after-text','after-items'].includes(source.position)?source.position:'after-text'};
+    if(source.kind==='diagram'){
+      base.widthMm=N(source.widthMm,60,160,145);base.height=N(source.height,200,640,360);
+      const seen=new Set();base.elements=list(source.elements,50).filter(obj).map(element).map(e=>{if(seen.has(e.id))e.id=uid();seen.add(e.id);e.w=Math.min(e.w,740);e.h=Math.min(e.h,base.height-36);e.x=N(e.x,18,782-e.w,18);e.y=N(e.y,18,base.height-e.h-18,18);return e;});
+      return base;
+    }
+    base.type=Object.hasOwn(templateNames,source.type)?source.type:'compare';base.lines=Math.round(N(source.lines,1,4,2));
+    base.leftTitle=text(source.leftTitle,100);base.rightTitle=text(source.rightTitle,100);base.root=text(source.root,180);base.words=text(source.words,1800);
+    base.rows=list(source.rows,12).filter(obj).map(r=>({criterion:text(r.criterion,180),left:text(r.left,500),right:text(r.right,500)}));
+    if(!base.rows.length)base.rows=[{criterion:'',left:'',right:''}];
+    base.nodes=list(source.nodes,5).map(v=>text(v,240));if(base.nodes.length<2)base.nodes=['',''];
+    base.columns=list(source.columns,4).filter(obj).map(c=>({title:text(c.title,100),content:text(c.content,700)}));if(base.columns.length<2)base.columns=[{title:'',content:''},{title:'',content:''}];
+    return base;
+  }
+  function normalizeAll(value){const seen=new Set();return list(value,8).map(normalize).filter(Boolean).map(v=>{if(seen.has(v.id))v.id=uid();seen.add(v.id);return v;});}
+  function validate(raw){
+    for(const q of raw.questions||[]){
+      if(q.visuals!=null&&(!Array.isArray(q.visuals)||q.visuals.length>8))throw new Error('يسمح بثمانية رسوم وقوالب في السؤال الواحد.');
+      for(const v of q.visuals||[]){
+        if(!obj(v)||!['diagram','template'].includes(v.kind))throw new Error('بيانات الرسم أو القالب غير صالحة.');
+        if(v.kind==='diagram'&&(!Array.isArray(v.elements)||v.elements.length>50||v.elements.some(e=>!obj(e)||!Object.hasOwn(names,e.kind))))throw new Error('عناصر الرسم غير صالحة أو تتجاوز 50 عنصرًا.');
+        if(v.kind==='template'&&!Object.hasOwn(templateNames,v.type))throw new Error('نوع القالب البصري غير صالح.');
+        for(const key of ['rows','nodes','columns'])if(v[key]!=null&&(!Array.isArray(v[key])||v[key].length>({rows:12,nodes:5,columns:4}[key])))throw new Error('عدد عناصر القالب يتجاوز الحد المسموح.');
+      }
+    }
+  }
+  function makeElement(kind,index=0){
+    const defaults={rectangle:{w:170,h:105,top:'٦ سم',side:'٤ سم',dimensions:true},circle:{w:130,h:130,label:'نق = ٣ سم',dimensions:true},triangle:{w:170,h:135,bottom:'٨ سم',top:'٥ سم',side:'٥ سم',dimensions:true},arrow:{w:180,h:60,label:''},line:{w:180,h:60,label:'أ ب'},axes:{w:280,h:235,label:'',min:-4,max:4,step:1},numberline:{w:440,h:105,min:-5,max:5,step:1},box:{w:150,h:72,label:'عنوان'},text:{w:150,h:55,label:'اكتب التسمية'}};
+    return element({kind,x:55+(index%4)*38,y:55+(index%4)*30,...defaults[kind]});
+  }
+  const makeDiagram=()=>normalize({kind:'diagram',title:'رسم توضيحي',height:360,elements:[]});
+  function makeTemplate(type){
+    const rows=Array.from({length:type==='compare'?3:2},()=>({criterion:'',left:'',right:''}));
+    return normalize({kind:'template',type,title:'',lines:2,leftTitle:type==='cause'?'السبب':'المفهوم الأول',rightTitle:type==='cause'?'النتيجة':'المفهوم الثاني',rows,root:'العنوان الرئيسي',nodes:['','',''],words:'',columns:[{title:'المجموعة الأولى',content:''},{title:'المجموعة الثانية',content:''}]});
+  }
+  function wrap(value,columns=20){
+    const result=[];for(const p of String(value).split('\n')){let row='';for(const word of p.split(/\s+/)){if(row&&row.length+word.length>columns){result.push(row);row=word;}else row+=(row?' ':'')+word;}result.push(row);}
+    return result.slice(0,6);
+  }
+  function label(value,x,y,maxWidth=150,size=19){
+    if(!value)return '';
+    const lines=wrap(value,Math.max(5,Math.floor(maxWidth/(size*.56))));
+    const direction=/[\u0600-\u06ff]/.test(value)?'rtl':'ltr';
+    return '<text x="'+x+'" y="'+(y-(lines.length-1)*size*.62)+'" text-anchor="middle" direction="'+direction+'" unicode-bidi="plaintext" fill="#17202a" stroke="none" font-size="'+size+'" font-family="Waraqa Naskh,Arial,sans-serif">'+lines.map((v,i)=>'<tspan x="'+x+'" dy="'+(i?size*1.25:0)+'">'+E(v)+'</tspan>').join('')+'</text>';
+  }
+  function arrow(x1,y1,x2,y2,size=9){
+    const a=Math.atan2(y2-y1,x2-x1),p=(x,y)=>x.toFixed(2)+','+y.toFixed(2);
+    return '<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'"/><path d="M'+p(x2-size*Math.cos(a-.45),y2-size*Math.sin(a-.45))+' L'+p(x2,y2)+' L'+p(x2-size*Math.cos(a+.45),y2-size*Math.sin(a+.45))+'" fill="none"/>';
+  }
+  function elementSVG(e,editor=false,selected=false){
+    const {x,y,w,h}=e,cx=x+w/2,cy=y+h/2,fill=e.fill==='light'?'#eef1f4':e.fill==='white'?'#fff':'none';
+    let shape='';
+    if(e.kind==='rectangle'||e.kind==='box'){
+      shape='<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="'+(e.kind==='box'?9:0)+'" fill="'+fill+'"/>';
+      shape+=e.label?label(e.label,cx,cy+6,w-15):e.kind==='box'?'<line x1="'+(x+18)+'" y1="'+cy+'" x2="'+(x+w-18)+'" y2="'+cy+'" stroke-dasharray="2 7"/>':'';
+      if(e.dimensions)shape+=label(e.top,cx,y-9,w,17)+label(e.side,x+w+19,cy+5,68,16)+label(e.bottom,cx,y+h+23,w,17);
+    }else if(e.kind==='circle'){
+      shape='<ellipse cx="'+cx+'" cy="'+cy+'" rx="'+w/2+'" ry="'+h/2+'" fill="'+fill+'"/>';
+      if(e.dimensions)shape+='<line x1="'+cx+'" y1="'+cy+'" x2="'+(x+w)+'" y2="'+cy+'" stroke-dasharray="5 4"/><circle cx="'+cx+'" cy="'+cy+'" r="2.6" fill="#17202a"/>';
+      shape+=label(e.label,cx,cy-9,w-8,17)+label(e.bottom,cx,y+h+23,w,17);
+    }else if(e.kind==='triangle'){
+      shape='<path d="M'+x+' '+(y+h)+' L'+cx+' '+y+' L'+(x+w)+' '+(y+h)+' Z" fill="'+fill+'"/>'+label(e.label,cx,y+h*.72,w*.65,17);
+      if(e.dimensions)shape+=label(e.bottom,cx,y+h+23,w,17)+label(e.top,x+w*.2-9,y+h*.46,95,16)+label(e.side,x+w*.8+9,y+h*.46,95,16);
+    }else if(e.kind==='arrow'||e.kind==='line'){
+      shape=e.kind==='arrow'?arrow(x,cy,x+w,cy):'<line x1="'+x+'" y1="'+cy+'" x2="'+(x+w)+'" y2="'+cy+'"/>';
+      shape+=label(e.label,cx,cy-12,w,18);
+    }else if(e.kind==='text')shape=label(e.label,cx,cy+6,w,21);
+    else if(e.kind==='numberline'){
+      const left=x+12,right=x+w-12,yy=y+h*.42,range=e.max-e.min,step=e.step,count=range>0?Math.min(30,Math.floor(range/step+1e-8)):0;
+      shape=arrow(left,yy,right,yy,10)+arrow(right,yy,left,yy,10);
+      const hidden=e.hidden.split(/[,،\s]+/).filter(Boolean).map(Number);
+      if(range>0&&count>0){for(let i=0;i<=count;i++){const val=+(e.min+i*step).toFixed(5),xx=left+18+(w-60)*(val-e.min)/range,blank=hidden.some(n=>Math.abs(n-val)<.0001);shape+='<line x1="'+xx+'" y1="'+(yy-7)+'" x2="'+xx+'" y2="'+(yy+7)+'"/>'+(blank?'<line x1="'+(xx-10)+'" y1="'+(yy+28)+'" x2="'+(xx+10)+'" y2="'+(yy+28)+'" stroke-dasharray="2 4"/>':label(String(val),xx,yy+29,45,16));}}
+      shape+=label(e.label,cx,y+h-4,w,18);
+    }else if(e.kind==='axes'){
+      const left=x+18,right=x+w-22,top=y+20,bottom=y+h-22,xx=(left+right)/2,yy=(top+bottom)/2,steps=4;
+      if(e.grid){for(let i=1;i<8;i++){const gx=left+(right-left)*i/8,gy=top+(bottom-top)*i/8;shape+='<path d="M'+gx+' '+top+' V'+bottom+' M'+left+' '+gy+' H'+right+'" stroke="#cbd1d7" stroke-width=".7"/>';}}
+      shape+=arrow(left,yy,right,yy)+arrow(xx,bottom,xx,top);
+      for(let i=-steps;i<=steps;i++){if(!i)continue;const gx=xx+i*(right-left)/8,gy=yy-i*(bottom-top)/8;shape+='<path d="M'+gx+' '+(yy-3)+' v6 M'+(xx-3)+' '+gy+' h6"/>';}
+      shape+=label(e.xLabel,right+13,yy-9,35,18)+label(e.yLabel,xx+18,top+1,35,18)+label('٠',xx-12,yy+20,30,14)+label(e.label,(left+right)/2,y+h+3,w,17);
+    }
+    const transform=e.rotation?' transform="rotate('+e.rotation+' '+cx+' '+cy+')"':'';
+    const hit=editor?'<rect x="'+(x-5)+'" y="'+(y-5)+'" width="'+(w+10)+'" height="'+(h+10)+'" fill="transparent" stroke="none" pointer-events="all"/>':'';
+    const selection=editor&&selected?'<rect x="'+(x-7)+'" y="'+(y-7)+'" width="'+(w+14)+'" height="'+(h+14)+'" fill="none" stroke="#267b67" stroke-width="1.7" stroke-dasharray="5 4"/>':'';
+    return '<g'+(editor?' data-vitem="'+E(e.id)+'" tabindex="0" role="button" aria-label="'+E(names[e.kind]+(e.label?' '+e.label:''))+'"':'')+transform+' stroke="#17202a" stroke-width="'+e.stroke+'" stroke-linecap="round" stroke-linejoin="round"'+(e.dashed?' stroke-dasharray="6 5"':'')+'>'+shape+hit+selection+'</g>';
+  }
+  function svg(v,options={}){
+    const grid=options.grid?Array.from({length:Math.ceil(800/20)},(_,i)=>'<path d="M'+i*20+' 0 V'+v.height+'"/>').join('')+Array.from({length:Math.ceil(v.height/20)},(_,i)=>'<path d="M0 '+i*20+' H800"/>').join(''):'';
+    return '<svg xmlns="http://www.w3.org/2000/svg" class="wv-drawing-svg" viewBox="0 0 800 '+v.height+'" width="800" height="'+v.height+'" role="img" aria-label="'+E(v.title||'رسم تعليمي')+'" style="display:block;width:100%;height:auto;overflow:visible"><title>'+E(v.title||'رسم تعليمي')+'</title>'+(options.editor?'<rect width="800" height="'+v.height+'" fill="white"/>':'')+(grid?'<g stroke="#e6ece9" stroke-width=".7" aria-hidden="true">'+grid+'</g>':'')+v.elements.map(e=>elementSVG(e,options.editor,options.selected===e.id)).join('')+'</svg>';
+  }
+  const blank=lines=>'<div class="wv-answer-space" aria-label="مساحة إجابة">'+Array.from({length:lines},()=>'<span></span>').join('')+'</div>';
+  const cell=(value,lines)=>value?'<div class="wv-cell-text">'+E(value).replace(/\n/g,'<br>')+'</div>':blank(lines);
+  function render(v,start=0,end=null,first=true){
+    if(v.kind==='diagram')return '<figure class="wv-print-diagram" style="width:'+v.widthMm+'mm;max-width:100%">'+svg(v)+(v.title?'<figcaption>'+E(v.title)+'</figcaption>':'')+'</figure>';
+    const title=v.title?'<div class="wv-template-title">'+E(v.title)+(first?'':' (تابع)')+'</div>':'';
+    if(v.type==='compare'||v.type==='cause'){
+      const compare=v.type==='compare',head=compare?'<th>وجه المقارنة</th>':'';
+      return '<div class="wv-print-template wv-'+v.type+'">'+title+'<table class="wv-template-table"><thead><tr>'+head+'<th>'+E(v.leftTitle)+'</th><th>'+E(v.rightTitle)+'</th></tr></thead><tbody>'+v.rows.slice(start,end??v.rows.length).map(r=>'<tr>'+(compare?'<th scope="row">'+cell(r.criterion,1)+'</th>':'')+'<td>'+cell(r.left,v.lines)+'</td><td>'+cell(r.right,v.lines)+'</td></tr>').join('')+'</tbody></table></div>';
+    }
+    if(v.type==='flow'){
+      const n=v.nodes.length,points=v.nodes.map((_,i)=>600-(i+.5)*600/n);
+      const connector='<svg class="wv-flow-connectors" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 36" width="600" height="36" aria-hidden="true"><g fill="none" stroke="#26333e" stroke-width="1.5"><path d="M300 0 V13 M'+Math.min(...points)+' 13 H'+Math.max(...points)+'"/>'+points.map(x=>arrow(x,13,x,34,6)).join('')+'</g></svg>';
+      return '<div class="wv-print-template wv-flow">'+title+'<div class="wv-flow-root">'+cell(v.root,1)+'</div>'+connector+'<div class="wv-flow-nodes" style="grid-template-columns:repeat('+n+',minmax(0,1fr))">'+v.nodes.map(t=>'<div class="wv-flow-node">'+cell(t,v.lines)+'</div>').join('')+'</div></div>';
+    }
+    const words=v.words.split(/[\n,،]+/).map(s=>s.trim()).filter(Boolean);
+    return '<div class="wv-print-template wv-classify">'+title+(words.length?'<div class="wv-word-bank">'+words.map(t=>'<span>'+E(t)+'</span>').join('')+'</div>':'')+'<div class="wv-classify-grid" style="grid-template-columns:repeat('+v.columns.length+',minmax(0,1fr))">'+v.columns.map(c=>'<div class="wv-classify-col"><div class="wv-classify-heading">'+E(c.title)+'</div><div class="wv-classify-content">'+cell(c.content,v.lines)+'</div></div>').join('')+'</div></div>';
+  }
+  function visualUnits(v){return v.kind==='template'&&['compare','cause'].includes(v.type)?v.rows.map((_,i)=>({kind:'visual-row',visual:v,startRow:i,endRow:i+1,first:i===0,text:''})):[{kind:'visual',visual:v,text:''}];}
+  function units(q,base){
+    const visuals=q.visuals||[],before=visuals.filter(v=>v.position==='before-text').flatMap(visualUnits),middle=visuals.filter(v=>v.position==='after-text').flatMap(visualUnits),after=visuals.filter(v=>v.position==='after-items').flatMap(visualUnits);
+    const index=base.findIndex(u=>u.asset?.position==='after-items'||!['text','image','table','poetry','quran','passage'].includes(u.kind));
+    const cut=index<0?base.length:index;return [...before,...base.slice(0,cut),...middle,...base.slice(cut),...after];
+  }
+  function texts(v){return [v.title,v.leftTitle,v.rightTitle,v.root,v.words,...(v.nodes||[]),...(v.rows||[]).flatMap(r=>[r.criterion,r.left,r.right]),...(v.columns||[]).flatMap(c=>[c.title,c.content]),...(v.elements||[]).flatMap(e=>[e.label,e.top,e.bottom,e.side])].filter(Boolean);}
+  function demo(context){
+    const M=WaraqaModel,d=M.defaultDocument();d.header=M.clone(context.header||d.header);
+    for(const k of ['school','directorate','country','ministry','teacher','teacherLabel','year'])if(context.metadata?.[k])d.metadata[k]=context.metadata[k];
+    Object.assign(d.metadata,{title:'ورقة عرض الرسومات والقوالب البصرية',subject:'تجربة الميزات الجديدة',grade:'نماذج توضيحية',duration:'٤٥ دقيقة',note:'أمثلة قابلة للتعديل. افتح السؤال لتحرير الرسم أو القالب.',expectedScore:100});
+    Object.assign(d.settings,{fontSize:14,lineHeight:1.5,gap:2.5,distribute:false,showStudent:true,showTotal:true});
+    const question=(title,prompt,score,visual,pageBreak=false)=>({...M.blankQuestion(),title,text:prompt,score,autoGrade:false,visuals:[visual],answer:'إجابة تدريبية يحددها المدرس.',pageBreak});
+    const geometry=makeDiagram();geometry.title='أشكال وأطوال وتسميات قابلة للتحرير';geometry.height=250;
+    geometry.elements=[element({kind:'triangle',x:75,y:55,w:170,h:120,dimensions:true,top:'٥ سم',side:'٥ سم',bottom:'٨ سم'}),element({kind:'rectangle',x:330,y:70,w:170,h:105,top:'٦ سم',side:'٤ سم',dimensions:true}),element({kind:'circle',x:600,y:65,w:110,h:110,label:'نق = ٣ سم',dimensions:true})];
+    const axes=makeDiagram();axes.title='محاور وخط أعداد مع قيم يملؤها الطالب';axes.height=270;
+    axes.elements=[element({kind:'axes',x:60,y:30,w:240,h:210,xLabel:'س',yLabel:'ص'}),element({kind:'numberline',x:340,y:75,w:390,h:110,min:-3,max:3,step:1,hidden:'-2,1',label:'أكمل القيم الناقصة'}),element({kind:'arrow',x:350,y:195,w:150,h:50,label:'الاتجاه'}),element({kind:'box',x:550,y:195,w:140,h:55,label:''})];
+    const compare=makeTemplate('compare');Object.assign(compare,{leftTitle:'الخلية النباتية',rightTitle:'الخلية الحيوانية',rows:[{criterion:'الجدار الخلوي',left:'',right:''},{criterion:'البلاستيدات',left:'',right:''}],lines:1});
+    const flow=makeTemplate('flow');Object.assign(flow,{root:'حالات المادة',nodes:['صلبة','','غازية'],lines:1});
+    const cause=makeTemplate('cause');Object.assign(cause,{rows:[{criterion:'',left:'ارتفاع درجة حرارة الماء',right:''},{criterion:'',left:'',right:'تزداد سرعة الجسم'}],lines:1});
+    const classify=makeTemplate('classify');Object.assign(classify,{words:'كتاب، يكتب، إلى، مدرسة، يقرأ، من',columns:[{title:'اسم',content:''},{title:'فعل',content:''},{title:'حرف',content:''}],lines:2});
+    d.questions=[question('الأشكال الهندسية','احسب محيط المستطيل، ثم اكتب قانون مساحة الدائرة.',20,geometry),question('المحاور وخط الأعداد','عيّن نقطة على المحاور، وأكمل القيم الناقصة على خط الأعداد.',20,axes),question('قارن بين','أكمل المقارنة الآتية:',15,compare,true),question('أكمل المخطط','اكتب حالة المادة الناقصة في المخطط:',15,flow),question('السبب والنتيجة','أكمل الطرف الناقص في كل صف:',15,cause),question('صنّف الكلمات','وزّع الكلمات الآتية في المجموعات المناسبة:',15,classify)];
+    return M.normalize(d);
+  }
+  return {names,templateNames,element,normalize,normalizeAll,validate,makeElement,makeDiagram,makeTemplate,svg,render,units,texts,demo};
+})();
+
+</script>
   <script id="waraqa-studio-model">
 'use strict';
 // Backward-compatible additions. All user-authored text is escaped at render time.
@@ -794,14 +974,14 @@ globalThis.WaraqaStudio = (() => {
     }));
   }
   function normalize(raw){
-    const d=B.normalize(raw);d.platformVersion=5;
+    const d=B.normalize(raw);d.platformVersion=6;
     d.settings.mathLanguage=raw.settings?.mathLanguage==='en'?'en':'ar';
     d.variantCode=/^[A-D]$/.test(raw.variantCode||'')?raw.variantCode:'';
     d.questions.forEach((q,i)=>{
       const s=raw.questions[i]||{};
       q.answer=text(s.answer,10000);q.lockOrder=s.lockOrder===true;
       q.shuffleBranches=s.shuffleBranches!==false;q.shuffleChoices=s.shuffleChoices!==false;
-      q.blocks=blocks(s.blocks);
+      q.blocks=blocks(s.blocks);q.visuals=WaraqaVisual.normalizeAll(s.visuals);
       const seen=new Set();
       q.choiceIds=q.choices.map((_,j)=>{let id=s.choiceIds?.[j];if(!B.validId(id)||seen.has(id))id=B.uid();seen.add(id);return id;});
       q.correctChoiceId=q.choiceIds.includes(s.correctChoiceId)?s.correctChoiceId:'';
@@ -828,7 +1008,7 @@ globalThis.WaraqaStudio = (() => {
   function validPlan(d,p){return p&&/^[A-D]$/.test(p.code)&&sameSet(p.order,d.questions.map(q=>q.id))&&d.questions.every(q=>sameSet(p.branches?.[q.id],q.branches.map(b=>b.id))&&sameSet(p.choices?.[q.id],q.choiceIds));}
   function random(seed){let t=seed>>>0;return()=>{t+=0x6D2B79F5;let x=t;x=Math.imul(x^x>>>15,x|1);x^=x+Math.imul(x^x>>>7,x|61);return((x^x>>>14)>>>0)/4294967296;};}
   function shuffle(list,rng){const out=[...list];for(let i=out.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[out[i],out[j]]=[out[j],out[i]];}return out;}
-  function visibleSignature(d,p){return JSON.stringify(p.order.map(id=>{const q=d.questions.find(q=>q.id===id);return [q.title,q.type,q.text,B.gradeOf(q),q.answerLines,B.isBranch(q)?p.branches[id].map(id=>{const b=q.branches.find(b=>b.id===id);return[b.text,b.score];}):[],q.type==='choice'?p.choices[id].map(id=>q.choices[q.choiceIds.indexOf(id)]):[],q.type==='matching'?q.pairs:[],q.type==='ordering'?q.ordering:[],q.blocks.map(b=>({...b,id:undefined})),q.assets.map(a=>({...a,id:undefined}))];}));}
+  function visibleSignature(d,p){return JSON.stringify(p.order.map(id=>{const q=d.questions.find(q=>q.id===id);return [q.title,q.type,q.text,B.gradeOf(q),q.answerLines,B.isBranch(q)?p.branches[id].map(id=>{const b=q.branches.find(b=>b.id===id);return[b.text,b.score];}):[],q.type==='choice'?p.choices[id].map(id=>q.choices[q.choiceIds.indexOf(id)]):[],q.type==='matching'?q.pairs:[],q.type==='ordering'?q.ordering:[],q.blocks.map(b=>({...b,id:undefined})),(q.visuals||[]).map(v=>JSON.stringify(v,(k,x)=>k==='id'?undefined:x)),q.assets.map(a=>({...a,id:undefined}))];}));}
   function generate(d,count=3,options={questions:true,branches:true,choices:true},seed){
     if(!d.questions.length)throw new Error('أضف الأسئلة أولًا، ثم أنشئ النماذج.');
     count=Math.round(B.num(count,2,4,3));seed=seed??crypto.getRandomValues(new Uint32Array(1))[0];
@@ -867,7 +1047,7 @@ globalThis.WaraqaStudio = (() => {
     if(B.isBranch(q)&&q.branches.length)return q.branches.map((b,i)=>B.label(i,q.branchStyle,s)+') '+(b.answer||'لم تُحدَّد الإجابة')).join('\n');
     return q.answer||'';
   }
-  function answerDoc(d){const copy=clone(d);copy.variantPlan=null;copy.metadata.title=(d.settings.language==='en'?'Answer key — ':'نموذج الإجابة — ')+d.metadata.title;copy.questions=copy.questions.map(q=>({...q,type:'essay',text:answer(q,d.settings)||(d.settings.language==='en'?'Answer not specified':'لم تُحدَّد الإجابة'),score:B.gradeOf(q),autoGrade:false,branches:[],choices:[],blocks:[],assets:[],answerLines:0,pageBreak:false}));return copy;}
+  function answerDoc(d){const copy=clone(d);copy.variantPlan=null;copy.metadata.title=(d.settings.language==='en'?'Answer key — ':'نموذج الإجابة — ')+d.metadata.title;copy.questions=copy.questions.map(q=>({...q,type:'essay',text:answer(q,d.settings)||(d.settings.language==='en'?'Answer not specified':'لم تُحدَّد الإجابة'),score:B.gradeOf(q),autoGrade:false,branches:[],choices:[],blocks:[],visuals:[],assets:[],answerLines:0,pageBreak:false}));return copy;}
   function blockUnits(q,s){return (q.blocks||[]).flatMap(b=>{
     if(b.kind==='poetry')return b.lines.map((l,i)=>({kind:'poetry',...l,title:i===0?b.title:'',text:'',blockId:b.id}));
     return b.text.split('\n').filter(l=>l.trim()).map((line,i,a)=>({kind:b.kind,text:line,title:i===0?b.title:'',index:b.start+i,language:b.language,first:i===0,last:i===a.length-1,blockId:b.id}));
@@ -881,9 +1061,9 @@ globalThis.WaraqaStudio = (() => {
     d.questions.forEach((q,i)=>{
       const label='السؤال '+(i+1)+': ';
       const norm=v=>v.normalize('NFKC').replace(/[\u064B-\u065F\u0670]/g,'').replace(/\s+/g,' ').trim();
-      const key=norm([q.text,...q.branches.map(b=>b.text),...q.choices,...(q.blocks||[]).map(b=>b.text||b.lines.map(l=>l.first+' '+l.second).join(' '))].join(' '));
+      const key=norm([q.text,...q.branches.map(b=>b.text),...q.choices,...(q.visuals||[]).map(v=>JSON.stringify(v,(k,x)=>k==='id'?undefined:x)),...(q.blocks||[]).map(b=>b.text||b.lines.map(l=>l.first+' '+l.second).join(' '))].join(' '));
       if(key&&seen.has(key))add('warning',label+'محتوى مكرر مع السؤال '+seen.get(key)+'.',q);else if(key)seen.set(key,i+1);
-      if(!q.text.trim()&&!q.branches.length&&!q.assets.length&&!q.blocks.length)add('error',label+'نص السؤال فارغ.',q);
+      if(!q.text.trim()&&!q.branches.length&&!q.assets.length&&!q.blocks.length&&!(q.visuals||[]).length)add('error',label+'نص السؤال فارغ.',q);
       if(B.gradeOf(q)<=0)add('warning',label+'لم تُخصَّص درجة.',q);
       q.branches.forEach((b,j)=>{if(!b.text.trim())add('error',label+'الفرع '+(j+1)+' بلا نص.',q);if(b.score<=0)add('warning',label+'الفرع '+(j+1)+' بلا درجة.',q);});
       if(B.isBranch(q)&&!q.branches.length)add('error',label+'أضف فرعًا واحدًا على الأقل.',q);
@@ -971,7 +1151,7 @@ globalThis.WaraqaStudio = (() => {
     return normalize(d);
   }
   function migrate(raw){const legacy=B.migrateSavedDocument(raw),d=normalize(raw);if(raw.experienceVersion!==2&&!legacy.questions.length)d.questions=[];d.experienceVersion=2;return d;}
-  const model={...B,normalize,validateImport:raw=>{B.validateImport(raw);return normalize(raw);},blankQuestion:()=>normalize({version:1,questions:[B.blankQuestion()]}).questions[0],defaultDocument:()=>normalize(B.defaultDocument()),sampleDocument:()=>sample('arabic'),migrateSavedDocument:migrate,unitsFor:(q,s)=>[...blockUnits(q,s),...B.unitsFor(q,s)]};
+  const model={...B,normalize,validateImport:raw=>{WaraqaVisual.validate(raw);B.validateImport(raw);return normalize(raw);},blankQuestion:()=>normalize({version:1,questions:[B.blankQuestion()]}).questions[0],defaultDocument:()=>normalize(B.defaultDocument()),sampleDocument:()=>sample('arabic'),migrateSavedDocument:migrate,unitsFor:(q,s)=>WaraqaVisual.units(q,[...blockUnits(q,s),...B.unitsFor(q,s)])};
   globalThis.WaraqaModel=model;
   return {normalize,fingerprint,generate,materialize,answer,answerDoc,inspect,subjects,sample,dependent,validPlan};
 })();
@@ -1305,7 +1485,7 @@ globalThis.WaraqaAuth = (() => {
         const target='choice-'+q.id+'-'+j;
         return'<div class="choice-row"><span class="branch-letter">'+M.label(j,'letters',doc.settings)+')</span><input id="'+target+'" class="choice-text" dir="'+dir+'" data-choice="'+j+'" maxlength="30000" value="'+E(choice)+'" aria-label="الخيار '+(j+1)+'" placeholder="'+(english?'Write the option…':'اكتب الخيار…')+'"><span class="branch-tools"><button class="icon-btn" type="button" data-action="equation" data-target="'+target+'" title="إدراج معادلة في الخيار" aria-label="إدراج معادلة في الخيار '+(j+1)+'">∑</button><button class="icon-btn danger" data-action="delete-choice" data-id="'+q.id+'" data-index="'+j+'" aria-label="حذف الخيار">'+ic('close')+'</button></span></div>';
       }).join('')+'<button class="branch-add" data-action="add-choice" data-id="'+q.id+'">'+ic('plus')+'إضافة خيار</button></div>';
-      body+=itemEditor(q,dir)+v5QuestionExtras(q,dir)+'<details class="v5-more-content"><summary>صور، جداول، وتصنيف السؤال</summary>'+assetEditor(q)+classFields(q)+'</details>'+'<button class="btn soft small question-bank-save" data-action="bank-save-question" data-id="'+q.id+'">'+ic('copy')+(q.bankRef?'تحديث السؤال في البنك':'حفظ السؤال في البنك')+'</button>';
+      body+=itemEditor(q,dir)+wvQuestionTools(q)+v5QuestionExtras(q,dir)+'<details class="v5-more-content"><summary>صور، جداول، وتصنيف السؤال</summary>'+assetEditor(q)+classFields(q)+'</details>'+'<button class="btn soft small question-bank-save" data-action="bank-save-question" data-id="'+q.id+'">'+ic('copy')+(q.bankRef?'تحديث السؤال في البنك':'حفظ السؤال في البنك')+'</button>';
       body+='<details class="card-options"><summary>'+ic('settings')+'خيارات إضافية</summary><div class="options-content"><div class="form-row equal"><label class="field"><span class="field-label">عدد أسطر الإجابة</span><input data-q="answerLines" type="number" min="0" max="50" value="'+q.answerLines+'"></label>'+(M.isBranch(q)?'<label class="field"><span class="field-label">ترقيم الفروع</span><select data-q="branchStyle"><option value="letters"'+(q.branchStyle==='letters'?' selected':'')+'>'+(english?'A، B، C':'أ، ب، ج')+'</option><option value="numbers"'+(q.branchStyle==='numbers'?' selected':'')+'>1، 2، 3</option></select></label>':'')+'</div>'+
         (q.type==='blanks'?'<label class="field"><span class="field-label">طول الفراغ (مم)</span><input data-q="blankWidth" type="number" min="10" max="80" value="'+q.blankWidth+'"></label>':'')+
         checkField('بدء السؤال في صفحة جديدة','pageBreak',q.pageBreak,'q')+(M.isBranch(q)?checkField('جمع درجات الفروع تلقائيًا','autoGrade',q.autoGrade,'q'):'')+'</div></details></div>';
@@ -1316,6 +1496,7 @@ globalThis.WaraqaAuth = (() => {
     function renderEditor(){renderMetadata();renderFormat();renderQuestions();updateSummary();}
     function setDocument(next){v5Active='base';undoAction=null;$('undoButton').hidden=true;doc=M.normalize(next);resetHistory();selected=doc.questions[0]?.id||null;renderEditor();setTab('questions',false,false);trackView(true);queueUpdate();}
     function unitHTML(unit){
+      if(unit.kind==='visual'||unit.kind==='visual-row')return WaraqaVisual.render(unit.visual,unit.startRow||0,unit.endRow??null,unit.first!==false);
       const special=v5Unit(unit);if(special!==null)return special;
       if(unit.kind==='line')return'<div class="q-unit answer-line"></div>';
       if(unit.kind==='image')return imageHTML(unit.asset);
@@ -1383,7 +1564,7 @@ globalThis.WaraqaAuth = (() => {
       if(unit.suffix)pieces[pieces.length-1].suffix=unit.suffix;
       return pieces;
     }
-    function measureGroups(measurePage,capacity){const body=measurePage.querySelector('.exam-questions'),groups=[];for(let index=0;index<doc.questions.length;index++){const q=doc.questions[index],raw=M.unitsFor(q,doc.settings);body.innerHTML=questionHTML(q,index,[],false);let section=body.firstElementChild,content=section.querySelector('.question-content');const overhead=section.getBoundingClientRect().height;body.innerHTML=questionHTML(q,index,[],true);const continuedOverhead=body.firstElementChild.getBoundingClientRect().height;body.innerHTML=questionHTML(q,index,[],false);section=body.firstElementChild;content=section.querySelector('.question-content');const maxUnit=capacity-Math.max(overhead,continuedOverhead)-1;const units=[];for(const unit of raw){content.innerHTML=unitHTML(unit);fitMath(content);const height=content.getBoundingClientRect().height;if(height>maxUnit){if(['table','image','matching','poetry','quran','passage'].includes(unit.kind))throw new Error('هناك صورة أو صف أو مقطع متخصص أطول من مساحة الصفحة. قلّل حجمه أو قسّم النص إلى أسطر أقصر.');for(const piece of splitLargeUnit(unit,maxUnit,content)){content.innerHTML=unitHTML(piece);fitMath(content);units.push({...piece,height:content.getBoundingClientRect().height});}}else units.push({...unit,height});}groups.push({q,index,units,overhead,continuedOverhead,pageBreak:q.pageBreak});}body.replaceChildren();return groups;}
+    function measureGroups(measurePage,capacity){const body=measurePage.querySelector('.exam-questions'),groups=[];for(let index=0;index<doc.questions.length;index++){const q=doc.questions[index],raw=M.unitsFor(q,doc.settings);body.innerHTML=questionHTML(q,index,[],false);let section=body.firstElementChild,content=section.querySelector('.question-content');const overhead=section.getBoundingClientRect().height;body.innerHTML=questionHTML(q,index,[],true);const continuedOverhead=body.firstElementChild.getBoundingClientRect().height;body.innerHTML=questionHTML(q,index,[],false);section=body.firstElementChild;content=section.querySelector('.question-content');const maxUnit=capacity-Math.max(overhead,continuedOverhead)-1;const units=[];for(const unit of raw){content.innerHTML=unitHTML(unit);fitMath(content);const height=content.getBoundingClientRect().height;if(height>maxUnit){if(['table','image','matching','poetry','quran','passage','visual','visual-row'].includes(unit.kind))throw new Error('هناك رسم أو قالب أو مرفق أطول من مساحة الصفحة. قلّل ارتفاع الرسم أو أسطر القالب أو طول نصه.');for(const piece of splitLargeUnit(unit,maxUnit,content)){content.innerHTML=unitHTML(piece);fitMath(content);units.push({...piece,height:content.getBoundingClientRect().height});}}else units.push({...unit,height});}groups.push({q,index,units,overhead,continuedOverhead,pageBreak:q.pageBreak});}body.replaceChildren();return groups;}
     function renderPreview(){v5RenderPreview();}
     function scalePreview(){const stage=$('previewStage'),style=getComputedStyle(stage),width=Math.max(0,stage.clientWidth-parseFloat(style.paddingLeft)-parseFloat(style.paddingRight));if(!width)return;for(const wrap of $('paperDeck').children){const page=wrap.firstElementChild;if(!page?.classList.contains('exam-page'))continue;const scale=Math.min(width/page.offsetWidth,1);wrap.style.width=(page.offsetWidth*scale)+'px';wrap.style.height=(page.offsetHeight*scale)+'px';page.style.transform='scale('+scale+')';}}
     function preparePrint(){v5PreparePrint();}
@@ -1560,7 +1741,7 @@ globalThis.WaraqaAuth = (() => {
       $('archivePanel').innerHTML='<div class="panel-card"><h3>أرشيف الامتحانات</h3><p class="panel-description">امتحاناتك محفوظة حسب المادة والصف والسنة الدراسية. فتح امتحان آخر يحفظ الامتحان الحالي أولًا.</p>'+collectionToolbar('archive')+filterInput('عنوان أو نص السؤال','archive','query')+'<div class="filter-grid">'+['subject','grade','year'].map((k,i)=>filterSelect(['المادة','الصف','السنة الدراسية'][i],'archive',k,exams.map(e=>e.document.metadata[k]))).join('')+'</div><div id="archiveResults"></div></div>';
       renderArchiveResults();
     }
-    function questionSearchContent(q){return [q.title,q.text,...q.choices,...q.branches.map(b=>b.text),...q.ordering,...q.pairs.flatMap(p=>[p.left,p.right]),...q.assets.flatMap(a=>[a.caption,...(a.kind==='table'?a.cells.map(c=>c.text):[])]),...Object.values(q.classification)].join(' ');}
+    function questionSearchContent(q){return [...(q.visuals||[]).flatMap(WaraqaVisual.texts),q.title,q.text,...q.choices,...q.branches.map(b=>b.text),...q.ordering,...q.pairs.flatMap(p=>[p.left,p.right]),...q.assets.flatMap(a=>[a.caption,...(a.kind==='table'?a.cells.map(c=>c.text):[])]),...Object.values(q.classification)].join(' ');}
     function matchesFilters(record,kind){const f=filters[kind],meta=kind==='archive'?record.document.metadata:record.question.classification;return Object.entries(f).every(([k,v])=>!v||k==='query'||meta[k]===v)&&(!f.query||searchText(kind==='archive'?[...Object.values(meta),...record.document.questions.map(questionSearchContent)].join(' '):[questionSearchContent(record.question),record.modelLabel||''].join(' ')).includes(searchText(f.query)));}
     function renderArchiveResults(){
       const items=libraryState.exams.filter(x=>matchesFilters(x,'archive')).sort((a,b)=>b.updatedAt.localeCompare(a.updatedAt));
@@ -1659,7 +1840,7 @@ globalThis.WaraqaAuth = (() => {
     }
     function unitsHTML(units){
       let result='';for(let i=0;i<units.length;i++){
-        const u=units[i];if(u.kind!=='table'){result+=unitHTML(u);continue;}
+        const u=units[i];if(u.kind==='visual-row'){let end=u.endRow,j=i+1;while(j<units.length&&units[j].kind==='visual-row'&&units[j].visual.id===u.visual.id&&units[j].startRow===end){end=units[j].endRow;j++;}result+=WaraqaVisual.render(u.visual,u.startRow,end,u.first);i=j-1;continue;}if(u.kind!=='table'){result+=unitHTML(u);continue;}
         let end=u.endRow,j=i+1;while(j<units.length&&units[j].kind==='table'&&units[j].asset.id===u.asset.id&&units[j].startRow===end){end=units[j].endRow;j++;}
         result+=tableHTML(u.asset,u.startRow,end,u.first);i=j-1;
       }return result;
@@ -2260,6 +2441,184 @@ globalThis.WaraqaAuth = (() => {
       window.addEventListener('afterprint',()=>{v5PrintJob=null;});
     }
 
+    // Visual tools use the same question records, account storage and undo history.
+    const V=WaraqaVisual;
+    let wvTarget=null,wvDraft=null,wvSelected='',wvPast=[],wvFuture=[],wvDrag=null,wvGrid=true,wvSnap=true,wvTemplateCache={},wvFirstDemo=false;
+    const wvButton=(label,action,attrs='',cls='secondary small')=>'<button type="button" class="btn '+cls+'" data-wv-action="'+action+'" '+attrs+'>'+label+'</button>';
+    const wvAttr=q=>'data-qid="'+E(q.id)+'"';
+    const wvField=(label,name,value,type='text',extra='')=>'<label class="field"><span class="field-label">'+label+'</span><input type="'+type+'" data-wv-prop="'+name+'" value="'+E(value)+'" '+extra+'></label>';
+    function wvQuestionTools(q){
+      return '<section class="wv-question-tools" aria-label="الرسومات والقوالب البصرية"><div class="wv-tools-head"><strong>رسومات وقوالب داخل السؤال <span class="wv-new-chip">جديد</span></strong><small>تظهر في المعاينة والطباعة</small></div><div class="wv-tools-buttons">'+wvButton('◇ محرر الرسومات','drawing-new',wvAttr(q))+wvButton('▦ قالب سؤال بصري','template-new',wvAttr(q))+'</div>'+(q.visuals||[]).map(v=>'<div class="wv-preview-card"><div class="wv-thumbnail">'+(v.kind==='diagram'?V.svg(v):E(V.templateNames[v.type]))+'</div><div><strong>'+E(v.title||(v.kind==='diagram'?'رسم تعليمي':V.templateNames[v.type]))+'</strong><p>'+E(v.kind==='diagram'?v.elements.length+' عناصر قابلة للتحرير':V.templateNames[v.type])+'</p></div><div class="wv-card-actions">'+wvButton('تعديل',v.kind==='diagram'?'drawing-edit':'template-edit',wvAttr(q)+' data-vid="'+v.id+'"')+wvButton('نسخ','visual-copy',wvAttr(q)+' data-vid="'+v.id+'"')+wvButton('حذف','visual-delete',wvAttr(q)+' data-vid="'+v.id+'"','small danger-text')+'</div></div>').join('')+'</section>';
+    }
+    function wvPositionOptions(value){return [['before-text','قبل نص السؤال'],['after-text','بعد النص وقبل الفروع'],['after-items','بعد الفروع والعناصر']].map(([key,label])=>'<option value="'+key+'"'+(value===key?' selected':'')+'>'+label+'</option>').join('');}
+    function wvIcon(kind){
+      const icons={rectangle:'<rect x="8" y="7" width="30" height="18"/>',circle:'<circle cx="23" cy="16" r="11"/>',triangle:'<path d="M8 27 L23 5 L39 27 Z"/>',line:'<path d="M5 16 H41 M5 12 V20 M41 12 V20"/>',arrow:'<path d="M5 16 H40 M33 9 L40 16 L33 23"/>',axes:'<path d="M6 17 H41 M23 30 V2 M36 12 L41 17 L36 22 M18 7 L23 2 L28 7"/>',numberline:'<path d="M3 16 H44 M10 11 V21 M18 11 V21 M26 11 V21 M34 11 V21 M40 12 L44 16 L40 20"/>',box:'<rect x="4" y="5" width="39" height="23" rx="4"/><path d="M13 17 H33" stroke-dasharray="2 3"/>',text:'<path d="M11 8 H35 M23 8 V28 M16 28 H30"/>'};
+      return '<svg viewBox="0 0 47 33" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">'+icons[kind]+'</g></svg>';
+    }
+    function wvTemplateIcon(type){
+      const icons={compare:'<rect x="10" y="8" width="100" height="48" rx="2"/><path d="M10 23 H110 M10 39 H110 M43 8 V56 M77 8 V56"/>',flow:'<rect x="43" y="4" width="34" height="16" rx="3"/><path d="M60 20 V29 M24 29 H96 M24 29 V36 M60 29 V36 M96 29 V36"/><rect x="10" y="36" width="28" height="19" rx="2"/><rect x="46" y="36" width="28" height="19" rx="2"/><rect x="82" y="36" width="28" height="19" rx="2"/>',cause:'<rect x="10" y="10" width="40" height="19" rx="3"/><rect x="70" y="10" width="40" height="19" rx="3"/><path d="M53 19 H66 M62 15 L66 19 L62 23 M14 43 H45 M75 43 H106"/>',classify:'<rect x="10" y="3" width="100" height="15" rx="3" stroke-dasharray="3 2"/><rect x="10" y="26" width="100" height="31" rx="2"/><path d="M10 36 H110 M43 26 V57 M77 26 V57"/>'};
+      return '<svg viewBox="0 0 120 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">'+icons[type]+'</g></svg>';
+    }
+    function wvInit(){
+      const dialog=(id,title,body)=>'<dialog class="dialog wv-dialog" id="'+id+'" aria-labelledby="'+id+'Title"><button type="button" class="icon-btn dialog-close" data-close="'+id+'" aria-label="إغلاق">×</button><h2 id="'+id+'Title">'+title+'</h2>'+body+'</dialog>';
+      document.body.insertAdjacentHTML('beforeend',dialog('wvDrawingDialog','محرر الرسومات التعليمية','<p class="wv-dialog-intro">أضف عنصرًا، ثم اسحبه وعدّل أبعاده وتسمياته. تُطبع الرسومات بوضوح كامل.</p><div class="wv-editor-layout"><div class="wv-stage-column"><div class="wv-palette">'+Object.entries(V.names).map(([kind,label])=>'<button type="button" data-wv-action="element-add" data-kind="'+kind+'">'+wvIcon(kind)+'<span>'+label+'</span></button>').join('')+'</div><div class="wv-canvas-wrap"><div id="wvCanvas" class="wv-canvas" tabindex="0" role="group" aria-label="لوحة الرسم. حرّك العنصر بالأسهم أو اسحبه بالفأرة أو اللمس."></div></div><div class="wv-toolbar">'+wvButton('تراجع','drawing-undo','id="wvUndo"')+wvButton('إعادة','drawing-redo','id="wvRedo"')+wvButton('نسخ العنصر','element-copy')+wvButton('حذف','element-delete')+wvButton('توسيط','element-center')+wvButton('للأمام','element-front')+'<label><input type="checkbox" id="wvGrid" checked>شبكة ومحاذاة</label></div><p class="wv-canvas-hint" id="wvCanvasHint">ابدأ بإضافة شكل من المكتبة. يمكنك ترك التسمية فارغة ليكملها الطالب.</p><div id="wvElementList" class="wv-elements" aria-label="عناصر الرسم"></div><div class="wv-drawing-settings"><label class="field"><span class="field-label">عنوان أسفل الرسم</span><input id="wvDrawingTitle" maxlength="200"></label><label class="field"><span class="field-label">عرض الطباعة (مم)</span><input type="number" id="wvDrawingWidth" min="60" max="160" step="5"></label><label class="field"><span class="field-label">ارتفاع اللوحة</span><select id="wvDrawingHeight"><option value="240">قصيرة</option><option value="360">متوسطة</option><option value="500">واسعة</option><option value="640">طويلة</option></select></label><label class="field"><span class="field-label">موضع الرسم</span><select id="wvDrawingPosition"></select></label></div></div><aside id="wvProperties" class="wv-properties" aria-label="خصائص العنصر المحدد"></aside></div><p class="wv-error" id="wvDrawingError" role="alert"></p><div class="wv-dialog-footer"><p>التعديل هنا مسودة حتى تضغط إدراج الرسم.</p><div class="dialog-actions">'+wvButton('إدراج الرسم في السؤال','drawing-save','','primary')+wvButton('إلغاء','drawing-cancel')+'</div></div>')+dialog('wvTemplateDialog','قوالب بصرية للأسئلة','<p class="wv-dialog-intro">اختر شكل السؤال، ثم املأ الحقول. اترك خانات الإجابة فارغة لتظهر فيها سطور للطالب.</p><div class="wv-template-picker">'+Object.entries(V.templateNames).map(([type,label])=>'<button type="button" class="wv-template-choice" data-wv-action="template-type" data-kind="'+type+'" aria-pressed="false">'+wvTemplateIcon(type)+label+'</button>').join('')+'</div><div class="wv-template-layout"><div class="wv-template-form" id="wvTemplateForm"></div><div class="wv-template-preview-wrap"><p class="wv-preview-label">معاينة القالب كما سيظهر في الورقة</p><div id="wvTemplatePreview" class="wv-template-preview" dir="rtl"></div></div></div><p id="wvTemplateError" class="wv-error" role="alert"></p><div class="wv-dialog-footer"><p>كل حقل فارغ يصبح مساحة إجابة.</p><div class="dialog-actions">'+wvButton('إدراج القالب في السؤال','template-save','','primary')+wvButton('إلغاء','template-cancel')+'</div></div>'));
+      $('questionsPanel').insertAdjacentHTML('afterbegin','<div class="wv-demo-banner" id="wvDemoBanner" hidden><strong>ورقة عرض جاهزة للرسومات والقوالب الجديدة</strong><p>استعرض الأمثلة في المعاينة، وافتح أي سؤال لتعديل عناصره. يمكنك استعادة ورقة العرض من أدوات الامتحان.</p><div class="wv-tools-buttons">'+wvButton('استعراض الورقة','demo-preview')+wvButton('بدء امتحان جديد','demo-new')+wvButton('إخفاء التنبيه','demo-dismiss')+'</div></div>');
+      $('appToolActions').insertAdjacentHTML('afterbegin',wvButton('◇ استعراض الرسومات والقوالب','demo-open','','secondary wv-demo-button'));
+      $('wvCanvas').addEventListener('pointerdown',wvPointerDown);$('wvCanvas').addEventListener('pointermove',wvPointerMove);$('wvCanvas').addEventListener('pointerup',wvPointerEnd);$('wvCanvas').addEventListener('pointercancel',wvPointerEnd);
+      $('wvCanvas').addEventListener('keydown',event=>{
+        if(event.ctrlKey||event.metaKey){if(event.key.toLowerCase()==='z'){event.preventDefault();event.stopPropagation();wvUndo(event.shiftKey);}return;}
+        const e=wvCurrent();if(!e)return;
+        if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(event.key)){event.preventDefault();event.stopPropagation();wvRemember();const step=event.shiftKey?10:1;if(event.key==='ArrowLeft')e.x-=step;if(event.key==='ArrowRight')e.x+=step;if(event.key==='ArrowUp')e.y-=step;if(event.key==='ArrowDown')e.y+=step;wvClamp(e);wvRenderCanvas();wvProperties();}
+        if(event.key==='Delete'||event.key==='Backspace'){event.preventDefault();event.stopPropagation();wvDeleteElement();}
+      });
+      document.addEventListener('input',wvInput);
+      document.addEventListener('change',event=>{const el=event.target;if(el.type==='number'&&el.dataset.wvProp!=null){const e=wvCurrent();if(e)el.value=e[el.dataset.wvProp];}if(el.id==='wvDrawingWidth'&&wvDraft)el.value=wvDraft.widthMm;});
+      for(const id of ['wvDrawingDialog','wvTemplateDialog'])$(id).addEventListener('keydown',event=>{if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='z'&&event.target===$('wvCanvas'))return;if((event.ctrlKey||event.metaKey)&&['z','y'].includes(event.key.toLowerCase()))event.stopPropagation();});
+      document.addEventListener('click',event=>{
+        const button=event.target.closest('[data-wv-action]');if(!button)return;
+        const action=button.dataset.wvAction,source=button.closest('#bankEditorDialog')?'bank':'doc',q=docQuestion(button.dataset.qid,source),visual=q?.visuals?.find(v=>v.id===button.dataset.vid);
+        closeMenu();
+        runFeature(async()=>{
+          if(action==='drawing-new'||action==='drawing-edit')wvOpen(q,source,'diagram',visual);
+          if(action==='template-new'||action==='template-edit')wvOpen(q,source,'template',visual);
+          if(action==='visual-copy'&&visual){if(q.visuals.length>=8)throw new Error('الحد الأقصى 8 رسوم وقوالب لكل سؤال.');const copy=M.clone(visual);copy.id=M.uid();if(copy.elements)copy.elements.forEach(e=>e.id=M.uid());q.visuals.push(copy);changedQuestion(q,source);toast('تم نسخ العنصر البصري.');}
+          if(action==='visual-delete'&&visual){const previous=M.clone(q.visuals);q.visuals=q.visuals.filter(v=>v.id!==visual.id);changedQuestion(q,source);toast('تم حذف العنصر البصري.',()=>{if(docQuestion(q.id,source)!==q)return;q.visuals=previous;changedQuestion(q,source);});}
+          if(action==='element-add')wvAddElement(button.dataset.kind);
+          if(action==='element-select'){wvSelected=button.dataset.eid;wvRenderCanvas();wvProperties();}
+          if(action==='element-delete')wvDeleteElement();
+          if(action==='element-copy')wvCopyElement();
+          if(action==='element-center'){const e=wvCurrent();if(e){wvRemember();e.x=(800-e.w)/2;wvRenderCanvas();wvProperties();}}
+          if(action==='element-front'){const e=wvCurrent();if(e){wvRemember();wvDraft.elements=wvDraft.elements.filter(x=>x!==e);wvDraft.elements.push(e);wvRenderCanvas();}}
+          if(action==='drawing-undo')wvUndo(false);if(action==='drawing-redo')wvUndo(true);
+          if(action==='drawing-save')wvSave('diagram');if(action==='template-save')wvSave('template');
+          if(action==='drawing-cancel')$('wvDrawingDialog').close();if(action==='template-cancel')$('wvTemplateDialog').close();
+          if(action==='template-type'){wvTemplateCache[wvDraft.type]=M.clone(wvDraft);wvDraft=wvTemplateCache[button.dataset.kind]||V.makeTemplate(button.dataset.kind);wvRenderTemplate();}
+          if(action==='template-add-row'){if(wvDraft.rows.length>=12)throw new Error('الحد الأقصى 12 صفًا.');wvDraft.rows.push({criterion:'',left:'',right:''});wvRenderTemplate();}
+          if(action==='template-remove-row'){if(wvDraft.rows.length<=1)throw new Error('احتفظ بصف واحد على الأقل.');wvDraft.rows.splice(+button.dataset.row,1);wvRenderTemplate();}
+          if(action==='template-add-node'){if(wvDraft.nodes.length<5){wvDraft.nodes.push('');wvRenderTemplate();}}
+          if(action==='template-remove-node'){if(wvDraft.nodes.length>2){wvDraft.nodes.splice(+button.dataset.row,1);wvRenderTemplate();}}
+          if(action==='template-add-col'){if(wvDraft.columns.length<4){wvDraft.columns.push({title:'',content:''});wvRenderTemplate();}}
+          if(action==='template-remove-col'){if(wvDraft.columns.length>2){wvDraft.columns.splice(+button.dataset.row,1);wvRenderTemplate();}}
+          if(action==='demo-open')await wvLoadDemo(false);
+          if(action==='demo-preview')wvShowPreview();
+          if(action==='demo-new'){$('wvDemoBanner').hidden=true;document.querySelector('[data-action="new"]').click();}
+          if(action==='demo-dismiss')$('wvDemoBanner').hidden=true;
+        });
+      });
+      for(const name of ['wvDrawingDialog','wvTemplateDialog'])$(name).addEventListener('close',()=>{wvDraft=null;wvTarget=null;wvSelected='';wvDrag=null;});
+    }
+    function wvOpen(q,source,kind,visual){
+      if(!q)return;if(!visual&&(q.visuals||[]).length>=8){toast('الحد الأقصى 8 رسوم وقوالب لكل سؤال.');return;}
+      wvTarget={qid:q.id,source,vid:visual?.id||'',examId:doc.id};wvDraft=visual?M.clone(visual):kind==='diagram'?V.makeDiagram():V.makeTemplate('compare');wvSelected=wvDraft.elements?.[0]?.id||'';wvPast=[];wvFuture=[];wvTemplateCache={};
+      if(kind==='diagram'){
+        $('wvDrawingError').textContent='';$('wvDrawingTitle').value=wvDraft.title;$('wvDrawingWidth').value=wvDraft.widthMm;
+        const height=$('wvDrawingHeight');for(const opt of [...height.options])if(opt.dataset.custom)opt.remove();if(![...height.options].some(o=>+o.value===wvDraft.height)){const opt=document.createElement('option');opt.value=wvDraft.height;opt.textContent='مخصص · '+wvDraft.height;opt.dataset.custom='true';height.append(opt);}height.value=wvDraft.height;
+        $('wvDrawingPosition').innerHTML=wvPositionOptions(wvDraft.position);wvRenderCanvas();wvProperties();$('wvDrawingDialog').showModal();
+      }else{$('wvTemplateError').textContent='';wvRenderTemplate();$('wvTemplateDialog').showModal();}
+    }
+    const wvCurrent=()=>wvDraft?.elements?.find(e=>e.id===wvSelected);
+    function wvRemember(){if(!wvDraft)return;wvPast.push(JSON.stringify({draft:wvDraft,selected:wvSelected}));if(wvPast.length>60)wvPast.shift();wvFuture=[];}
+    function wvUndo(redo){const from=redo?wvFuture:wvPast,to=redo?wvPast:wvFuture;if(!from.length||!wvDraft)return;to.push(JSON.stringify({draft:wvDraft,selected:wvSelected}));const state=JSON.parse(from.pop());wvDraft=state.draft;wvSelected=state.selected;$('wvDrawingTitle').value=wvDraft.title;$('wvDrawingWidth').value=wvDraft.widthMm;$('wvDrawingHeight').value=wvDraft.height;$('wvDrawingPosition').value=wvDraft.position;wvRenderCanvas();wvProperties();}
+    function wvClamp(e){e.w=Math.max(40,Math.min(740,e.w));e.h=Math.max(30,Math.min(wvDraft.height-36,e.h));if(e.kind==='circle'){e.w=e.h=Math.min(e.w,e.h,wvDraft.height-36);}e.x=Math.max(18,Math.min(782-e.w,e.x));e.y=Math.max(18,Math.min(wvDraft.height-18-e.h,e.y));}
+    function wvRenderCanvas(){
+      if(!wvDraft?.elements)return;$('wvCanvas').innerHTML=V.svg(wvDraft,{editor:true,grid:wvGrid,selected:wvSelected});
+      $('wvUndo').disabled=!wvPast.length;$('wvRedo').disabled=!wvFuture.length;
+      $('wvElementList').innerHTML=wvDraft.elements.map((e,i)=>'<button type="button" data-wv-action="element-select" data-eid="'+e.id+'" aria-pressed="'+(wvSelected===e.id)+'">'+(i+1)+' · '+E(V.names[e.kind])+'</button>').join('');
+      $('wvCanvasHint').textContent=wvDraft.elements.length?'اسحب العناصر لتغيير موضعها. الأسهم تحرك العنصر المحدد، وShift مع الأسهم يحركه أكثر.':'ابدأ بإضافة شكل من المكتبة. يمكنك ترك التسمية فارغة ليكملها الطالب.';
+    }
+    function wvProperties(){
+      const e=wvCurrent();if(!e){$('wvProperties').innerHTML='<h3>خصائص العنصر</h3><p class="wv-empty-properties">اختر عنصرًا من الرسم أو أضف عنصرًا جديدًا. ستظهر هنا الأبعاد والتسميات وخيارات الخط.</p>';return;}
+      let body='<h3>'+E(V.names[e.kind])+'</h3>'+wvField('التسمية · اتركها فارغة للطالب','label',e.label,'text','maxlength="240"');
+      body+='<div class="form-row">'+wvField('الموضع الأفقي','x',Math.round(e.x),'number','min="18" max="760"')+wvField('الموضع العمودي','y',Math.round(e.y),'number','min="18" max="620"')+'</div>';
+      body+='<div class="form-row">'+wvField(e.kind==='circle'?'القطر على اللوحة':'العرض / الطول','w',Math.round(e.w),'number','min="40" max="740"')+(e.kind==='circle'?'':wvField('الارتفاع','h',Math.round(e.h),'number','min="30" max="600"'))+'</div>';
+      if(['rectangle','triangle','circle'].includes(e.kind)){
+        body+='<label class="checkbox"><input type="checkbox" data-wv-prop="dimensions"'+(e.dimensions?' checked':'')+'> إظهار تسميات الأبعاد</label>';
+        if(e.kind!=='circle')body+=wvField(e.kind==='triangle'?'تسمية الضلع الأيسر':'تسمية الطول العلوية','top',e.top,'text','maxlength="80"')+wvField(e.kind==='triangle'?'تسمية الضلع الأيمن':'تسمية الارتفاع','side',e.side,'text','maxlength="80"');
+        body+=wvField('التسمية السفلية','bottom',e.bottom,'text','maxlength="80"');
+      }
+      if(e.kind==='numberline')body+='<div class="form-row">'+wvField('من','min',e.min,'number','min="-100" max="100" step="any"')+wvField('إلى','max',e.max,'number','min="-100" max="100" step="any"')+'</div>'+wvField('خطوة التدريج','step',e.step,'number','min="0.1" max="100" step="any"')+wvField('قيم تُترك فارغة · مثال: -2, 1','hidden',e.hidden,'text','dir="ltr" maxlength="200"');
+      if(e.kind==='axes')body+='<div class="form-row">'+wvField('اسم المحور الأفقي','xLabel',e.xLabel,'text','maxlength="30"')+wvField('اسم المحور العمودي','yLabel',e.yLabel,'text','maxlength="30"')+'</div><label class="checkbox"><input type="checkbox" data-wv-prop="grid"'+(e.grid?' checked':'')+'> شبكة إحداثيات داخل المحاور</label>';
+      body+='<div class="form-row">'+wvField('سُمك الخط','stroke',e.stroke,'number','min="1" max="5" step="0.5"')+wvField('الدوران °','rotation',e.rotation,'number','min="-180" max="180"')+'</div>';
+      body+='<label class="checkbox"><input type="checkbox" data-wv-prop="dashed"'+(e.dashed?' checked':'')+'> خط متقطع</label>';
+      if(['rectangle','box','circle','triangle'].includes(e.kind))body+='<label class="field"><span class="field-label">تعبئة الشكل</span><select data-wv-prop="fill">'+[['none','بدون تعبئة'],['white','أبيض'],['light','رمادي فاتح']].map(([k,v])=>'<option value="'+k+'"'+(e.fill===k?' selected':'')+'>'+v+'</option>').join('')+'</select></label>';
+      $('wvProperties').innerHTML=body;
+    }
+    function wvAddElement(kind){if(!wvDraft?.elements)return;if(wvDraft.elements.length>=50){$('wvDrawingError').textContent='الحد الأقصى 50 عنصرًا في الرسم.';return;}wvRemember();const e=V.makeElement(kind,wvDraft.elements.length);wvClamp(e);wvDraft.elements.push(e);wvSelected=e.id;wvRenderCanvas();wvProperties();}
+    function wvDeleteElement(){const e=wvCurrent();if(!e)return;wvRemember();wvDraft.elements=wvDraft.elements.filter(x=>x!==e);wvSelected=wvDraft.elements.at(-1)?.id||'';wvRenderCanvas();wvProperties();}
+    function wvCopyElement(){const e=wvCurrent();if(!e||wvDraft.elements.length>=50)return;wvRemember();const copy=M.clone(e);copy.id=M.uid();copy.x+=20;copy.y+=20;wvClamp(copy);wvDraft.elements.push(copy);wvSelected=copy.id;wvRenderCanvas();wvProperties();}
+    function wvPoint(event){const r=$('wvCanvas').getBoundingClientRect();return {x:(event.clientX-r.left)/r.width*800,y:(event.clientY-r.top)/r.height*wvDraft.height};}
+    function wvPointerDown(event){
+      if(!wvDraft?.elements||event.button!==0)return;const target=event.target.closest('[data-vitem]');
+      if(!target){wvSelected='';wvRenderCanvas();wvProperties();return;}
+      event.preventDefault();wvSelected=target.dataset.vitem;const e=wvCurrent(),p=wvPoint(event);wvRemember();wvDrag={id:e.id,dx:p.x-e.x,dy:p.y-e.y,pointerId:event.pointerId};$('wvCanvas').setPointerCapture?.(event.pointerId);$('wvCanvas').focus({preventScroll:true});wvRenderCanvas();wvProperties();
+    }
+    function wvPointerMove(event){if(!wvDrag||!wvDraft)return;event.preventDefault();const e=wvCurrent();if(!e)return;const p=wvPoint(event),snap=wvSnap?5:1;e.x=Math.round((p.x-wvDrag.dx)/snap)*snap;e.y=Math.round((p.y-wvDrag.dy)/snap)*snap;wvClamp(e);wvRenderCanvas();for(const key of ['x','y']){const input=$('wvProperties').querySelector('[data-wv-prop="'+key+'"]');if(input)input.value=Math.round(e[key]);}}
+    function wvPointerEnd(event){if(wvDrag&&$('wvCanvas').hasPointerCapture?.(event.pointerId))$('wvCanvas').releasePointerCapture(event.pointerId);wvDrag=null;}
+    function wvTemplateField(label,key,value,options={}){
+      const attrs='data-wv-template="'+key+'"'+(options.row!=null?' data-row="'+options.row+'"':'')+(options.part?' data-part="'+options.part+'"':'');
+      return '<label class="field"><span class="field-label">'+label+'</span>'+(options.textarea?'<textarea '+attrs+' rows="2" maxlength="'+(options.max||500)+'" placeholder="'+E(options.placeholder||'اترك الحقل فارغًا ليجيب الطالب')+'">'+E(value)+'</textarea>':'<input '+attrs+' maxlength="'+(options.max||180)+'" value="'+E(value)+'" placeholder="'+E(options.placeholder||'')+'">')+'</label>';
+    }
+    function wvRenderTemplate(){
+      const v=wvDraft;if(!v||v.kind!=='template')return;
+      for(const button of $('wvTemplateDialog').querySelectorAll('[data-wv-action="template-type"]'))button.setAttribute('aria-pressed',String(button.dataset.kind===v.type));
+      let body=wvTemplateField('عنوان القالب · اختياري','title',v.title,{max:200});
+      if(['compare','cause'].includes(v.type)){
+        body+='<div class="form-row">'+wvTemplateField(v.type==='compare'?'عنوان العمود الأول':'عنوان السبب','leftTitle',v.leftTitle,{max:100})+wvTemplateField(v.type==='compare'?'عنوان العمود الثاني':'عنوان النتيجة','rightTitle',v.rightTitle,{max:100})+'</div>';
+        body+=v.rows.map((r,i)=>'<div class="wv-template-row"><div class="wv-template-row-top"><strong>الصف '+(i+1)+'</strong>'+wvButton('حذف الصف','template-remove-row','data-row="'+i+'"')+'</div>'+(v.type==='compare'?wvTemplateField('وجه المقارنة','row',r.criterion,{row:i,part:'criterion'}):'')+'<div class="form-row">'+wvTemplateField(v.leftTitle||'العمود الأول','row',r.left,{row:i,part:'left',textarea:true})+wvTemplateField(v.rightTitle||'العمود الثاني','row',r.right,{row:i,part:'right',textarea:true})+'</div></div>').join('')+wvButton('+ إضافة صف','template-add-row');
+      }else if(v.type==='flow'){
+        body+=wvTemplateField('المربع الرئيسي','root',v.root,{textarea:true,max:180});
+        body+=v.nodes.map((value,i)=>'<div class="wv-template-row"><div class="wv-template-row-top"><strong>المربع '+(i+1)+'</strong>'+wvButton('حذف','template-remove-node','data-row="'+i+'"')+'</div>'+wvTemplateField('محتوى المربع','node',value,{row:i,textarea:true,max:240})+'</div>').join('')+wvButton('+ إضافة مربع','template-add-node');
+      }else{
+        body+=wvTemplateField('الكلمات المطلوب تصنيفها · افصل بفاصلة أو سطر','words',v.words,{textarea:true,max:1800,placeholder:'كتاب، يكتب، إلى، مدرسة، يقرأ، من'});
+        body+=v.columns.map((c,i)=>'<div class="wv-template-row"><div class="wv-template-row-top"><strong>المجموعة '+(i+1)+'</strong>'+wvButton('حذف','template-remove-col','data-row="'+i+'"')+'</div>'+wvTemplateField('عنوان المجموعة','column',c.title,{row:i,part:'title',max:100})+wvTemplateField('المحتوى · اتركه فارغًا للطالب','column',c.content,{row:i,part:'content',textarea:true,max:700})+'</div>').join('')+wvButton('+ إضافة مجموعة','template-add-col');
+      }
+      body+='<div class="form-row" style="margin-top:14px"><label class="field"><span class="field-label">أسطر كل خانة فارغة</span><select data-wv-template="lines">'+[1,2,3,4].map(n=>'<option value="'+n+'"'+(v.lines===n?' selected':'')+'>'+n+'</option>').join('')+'</select></label><label class="field"><span class="field-label">موضع القالب</span><select data-wv-template="position">'+wvPositionOptions(v.position)+'</select></label></div>';
+      $('wvTemplateForm').innerHTML=body;wvRenderTemplatePreview();
+    }
+    function wvRenderTemplatePreview(){if(wvDraft?.kind==='template')$('wvTemplatePreview').innerHTML=V.render(wvDraft);}
+    function wvInput(event){
+      const el=event.target;if(!wvDraft)return;
+      if(el.dataset.wvProp!=null){
+        const e=wvCurrent();if(!e)return;const key=el.dataset.wvProp;wvRemember();
+        e[key]=el.type==='checkbox'?el.checked:el.type==='number'?(Number.isFinite(el.valueAsNumber)?el.valueAsNumber:e[key]):el.value;
+        if(e.kind==='circle'&&key==='w')e.h=e.w;
+        if(['w','h','x','y'].includes(key))wvClamp(e);e.stroke=M.num(e.stroke,1,5,2);e.rotation=M.num(e.rotation,-180,180,0);
+        $('wvDrawingError').textContent=e.kind==='numberline'&&(e.max<=e.min||e.step<=0||(e.max-e.min)/e.step>30)?'خط الأعداد يحتاج نهاية أكبر من البداية، وخطوة موجبة، وحتى 30 فترة.':'';
+        wvRenderCanvas();return;
+      }
+      if(el.id==='wvDrawingTitle'){wvRemember();wvDraft.title=el.value;wvRenderCanvas();}
+      if(el.id==='wvDrawingWidth'){wvRemember();wvDraft.widthMm=M.num(el.value,60,160,145);}
+      if(el.id==='wvDrawingHeight'){wvRemember();wvDraft.height=+el.value;wvDraft.elements.forEach(wvClamp);wvRenderCanvas();wvProperties();}
+      if(el.id==='wvDrawingPosition'){wvRemember();wvDraft.position=el.value;}
+      if(el.id==='wvGrid'){wvGrid=el.checked;wvSnap=el.checked;wvRenderCanvas();}
+      if(el.dataset.wvTemplate!=null){const key=el.dataset.wvTemplate,row=+el.dataset.row,part=el.dataset.part;if(key==='row')wvDraft.rows[row][part]=el.value;else if(key==='node')wvDraft.nodes[row]=el.value;else if(key==='column')wvDraft.columns[row][part]=el.value;else wvDraft[key]=key==='lines'?+el.value:el.value;wvRenderTemplatePreview();}
+    }
+    function wvSave(kind){
+      const error=$(kind==='diagram'?'wvDrawingError':'wvTemplateError');error.textContent='';
+      if(!wvDraft||!wvTarget)return;
+      const q=docQuestion(wvTarget.qid,wvTarget.source);
+      if(!q||wvTarget.source==='doc'&&doc.id!==wvTarget.examId){error.textContent='أُغلق السؤال قبل حفظ التعديل.';return;}
+      if(kind==='diagram'){
+        if(!wvDraft.elements.length){error.textContent='أضف عنصرًا واحدًا على الأقل إلى الرسم.';return;}
+        for(const e of wvDraft.elements)if(e.kind==='numberline'&&(e.max<=e.min||e.step<=0||(e.max-e.min)/e.step>30)){error.textContent='راجع بداية خط الأعداد ونهايته وخطوته. الحد الأقصى 30 فترة.';return;}
+      }
+      const visual=V.normalize(wvDraft),source=wvTarget.source,index=(q.visuals||[]).findIndex(v=>v.id===wvTarget.vid);
+      q.visuals=q.visuals||[];if(index>=0){visual.id=q.visuals[index].id;q.visuals[index]=visual;}else{if(q.visuals.length>=8){error.textContent='الحد الأقصى 8 رسوم وقوالب لكل سؤال.';return;}q.visuals.push(visual);}
+      $(kind==='diagram'?'wvDrawingDialog':'wvTemplateDialog').close();changedQuestion(q,source);toast(kind==='diagram'?'تم حفظ الرسم داخل السؤال.':'تم حفظ القالب داخل السؤال.');
+    }
+    function wvShowPreview(){document.body.classList.add('mobile-preview');appSyncNavigation();renderPreview();if(innerWidth<=900)window.scrollTo({top:0,behavior:'instant'});else $('previewStage').scrollIntoView({behavior:'smooth',block:'start'});}
+    async function wvLoadDemo(first=false){
+      const next=V.demo(doc);
+      if(await archiveCurrent('قبل فتح ورقة الرسومات والقوالب',false)===false)throw new Error('تعذّر حفظ الامتحان الحالي قبل فتح ورقة العرض.');
+      await repository.batch([{kind:'draft',id:'current',value:next},{kind:'preference',id:'visual-demo-v1',value:{seen:true,openedAt:now()}}]);
+      try{localStorage.removeItem(recoveryKey);}catch{}
+      if(first){doc=next;selected=doc.questions[0]?.id||null;durableSnapshot=JSON.stringify(doc);migratedSaved=true;wvFirstDemo=true;resetHistory();}
+      else{interaction.source='doc';setDocument(next);await save();$('wvDemoBanner').hidden=false;wvShowPreview();toast('ورقة العرض جاهزة. حُفظ الامتحان السابق في الأرشيف.');}
+    }
+    async function wvFirstVisit(){
+      try{const seen=await repository.get('preference','visual-demo-v1');if(!seen?.seen)await wvLoadDemo(true);}catch{toast('تعذّر فتح ورقة العرض تلقائيًا. يمكنك فتحها من أدوات الامتحان بعد حفظ عملك.');}
+    }
+
     // Application navigation and progressive disclosure; exam rendering stays unchanged.
     let appRememberedEditor='questions';
     const appOpenGroups={metadata:0,format:0};
@@ -2359,7 +2718,8 @@ globalThis.WaraqaAuth = (() => {
       appGroupPanels('metadata');appGroupPanels('format');appSyncNavigation();
     }
 
-    v5Init();renderEditor();appInit();setTab('questions',false,false);updateHistoryButtons();
+    v5Init();wvInit();await wvFirstVisit();renderEditor();appInit();setTab('questions',false,false);updateHistoryButtons();
+    if(wvFirstDemo){$('wvDemoBanner').hidden=false;if(innerWidth<=1020)document.body.classList.add('mobile-preview');appSyncNavigation();}
     navigation=WaraqaNavigation.create({env:window,session:M.uid(),getView:captureView,applyView:restoreView,consumeBack:closeTransientViews,beforeExit:async()=>{const saved=await save();if(!saved)toast('تعذّر الحفظ. نزّل ملف الأسئلة قبل المغادرة.');return saved;},requestExit:leave=>{
       save();
       confirm('الخروج من الموقع؟',storageAvailable?'سيُحفظ آخر تعديل قبل المغادرة. هل تريد الخروج؟':'تعذّر الحفظ التلقائي. احفظ ملف الأسئلة من قائمة الخيارات قبل مغادرة الموقع.','الخروج',leave);
