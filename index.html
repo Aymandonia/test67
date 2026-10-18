@@ -264,6 +264,117 @@ This Font Software is licensed under the SIL Open Font License, Version 1.1. Thi
 @media print{.wv-dialog,.wv-demo-banner,.wv-question-tools{display:none!important}.wv-print-diagram,.wv-flow,.wv-classify{break-inside:avoid;page-break-inside:avoid}.wv-drawing-svg{overflow:visible!important}.wv-print-template,.wv-print-diagram{color:#17202a!important}}
 
 </style>
+<style id="waraqa-paper-templates">
+/* Paper templates share the same A4 rendering in thumbnails, previews and print. */
+.exam-page[data-paper-template]:not([data-paper-template=original]) .exam-frame{border-color:var(--paper-accent,#294c41)}
+.exam-page[data-paper-template]:not([data-paper-template=original]) .exam-frame::before{border-color:var(--paper-accent,#294c41)}
+.exam-page[data-paper-template]:not([data-paper-template=original]) .exam-title{color:var(--paper-accent,#294c41)}
+.exam-page[data-paper-template]:not([data-paper-template=original]) .exam-note{border-color:var(--paper-accent,#294c41)}
+.exam-page[data-paper-template]:not([data-paper-template=original]) .q-head>.q-grade{color:var(--paper-accent,#294c41);border:.25mm solid var(--paper-accent,#294c41);background:var(--paper-soft,#edf3ef);border-radius:1mm;padding:.1mm 1.4mm;white-space:normal;flex-shrink:0;max-width:40%;text-align:center}
+.exam-page[data-paper-template]:not([data-paper-template=original]) .q-title{min-width:0}
+.exam-page[data-paper-template]:not([data-paper-template=original]) .exam-footer-row{border-top:.25mm solid var(--paper-accent,#294c41);padding-top:2mm}
+.exam-page[data-paper-template=waqar] .header-center{border-bottom:.7mm double var(--paper-accent);padding-bottom:2mm}
+.exam-page[data-paper-template=waqar] .q-title{border-inline-start:.8mm solid var(--paper-accent);padding-inline-start:2mm}
+.exam-page[data-paper-template=waqar] .q-head>.q-grade{border-radius:8mm;background:transparent}
+.exam-page[data-paper-template=academic] .header-center{background:var(--paper-soft);border-top:.8mm solid var(--paper-accent);border-bottom:.25mm solid var(--paper-accent);padding:2mm}
+.exam-page[data-paper-template=academic] .q-head{background:var(--paper-soft);border-inline-start:.9mm solid var(--paper-accent);padding:1mm 2mm;margin-bottom:1mm}
+.exam-page[data-paper-template=academic] .q-head>.q-grade{border:0;background:white}
+.exam-page[data-paper-template=elite] .header-center{border:.7mm double var(--paper-accent);padding:2mm;border-radius:1mm}
+.exam-page[data-paper-template=elite] .q-title{color:var(--paper-accent);border-bottom:.7mm double var(--paper-accent);padding-bottom:.5mm}
+.exam-page[data-paper-template=elite] .q-head>.q-grade{border:0;border-bottom:.35mm solid var(--paper-accent);border-radius:0;background:transparent}
+.exam-page[data-paper-template=minimal] .exam-header{border-bottom:.25mm solid var(--paper-accent);margin-bottom:1mm}
+.exam-page[data-paper-template=minimal] .exam-note{border-bottom-width:.25mm;border-bottom-style:solid}
+.exam-page[data-paper-template=minimal] .q-title{color:var(--paper-accent)}
+.exam-page[data-paper-template=minimal] .q-head>.q-grade{border:0;border-radius:0;background:transparent;padding:0}
+.exam-page[data-paper-template=minimal] .exam-question{border-bottom-color:#b2bab6}
+.exam-page[data-paper-template=oasis] .header-center{background:var(--paper-soft);border-radius:6mm;padding:2mm}
+.exam-page[data-paper-template=oasis] .exam-note{border-bottom-style:dashed;border-bottom-width:.3mm}
+.exam-page[data-paper-template=oasis] .q-title{border:.25mm solid var(--paper-accent);border-radius:5mm;padding:.3mm 2.5mm;color:var(--paper-accent)}
+.exam-page[data-paper-template=oasis] .q-head>.q-grade{border-radius:5mm}
+.exam-page[data-paper-template=geometry] .header-center{border-inline:.45mm solid var(--paper-accent);padding-inline:2mm}
+.exam-page[data-paper-template=geometry] .exam-title{border-bottom:.3mm solid var(--paper-accent);padding-bottom:1mm}
+.exam-page[data-paper-template=geometry] .q-title::before{content:'';display:inline-block;width:1.8mm;height:1.8mm;background:var(--paper-accent);transform:rotate(45deg);margin-inline:1mm 2mm;vertical-align:middle}
+.exam-page[data-paper-template=geometry] .q-head>.q-grade{border-radius:0;border-inline-start:.8mm solid var(--paper-accent)}
+.exam-page[data-paper-template=geometry] .exam-question{border-bottom-style:dashed;border-bottom-color:#a5afb9}
+.exam-page[data-paper-template=heritage] .header-center{padding:2mm;border-block:.8mm double var(--paper-accent)}
+.exam-page[data-paper-template=heritage] .exam-title::before,.exam-page[data-paper-template=heritage] .exam-title::after{content:'◆';font-size:.5em;vertical-align:middle;margin:0 1mm}
+.exam-page[data-paper-template=heritage] .q-head{border-bottom:.7mm double var(--paper-accent);margin-bottom:1.4mm;padding-bottom:1mm}
+.exam-page[data-paper-template=heritage] .q-title{color:var(--paper-accent)}
+.exam-page[data-paper-template=heritage] .q-head>.q-grade{border-radius:6mm;background:transparent}
+.exam-page[data-paper-template=horizon] .exam-header{border-top:.9mm solid var(--paper-accent);padding-top:2mm}
+.exam-page[data-paper-template=horizon] .header-center{border-bottom:.25mm solid var(--paper-accent)}
+.exam-page[data-paper-template=horizon] .q-head{border-bottom:.25mm solid var(--paper-accent);margin-bottom:1.5mm;padding-bottom:1mm}
+.exam-page[data-paper-template=horizon] .q-title{color:var(--paper-accent)}
+.exam-page[data-paper-template=horizon] .q-head>.q-grade{border:0;border-bottom:.6mm solid var(--paper-accent);border-radius:0}
+.exam-page[data-paper-template=manuscript] .header-center{margin-inline:1mm;padding:2mm 0;border-block:.8mm double var(--paper-accent)}
+.exam-page[data-paper-template=manuscript] .q-title{background:var(--paper-soft);border-inline-start:.8mm solid var(--paper-accent);padding:.4mm 2mm}
+.exam-page[data-paper-template=manuscript] .q-head>.q-grade{background:transparent;border-style:double;border-width:.6mm}
+.exam-page[data-paper-template=balance] .header-right,.exam-page[data-paper-template=balance] .header-left{padding:2mm;border-block:.25mm solid var(--paper-accent)}
+.exam-page[data-paper-template=balance] .exam-title{border-bottom:.6mm solid var(--paper-accent);padding-bottom:1mm}
+.exam-page[data-paper-template=balance] .q-head{background:var(--paper-soft);border-radius:2mm;padding:1mm 2mm;margin-bottom:1mm}
+.exam-page[data-paper-template=balance] .q-head>.q-grade{background:white;border-radius:2mm}
+.exam-page[data-paper-template=identity] .header-right{border-inline-start:.9mm solid var(--paper-accent);padding-inline-start:2.5mm}
+.exam-page[data-paper-template=identity] .header-center{border-block:.25mm solid var(--paper-accent);padding:2mm 0}
+.exam-page[data-paper-template=identity] .q-head{border-inline-start:1.2mm solid var(--paper-accent);padding-inline-start:2mm;margin-bottom:1mm}
+.exam-page[data-paper-template=identity] .q-head>.q-grade{border:0;background:var(--paper-soft);border-radius:0}
+.exam-page[data-paper-template=signature] .exam-title{border:.3mm solid var(--paper-accent);border-radius:8mm;padding:1mm 2mm}
+.exam-page[data-paper-template=signature] .header-center{border-bottom:.8mm double var(--paper-accent);padding-bottom:1mm}
+.exam-page[data-paper-template=signature] .q-title{border-inline:.4mm solid var(--paper-accent);padding-inline:2mm}
+.exam-page[data-paper-template=signature] .q-head>.q-grade{border-style:dashed;background:transparent;border-radius:3mm}
+.exam-page[data-paper-template=signature] .exam-footer-row{border-top-style:double;border-top-width:.7mm}
+@media screen{
+  .paper-templates-intro{padding:23px;border:1px solid var(--line);border-radius:22px;background:var(--surface);margin-bottom:18px;position:relative;overflow:hidden}
+  .paper-templates-kicker{display:flex;align-items:center;gap:8px;color:var(--green);font-size:11px;font-weight:700;margin-bottom:10px}
+  .paper-templates-kicker .icon{width:17px;height:17px}
+  .paper-templates-intro h3{font-size:21px;line-height:1.7;margin:0 0 8px;letter-spacing:-.3px}
+  .paper-templates-intro p{font-size:12px;line-height:2;color:var(--muted);margin:0 0 18px}
+  .paper-templates-current{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding-top:14px;border-top:1px solid var(--line)}
+  .paper-templates-current>span{display:flex;gap:7px;align-items:center;color:var(--muted);font-size:11px;flex:1;min-width:130px}
+  .paper-templates-current strong{color:var(--green);font-size:12px}
+  .paper-templates-current>.btn{font-size:10px;min-height:40px;padding:7px 10px}
+  .paper-templates-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .paper-template-card{background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;min-width:0;position:relative;transition:border-color .18s,box-shadow .18s}
+  .paper-template-card.is-applied{border-color:var(--green);box-shadow:0 0 0 1px var(--green)}
+  .paper-template-thumbnail{position:relative;height:221px;background:#edf1ee;overflow:hidden;border-bottom:1px solid var(--line);isolation:isolate}
+  .paper-template-thumbnail::after{content:'';position:absolute;inset:auto 0 0;height:25px;background:linear-gradient(transparent,#edf1ee);pointer-events:none}
+  .paper-template-thumbnail .exam-page{position:absolute;top:20px;left:50%;margin-left:-105mm;transform:scale(.168);transform-origin:top center;box-shadow:0 8px 40px #203b3526;pointer-events:none;user-select:none}
+  .paper-template-number{position:absolute;inset:12px 12px auto auto;color:#6e7e75;font:10px Arial,sans-serif;letter-spacing:1px;z-index:1}
+  .paper-template-badge{position:absolute;top:10px;left:10px;z-index:1;display:flex;gap:4px;align-items:center;border:1px solid #c9dfd3;border-radius:20px;background:#edf7f0;color:#1b5c47;font-size:9px;padding:3px 8px}
+  .paper-template-badge .icon{width:12px;height:12px}
+  .paper-template-card-body{padding:15px}
+  .paper-template-card-heading{display:flex;align-items:center;justify-content:space-between;gap:7px;margin-bottom:5px}
+  .paper-template-card-heading h3{font-size:15px;margin:0;line-height:1.9}
+  .paper-template-tag{font-size:9px;line-height:1.7;white-space:nowrap;color:var(--muted);border:1px solid var(--line);padding:2px 7px;border-radius:7px}
+  .paper-template-card-body p{font-size:10px;color:var(--muted);line-height:1.9;margin:0 0 13px;min-height:38px}
+  .paper-template-actions{display:flex;align-items:center;gap:7px}
+  .paper-template-actions>.btn{flex:1;font-size:11px;min-height:43px;padding:8px 9px;border-radius:12px}
+  .paper-template-actions>.btn .icon{width:15px;height:15px}
+  .paper-template-actions>.icon-btn{flex:none;border:1px solid var(--line);background:var(--input);border-radius:12px}
+  .paper-template-card.is-applied .paper-template-apply{background:var(--mint);color:var(--green);border-color:transparent}
+  .paper-template-footnote{display:flex;align-items:flex-start;gap:8px;color:var(--muted);font-size:10px;line-height:2;padding:16px 3px 2px;margin:0}
+  .paper-template-footnote .icon{width:15px;height:15px;margin-top:3px;flex:none}
+  .paper-template-dialog{width:min(830px,calc(100vw - 40px));max-width:830px;overflow:auto}
+  .paper-template-dialog>p{margin-bottom:18px}
+  .paper-template-proof-stage{padding:20px 16px;background:#e8eeea;border:1px solid var(--line);border-radius:16px;max-height:56dvh;overflow:auto;overscroll-behavior:contain}
+  .paper-template-proof-page{position:relative;margin:0 auto 18px;flex:none;overflow:hidden;box-shadow:0 4px 16px #16392c12}
+  .paper-template-proof-page:last-child{margin-bottom:0}
+  .paper-template-proof-page>.exam-page{position:absolute;left:0;top:0;transform-origin:top left}
+  .paper-template-dialog .dialog-actions{position:sticky;bottom:-30px;background:var(--surface);padding-block:15px 4px;z-index:2;display:flex;flex-wrap:wrap}
+  :root[data-theme=dark] .paper-template-thumbnail{background:#25342c}
+  :root[data-theme=dark] .paper-template-thumbnail::after{background:linear-gradient(transparent,#25342c)}
+  :root[data-theme=dark] .paper-template-number{color:#a5b9ac}
+  :root[data-theme=dark] .paper-template-proof-stage{background:#101b15}
+  @media(min-width:741px){.nav-tab.app-more-nav{margin-top:2px}}
+  @media(max-width:1190px) and (min-width:1021px){.paper-templates-grid{gap:11px}.paper-template-card-body{padding:12px}.paper-template-thumbnail{height:203px}.paper-template-thumbnail .exam-page{transform:scale(.154)}}
+  @media(max-width:740px){
+    .paper-templates-intro{padding:20px;margin-bottom:20px}.paper-templates-intro h3{font-size:21px}.paper-templates-intro p{font-size:12px}
+    .paper-templates-grid{gap:12px}.paper-template-thumbnail{height:203px}.paper-template-thumbnail .exam-page{transform:scale(.154)}.paper-template-card-body{padding:13px 11px}.paper-template-card-heading{flex-wrap:wrap;gap:3px;margin-bottom:7px}.paper-template-card-heading h3{font-size:14px}.paper-template-tag{font-size:8px}.paper-template-card-body p{font-size:10px;min-height:38px}.paper-template-actions{gap:5px}.paper-template-actions>.btn{font-size:10px;padding:7px 5px;min-height:44px}.paper-template-actions>.icon-btn{min-width:36px!important;width:36px!important;border-radius:10px}.paper-template-actions>.icon-btn .icon{width:17px;height:17px}.paper-template-actions>.btn .icon{width:13px;height:13px}
+    .paper-template-dialog{width:100%;max-width:620px;max-height:91dvh}.paper-template-dialog .dialog-actions{bottom:calc(-24px - env(safe-area-inset-bottom));padding-bottom:calc(10px + env(safe-area-inset-bottom))}.paper-template-dialog .dialog-actions .btn{font-size:12px;min-height:48px}.paper-template-proof-stage{padding:14px 10px;max-height:54dvh}
+  }
+  @media(max-width:360px){.paper-templates-grid{gap:9px}.paper-template-card-body{padding:11px 9px}.paper-template-thumbnail{height:181px}.paper-template-thumbnail .exam-page{transform:scale(.137)}.paper-template-actions{flex-wrap:wrap}.paper-template-actions>.btn{flex-basis:100%}.paper-template-actions>.icon-btn{width:100%!important;flex:1}.paper-template-card-body p{min-height:57px}}
+}
+
+</style>
 </head>
 <body class="auth-locked"><button class="btn v5-login-theme" data-theme-toggle aria-label="تفعيل الوضع الليلي" title="الوضع الليلي"><span data-theme-icon>☾</span></button>
   <svg class="icons" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
@@ -347,9 +458,10 @@ This Font Software is licensed under the SIL Open Font License, Version 1.1. Thi
             <button class="nav-tab active" id="tab-questions" data-tab="questions" role="tab" aria-selected="true" aria-controls="questionsPanel"><span class="nav-num">02</span>الأسئلة والدرجات</button>
             <button class="nav-tab" id="tab-format" data-tab="format" role="tab" aria-selected="false" aria-controls="formatPanel" tabindex="-1"><span class="nav-num">03</span>التنسيق والطباعة</button>
             <button class="nav-tab" id="tab-archive" data-tab="archive" role="tab" aria-selected="false" aria-controls="archivePanel" tabindex="-1"><span class="nav-num">▤</span>أرشيف الامتحانات</button>
-            <button class="nav-tab" id="tab-bank" data-tab="bank" role="tab" aria-selected="false" aria-controls="bankPanel" tabindex="-1"><span class="nav-num">▦</span>بنك الأسئلة</button>
+            <button class="nav-tab" id="tab-templates" data-tab="templates" role="tab" aria-selected="false" aria-controls="templatesPanel" tabindex="-1"><span class="nav-num">▦</span>قوالب جديدة</button>
             <button class="nav-tab" id="tab-versions" data-tab="versions" role="tab" aria-selected="false" aria-controls="versionsPanel" tabindex="-1"><span class="nav-num">◷</span>سجل النسخ</button>
           </nav>
+          <button type="button" class="nav-tab app-more-nav" data-app-destination="more" data-app-open-tools><span class="nav-num">⋯</span>المزيد</button>
           <div class="exam-summary"><div class="summary-caption"><svg class="icon"><use href="#i-grid"/></svg>ملخّص امتحانك</div><div class="summary-grade"><span id="totalScore">0</span> <small>من <span id="expectedScore">100</span></small></div><div class="summary-row"><span>عدد الأسئلة</span><strong id="questionCount">0 أسئلة</strong></div><div class="summary-row"><span>عدد الصفحات</span><strong id="pageCount">1 صفحة</strong></div><div class="score-meter"><span id="scoreMeter"></span></div><p class="summary-warning" id="scoreWarning" hidden></p></div>
           <div class="sidebar-tip">كل تغيير تكتبه<br>يظهر مباشرة في <strong>المعاينة.</strong><br>وتبقى مسودّتك محفوظة هنا.</div>
           <button class="sidebar-help" data-action="help"><svg class="icon"><use href="#i-info"/></svg>إرشادات الطباعة</button>
@@ -366,7 +478,8 @@ This Font Software is licensed under the SIL Open Font License, Version 1.1. Thi
             <div class="editor-panel" id="metadataPanel" role="tabpanel" aria-labelledby="tab-metadata" hidden></div>
             <div class="editor-panel" id="formatPanel" role="tabpanel" aria-labelledby="tab-format" hidden></div>
             <div class="editor-panel" id="archivePanel" role="tabpanel" aria-labelledby="tab-archive" hidden></div>
-            <div class="editor-panel" id="bankPanel" role="tabpanel" aria-labelledby="tab-bank" hidden></div>
+            <div class="editor-panel" id="templatesPanel" role="tabpanel" aria-labelledby="tab-templates" hidden></div>
+            <div class="editor-panel" id="bankPanel" role="region" aria-label="بنك الأسئلة" hidden></div>
             <div class="editor-panel" id="versionsPanel" role="tabpanel" aria-labelledby="tab-versions" hidden></div>
           </div>
           <button class="add-question" id="addQuestion" data-action="add" hidden><svg class="icon"><use href="#i-plus"/></svg>إضافة سؤال جديد</button>
@@ -382,12 +495,19 @@ This Font Software is licensed under the SIL Open Font License, Version 1.1. Thi
         </section>
       </div>
     </main>
-    <nav class="mobile-switch" aria-label="التنقل الرئيسي"><button type="button" data-app-destination="edit" id="mobileEdit" data-action="mobile-edit" class="active" aria-current="page"><span class="app-nav-icon"><svg class="icon" aria-hidden="true"><use href="#i-edit"/></svg></span><span>ورقتي</span></button><button type="button" data-app-destination="bank" ><span class="app-nav-icon"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg></span><span>بنك الأسئلة</span></button><button type="button" data-app-destination="preview" id="mobilePreview" data-action="mobile-preview"><span class="app-nav-icon"><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg></span><span>المعاينة</span></button><button type="button" data-app-destination="archive" ><span class="app-nav-icon"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg></span><span>الأرشيف</span></button><button type="button" data-app-destination="more" data-app-open-tools><span class="app-nav-icon"><svg class="icon" aria-hidden="true"><use href="#i-more"/></svg></span><span>المزيد</span></button></nav>
+    <nav class="mobile-switch" aria-label="التنقل الرئيسي"><button type="button" data-app-destination="edit" id="mobileEdit" data-action="mobile-edit" class="active" aria-current="page"><span class="app-nav-icon"><svg class="icon" aria-hidden="true"><use href="#i-edit"/></svg></span><span>ورقتي</span></button><button type="button" data-app-destination="templates"><span class="app-nav-icon"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg></span><span>قوالب جديدة</span></button><button type="button" data-app-destination="preview" id="mobilePreview" data-action="mobile-preview"><span class="app-nav-icon"><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg></span><span>المعاينة</span></button><button type="button" data-app-destination="archive" ><span class="app-nav-icon"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg></span><span>الأرشيف</span></button><button type="button" data-app-destination="more" data-app-open-tools><span class="app-nav-icon"><svg class="icon" aria-hidden="true"><use href="#i-more"/></svg></span><span>المزيد</span></button></nav>
   </div>
   <dialog class="dialog app-tools-dialog" id="appToolsDialog" aria-labelledby="appToolsHeading">
   <button type="button" class="icon-btn dialog-close" data-close="appToolsDialog" aria-label="إغلاق الأدوات"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
   <h2 id="appToolsHeading">أدوات ورقتك</h2><p class="app-tools-intro">كل ما تحتاجه لإعداد الامتحان، في مكان واحد.</p>
-  <div class="app-tools-grid"><button type="button" class="app-tool" data-app-go="metadata"><svg class="icon" aria-hidden="true"><use href="#i-paper"/></svg><span>بيانات الامتحان</span><small>المادة والصف والترويسة</small></button><button type="button" class="app-tool" data-app-go="format"><svg class="icon" aria-hidden="true"><use href="#i-settings"/></svg><span>تنسيق الورقة</span><small>الخط والإطار والطباعة</small></button><button type="button" class="app-tool" data-v5="samples"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg><span>نماذج جاهزة</span><small>ابدأ من نموذج تدريبي</small></button><button type="button" class="app-tool" data-app-go="versions"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg><span>سجل النسخ</span><small>ارجع إلى نسخة سابقة</small></button></div><h3 class="app-tool-heading">إعداد ومراجعة</h3><div id="appToolActions"></div><h3 class="app-tool-heading">ملف الامتحان</h3><div class="app-tool-list"><button type="button" class="btn" data-action="new"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>امتحان جديد</button><button type="button" class="btn" data-action="export-json"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>تنزيل ملف الأسئلة</button><button type="button" class="btn" data-action="import"><svg class="icon" aria-hidden="true"><use href="#i-upload"/></svg>فتح ملف محفوظ</button><button type="button" class="btn" data-action="help"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>إرشادات الطباعة</button></div></dialog>
+  <div class="app-tools-grid"><button type="button" class="app-tool" data-app-go="bank"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg><span>بنك الأسئلة</span><small>المواد والنماذج والأسئلة المحفوظة</small></button><button type="button" class="app-tool" data-app-go="metadata"><svg class="icon" aria-hidden="true"><use href="#i-paper"/></svg><span>بيانات الامتحان</span><small>المادة والصف والترويسة</small></button><button type="button" class="app-tool" data-app-go="format"><svg class="icon" aria-hidden="true"><use href="#i-settings"/></svg><span>تنسيق الورقة</span><small>الخط والإطار والطباعة</small></button><button type="button" class="app-tool" data-v5="samples"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg><span>نماذج جاهزة</span><small>ابدأ من نموذج تدريبي</small></button><button type="button" class="app-tool" data-app-go="versions"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg><span>سجل النسخ</span><small>ارجع إلى نسخة سابقة</small></button></div><h3 class="app-tool-heading">إعداد ومراجعة</h3><div id="appToolActions"></div><h3 class="app-tool-heading">ملف الامتحان</h3><div class="app-tool-list"><button type="button" class="btn" data-action="new"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>امتحان جديد</button><button type="button" class="btn" data-action="export-json"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>تنزيل ملف الأسئلة</button><button type="button" class="btn" data-action="import"><svg class="icon" aria-hidden="true"><use href="#i-upload"/></svg>فتح ملف محفوظ</button><button type="button" class="btn" data-action="help"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>إرشادات الطباعة</button></div></dialog>
+<dialog class="dialog paper-template-dialog" id="paperTemplateDialog" aria-labelledby="paperTemplateProofHeading" aria-describedby="paperTemplateProofDescription">
+    <button type="button" class="icon-btn dialog-close" data-close="paperTemplateDialog" aria-label="إغلاق معاينة القالب"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <h2 id="paperTemplateProofHeading">معاينة القالب</h2>
+    <p id="paperTemplateProofDescription"></p>
+    <div class="paper-template-proof-stage" id="paperTemplateProofStage"><div id="paperTemplateProofPages"></div></div>
+    <div class="dialog-actions"><button type="button" class="btn primary" id="paperTemplateProofApply" data-action="paper-template-apply">تطبيق القالب</button><button type="button" class="btn secondary" data-close="paperTemplateDialog">إغلاق المعاينة</button></div>
+  </dialog>
 <div class="measurement-root" id="measurementRoot" aria-hidden="true"></div>
   <div id="print-root" aria-hidden="true"></div>
   <div class="toast" id="toast" role="status" aria-live="polite"><span id="toastText"></span><button id="undoButton" hidden>تراجع</button></div>
@@ -523,7 +643,22 @@ globalThis.WaraqaMath = (() => {
     const TYPES=['essay','branches','choice','truefalse','blanks'];
     const FRAME_STYLES={none:'بلا إطار',solid:'كلاسيكي',double:'مزدوج',rounded:'زوايا دائرية',dashed:'متقطع',dotted:'منقّط',corners:'زوايا فقط',decorated:'مزخرف'};
     const META={country:'جمهورية العراق',ministry:'وزارة التربية',directorate:'مديرية التربية',school:'',title:'امتحانات نصف السنة',year:'2025 - 2026',basmala:'بسم الله الرحمن الرحيم',grade:'الثالث المتوسط',subject:'اللغة العربية',date:'2026-09-17',duration:'ساعتان',note:'الإجابة عن جميع الأسئلة',teacher:'علاء كاظم',teacherLabel:'مدرس المادة',footer:'مع تمنياتنا لكم بالنجاح والتوفيق',expectedScore:100};
-    const SETTINGS={fontSize:15,lineHeight:1.7,gap:3.4,font:'amiri',distribute:true,showGrades:true,showFrame:true,showStudent:false,showTotal:false,numerals:'western',language:'ar',frameStyle:'solid',questionLabelStyle:'short',gradeFormat:'arabic',gradeFormatVersion:2};
+    const PAPER_TEMPLATES=[
+      {id:'original',name:'القالب الأصلي',category:'الأصل',description:'التصميم الكلاسيكي الأصلي لورقة الامتحان.',accent:'#111111',soft:'#f4f4f4',frame:'solid'},
+      {id:'waqar',name:'الرصين',category:'كلاسيكي',description:'إطار مزدوج وعناوين هادئة بلمسة خضراء.',accent:'#294c41',soft:'#edf3ef',frame:'double'},
+      {id:'academic',name:'الأكاديمي',category:'رسمي',description:'ترويسة منظمة وشرائط أنيقة لعناوين الأسئلة.',accent:'#293f5d',soft:'#eef2f7',frame:'solid'},
+      {id:'elite',name:'النخبة',category:'فاخر',description:'تفاصيل نحاسية وزخرفة رقيقة حول الورقة.',accent:'#67563d',soft:'#f4f0e9',frame:'decorated'},
+      {id:'minimal',name:'البسيط',category:'هادئ',description:'زوايا مفتوحة وخطوط خفيفة تمنح النص مساحة.',accent:'#303a3b',soft:'#f2f4f3',frame:'corners'},
+      {id:'oasis',name:'الواحة',category:'ناعم',description:'زوايا مستديرة وترويسة بلون أخضر لطيف.',accent:'#1c5c50',soft:'#edf5f2',frame:'rounded'},
+      {id:'geometry',name:'الهندسي',category:'حديث',description:'تفاصيل هندسية وفواصل متقطعة متوازنة.',accent:'#3a4c5f',soft:'#edf1f5',frame:'corners'},
+      {id:'heritage',name:'التراث',category:'أصيل',description:'حلية عربية بسيطة وخطوط مزدوجة دافئة.',accent:'#614a42',soft:'#f5efeb',frame:'decorated'},
+      {id:'horizon',name:'الأفق',category:'معاصر',description:'خط علوي أزرق وعناوين واضحة بخطوط رفيعة.',accent:'#355673',soft:'#eff4f8',frame:'solid'},
+      {id:'manuscript',name:'المخطوط',category:'كلاسيكي',description:'ترويسة مزدوجة وعناوين بطابع ورقي أصيل.',accent:'#3d4a3c',soft:'#f1f4ee',frame:'double'},
+      {id:'balance',name:'التوازن',category:'منظم',description:'ترويسة متناظرة ومساحات عناوين بلون هادئ.',accent:'#555060',soft:'#f2f0f5',frame:'rounded'},
+      {id:'identity',name:'الهوية',category:'مميز',description:'لمسات جانبية خضراء تبرز الترويسة والأسئلة.',accent:'#365e59',soft:'#eef5f3',frame:'solid'},
+      {id:'signature',name:'التوقيع',category:'أنيق',description:'عنوان مستدير ودرجات مؤطرة بتفاصيل رقيقة.',accent:'#4a4650',soft:'#f2f1f5',frame:'double'}
+    ];
+    const SETTINGS={paperTemplate:'original',fontSize:15,lineHeight:1.7,gap:3.4,font:'amiri',distribute:true,showGrades:true,showFrame:true,showStudent:false,showTotal:false,numerals:'western',language:'ar',frameStyle:'solid',questionLabelStyle:'short',gradeFormat:'arabic',gradeFormatVersion:2};
     const letters=['أ','ب','ج','د','هـ','و','ز','ح','ط','ي','ك','ل','م','ن','س','ع','ف','ص','ق','ر','ش','ت','ث','خ','ذ','ض','ظ','غ'];
     const uid=()=>typeof crypto!=='undefined'&&crypto.randomUUID?crypto.randomUUID():('q-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,9));
     const clone=x=>JSON.parse(JSON.stringify(x));
@@ -571,7 +706,7 @@ globalThis.WaraqaMath = (() => {
       if(raw.version!==1)throw new Error('صيغة الملف غير مدعومة. اختر ملفًا حُفظ من ورقة.');
       const doc={version:1,experienceVersion:raw.experienceVersion===2?2:1,id:str(raw.id,100)||uid(),metadata:{...META},settings:{...SETTINGS},questions:[]};
       const m=raw.metadata||{};for(const k of Object.keys(META))doc.metadata[k]=k==='expectedScore'?num(m[k],0,10000,100):(typeof m[k]==='string'?str(m[k],k==='note'?1000:400):META[k]);
-      const s=raw.settings||{};doc.settings.fontSize=num(s.fontSize,11,22,15);doc.settings.lineHeight=num(s.lineHeight,1.3,2.1,1.7);doc.settings.gap=num(s.gap,1.5,6,3.4);doc.settings.font=['amiri','naskh','sans'].includes(s.font)?s.font:'amiri';doc.settings.numerals=s.numerals==='arabic'?'arabic':'western';doc.settings.questionLabelStyle=s.questionLabelStyle==='full'?'full':'short';doc.settings.gradeFormat=['arabic','western'].includes(s.gradeFormat)?s.gradeFormat:s.gradeFormat==='words'&&s.gradeFormatVersion===2?'words':'arabic';for(const k of ['distribute','showGrades','showFrame','showStudent','showTotal'])doc.settings[k]=typeof s[k]==='boolean'?s[k]:SETTINGS[k];doc.settings.language=s.language==='en'?'en':'ar';doc.settings.frameStyle=Object.prototype.hasOwnProperty.call(FRAME_STYLES,s.frameStyle)?s.frameStyle:'solid';if(doc.settings.frameStyle==='none')doc.settings.showFrame=false;
+      const s=raw.settings||{};doc.settings.paperTemplate=PAPER_TEMPLATES.some(item=>item.id===s.paperTemplate)?s.paperTemplate:'original';doc.settings.fontSize=num(s.fontSize,11,22,15);doc.settings.lineHeight=num(s.lineHeight,1.3,2.1,1.7);doc.settings.gap=num(s.gap,1.5,6,3.4);doc.settings.font=['amiri','naskh','sans'].includes(s.font)?s.font:'amiri';doc.settings.numerals=s.numerals==='arabic'?'arabic':'western';doc.settings.questionLabelStyle=s.questionLabelStyle==='full'?'full':'short';doc.settings.gradeFormat=['arabic','western'].includes(s.gradeFormat)?s.gradeFormat:s.gradeFormat==='words'&&s.gradeFormatVersion===2?'words':'arabic';for(const k of ['distribute','showGrades','showFrame','showStudent','showTotal'])doc.settings[k]=typeof s[k]==='boolean'?s[k]:SETTINGS[k];doc.settings.language=s.language==='en'?'en':'ar';doc.settings.frameStyle=Object.prototype.hasOwnProperty.call(FRAME_STYLES,s.frameStyle)?s.frameStyle:'solid';if(doc.settings.frameStyle==='none')doc.settings.showFrame=false;
       const ids=new Set();doc.questions=raw.questions.slice(0,200).map(q=>{if(!q||typeof q!=='object')q={};let id=typeof q.id==='string'&&/^[a-zA-Z0-9_-]{1,100}$/.test(q.id)?q.id:uid();if(ids.has(id))id=uid();ids.add(id);return{id,title:str(q.title,200),type:TYPES.includes(q.type)?q.type:'essay',text:str(q.text),score:num(q.score,0,10000,20),autoGrade:q.autoGrade!==false,branchStyle:q.branchStyle==='numbers'?'numbers':'letters',answerLines:Math.round(num(q.answerLines,0,50,0)),blankWidth:num(q.blankWidth,10,80,28),pageBreak:q.pageBreak===true,branches:Array.isArray(q.branches)?q.branches.slice(0,100).map(b=>({id:uid(),text:str(b?.text),score:num(b?.score,0,10000,0)})):[],choices:Array.isArray(q.choices)?q.choices.slice(0,50).map(c=>str(c)):['','']};});return doc;
     }
     function migrateSavedDocument(raw){
@@ -659,7 +794,7 @@ globalThis.WaraqaMath = (() => {
       });return pages;
     }
     function moveQuestion(doc,id,delta){const i=doc.questions.findIndex(q=>q.id===id),j=i+delta;if(i<0||j<0||j>=doc.questions.length)return false;[doc.questions[i],doc.questions[j]]=[doc.questions[j],doc.questions[i]];return true;}
-    return{META,SETTINGS,FRAME_STYLES,uid,clone,escape,formatText,richRuns,runsHTML,num,blankQuestion,defaultDocument,sampleDocument,migrateSavedDocument,normalize,validateImport,isBranch,gradeOf,total,number,label,questionLabel,gradeText,degree,unitsFor,planPages,moveQuestion};
+    return{META,SETTINGS,FRAME_STYLES,PAPER_TEMPLATES,uid,clone,escape,formatText,richRuns,runsHTML,num,blankQuestion,defaultDocument,sampleDocument,migrateSavedDocument,normalize,validateImport,isBranch,gradeOf,total,number,label,questionLabel,gradeText,degree,unitsFor,planPages,moveQuestion};
   })();
   
 </script>
@@ -992,6 +1127,7 @@ globalThis.WaraqaStudio = (() => {
     if(v&&typeof v.fingerprint==='string'&&Array.isArray(v.plans)&&v.plans.length>=2&&v.plans.length<=4){
       try{
         const candidate=clone(v);
+        if(!Object.hasOwn(raw.settings||{},'paperTemplate')){const legacy=clone(d);delete legacy.settings.paperTemplate;if(candidate.fingerprint===fingerprint(legacy))candidate.fingerprint=fingerprint(d);}
         if(JSON.stringify(candidate).length<300000&&candidate.fingerprint===fingerprint(d)&&candidate.plans.every((p,i)=>validPlan(d,p)&&p.code==='ABCD'[i])&&new Set(candidate.plans.map(p=>JSON.stringify([p.order,p.branches,p.choices]))).size===candidate.plans.length)d.variantPlan=candidate;
       }catch{}
     }
@@ -1234,7 +1370,7 @@ globalThis.WaraqaCatalog = (() => {
   'use strict';
   globalThis.WaraqaNavigation={create(options){
     const env=options.env||window;
-    const clean=view=>({tab:['questions','metadata','format','archive','bank','versions'].includes(view?.tab)?view.tab:'questions',selected:typeof view?.selected==='string'&&/^[a-zA-Z0-9_-]+$/.test(view.selected)?view.selected:null,mobilePreview:view?.mobilePreview===true});
+    const clean=view=>({tab:['questions','metadata','format','archive','bank','versions','templates'].includes(view?.tab)?view.tab:'questions',selected:typeof view?.selected==='string'&&/^[a-zA-Z0-9_-]+$/.test(view.selected)?view.selected:null,mobilePreview:view?.mobilePreview===true});
     const prior=env.history.state;
     const reusable=prior?.waraqaNavigation===1&&typeof prior.session==='string';
     const session=reusable?prior.session:(options.session||'waraqa-'+Date.now()+'-'+Math.random().toString(36).slice(2));
@@ -1491,9 +1627,9 @@ globalThis.WaraqaAuth = (() => {
         checkField('بدء السؤال في صفحة جديدة','pageBreak',q.pageBreak,'q')+(M.isBranch(q)?checkField('جمع درجات الفروع تلقائيًا','autoGrade',q.autoGrade,'q'):'')+'</div></details></div>';
       return'<article class="question-card selected" data-question="'+q.id+'">'+header+body+'</article>';
     }
-    function updateSummary(){updateModelContext();const n=doc.questions.length,total=M.total(doc),expected=doc.metadata.expectedScore;$('totalScore').textContent=total;$('expectedScore').textContent=expected;$('questionCount').textContent=n+' أسئلة';$('editorCounter').textContent=activeTab==='questions'?(n?n+' أسئلة':'لا توجد أسئلة بعد'):'تحديث مباشر';$('documentContext').textContent=[doc.metadata.subject,doc.metadata.grade].filter(Boolean).join(' · ')||'ورقة امتحان جديدة';$('addQuestion').hidden=activeTab!=='questions'||n===0;$('scoreMeter').style.width=(expected>0?Math.min(100,total/expected*100):100)+'%';$('scoreMeter').style.background=Math.abs(total-expected)<.001?'#709781':'#c5a06c';$('scoreWarning').hidden=n===0||Math.abs(total-expected)<.001;$('scoreWarning').textContent='مجموع الدرجات '+total+'، والدرجة المطلوبة '+expected+'.';}
-    function setTab(tab,focus=false,record=true){if(tab==='bank'&&activeTab!=='bank')resetCatalogView();activeTab=tab;for(const b of document.querySelectorAll('[data-tab]')){const active=b.dataset.tab===tab;b.classList.toggle('active',active);b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1;if(active&&focus)b.focus();}for(const name of ['questions','metadata','format','archive','bank','versions'])$(name+'Panel').hidden=name!==tab;$('editorTitle').textContent={questions:'الأسئلة والدرجات',metadata:'بيانات الامتحان',format:'التنسيق والطباعة',archive:'أرشيف الامتحانات',bank:'بنك الأسئلة',versions:'سجل النسخ'}[tab];if(tab==='archive')renderArchive();if(tab==='bank')renderBank();if(tab==='versions')renderVersions();$('addQuestion').hidden=tab!=='questions';$('editorScroll').scrollTop=0;updateSummary();appSyncNavigation();if(record)trackView();}
-    function renderEditor(){renderMetadata();renderFormat();renderQuestions();updateSummary();}
+    function updateSummary(){updateModelContext();const n=doc.questions.length,total=M.total(doc),expected=doc.metadata.expectedScore;$('totalScore').textContent=total;$('expectedScore').textContent=expected;$('questionCount').textContent=n+' أسئلة';$('editorCounter').textContent=activeTab==='questions'?(n?n+' أسئلة':'لا توجد أسئلة بعد'):activeTab==='templates'?'12 قالبًا':'تحديث مباشر';$('documentContext').textContent=[doc.metadata.subject,doc.metadata.grade].filter(Boolean).join(' · ')||'ورقة امتحان جديدة';$('addQuestion').hidden=activeTab!=='questions'||n===0;$('scoreMeter').style.width=(expected>0?Math.min(100,total/expected*100):100)+'%';$('scoreMeter').style.background=Math.abs(total-expected)<.001?'#709781':'#c5a06c';$('scoreWarning').hidden=n===0||Math.abs(total-expected)<.001;$('scoreWarning').textContent='مجموع الدرجات '+total+'، والدرجة المطلوبة '+expected+'.';}
+    function setTab(tab,focus=false,record=true){if(tab==='bank'&&activeTab!=='bank')resetCatalogView();activeTab=tab;for(const b of document.querySelectorAll('[data-tab]')){const active=b.dataset.tab===tab;b.classList.toggle('active',active);b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1;if(active&&focus)b.focus();}for(const name of ['questions','metadata','format','archive','bank','versions','templates'])$(name+'Panel').hidden=name!==tab;$('editorTitle').textContent={questions:'الأسئلة والدرجات',metadata:'بيانات الامتحان',format:'التنسيق والطباعة',archive:'أرشيف الامتحانات',bank:'بنك الأسئلة',versions:'سجل النسخ',templates:'قوالب جديدة'}[tab];if(tab==='templates')renderPaperTemplates();if(tab==='archive')renderArchive();if(tab==='bank')renderBank();if(tab==='versions')renderVersions();$('addQuestion').hidden=tab!=='questions';$('editorScroll').scrollTop=0;updateSummary();appSyncNavigation();if(record)trackView();}
+    function renderEditor(){renderMetadata();renderFormat();renderQuestions();if(activeTab==='templates')renderPaperTemplates();updateSummary();}
     function setDocument(next){v5Active='base';undoAction=null;$('undoButton').hidden=true;doc=M.normalize(next);resetHistory();selected=doc.questions[0]?.id||null;renderEditor();setTab('questions',false,false);trackView(true);queueUpdate();}
     function unitHTML(unit){
       if(unit.kind==='visual'||unit.kind==='visual-row')return WaraqaVisual.render(unit.visual,unit.startRow||0,unit.endRow??null,unit.first!==false);
@@ -1514,6 +1650,7 @@ globalThis.WaraqaAuth = (() => {
       const m=doc.metadata,s=doc.settings,english=s.language==='en',p=document.createElement('div'),frame=s.showFrame?s.frameStyle:'none';
       const t=english?{grade:'Grade',subject:'Subject',date:'Date',duration:'Time',note:'Note',student:'Student name',section:'Section',total:'Total marks',page:'Page',of:'of'}:{grade:'الصف',subject:'المادة',date:'التاريخ',duration:'الزمن',note:'ملاحظة',student:'اسم الطالب',section:'الشعبة',total:'مجموع الدرجات',page:'الصفحة',of:'من'};
       p.className='exam-page frame-'+frame+(frame==='none'?' no-frame':'');
+      const template=paperTemplate(s.paperTemplate);p.dataset.paperTemplate=template.id;p.style.setProperty('--paper-accent',template.accent);p.style.setProperty('--paper-soft',template.soft);
       p.dir=english?'ltr':'rtl';p.lang=english?'en':'ar';
       const fonts=english?{amiri:"Georgia,'Times New Roman',serif",naskh:"'Times New Roman',serif",sans:'Arial,sans-serif'}:{amiri:"'Waraqa Amiri','Traditional Arabic',serif",naskh:"'Waraqa Naskh','Traditional Arabic',serif",sans:"'Waraqa Sans',Tahoma,sans-serif"};
       p.style.setProperty('--exam-font-size',s.fontSize+'pt');p.style.setProperty('--exam-line-height',String(s.lineHeight));p.style.setProperty('--exam-gap',s.gap+'mm');p.style.fontFamily=fonts[s.font];
@@ -2619,7 +2756,82 @@ globalThis.WaraqaAuth = (() => {
       try{const seen=await repository.get('preference','visual-demo-v1');if(!seen?.seen)await wvLoadDemo(true);}catch{toast('تعذّر فتح ورقة العرض تلقائيًا. يمكنك فتحها من أدوات الامتحان بعد حفظ عملك.');}
     }
 
-    // Application navigation and progressive disclosure; exam rendering stays unchanged.
+    // Template identity travels with the exam, including JSON, archives and variants.
+    function paperTemplate(id){return M.PAPER_TEMPLATES.find(item=>item.id===id)||M.PAPER_TEMPLATES[0];}
+    function paperTemplateSettings(settings,template){return {...settings,paperTemplate:template.id,frameStyle:template.frame,showFrame:true};}
+    function paperTemplateThumbnail(template){
+      const original=doc;
+      try{
+        const sample=M.defaultDocument();
+        sample.metadata={...sample.metadata,country:'جمهورية العراق',ministry:'وزارة التربية',directorate:'المديرية العامة للتربية',school:'مدرسة الأمل',basmala:'بسم الله الرحمن الرحيم',title:'أسئلة الامتحان',year:'2026 - 2027',grade:'الأول المتوسط',subject:'اللغة العربية',date:'',duration:'ساعة واحدة',note:'أجب عن الأسئلة الآتية',footer:'مع تمنياتنا لكم بالنجاح',teacher:'مدرّس المادة',teacherLabel:''};
+        sample.settings=paperTemplateSettings({...sample.settings,showStudent:true},template);
+        doc=sample;const page=pageElement();
+        page.setAttribute('aria-hidden','true');
+        page.querySelector('.exam-questions').innerHTML=[
+          ['القواعد','اقرأ الجملة الآتية، ثم أجب عن المطلوب.','أ) استخرج الفعل والفاعل من الجملة.','ب) أعرب الكلمة التي تحتها خط.'],
+          ['الأدب والنصوص','أجب عن فرعين مما يأتي:','أ) ما الفكرة الرئيسة في النص؟','ب) اكتب بيتين مما تحفظ.'],
+          ['التعبير','اكتب موضوعًا في حب الوطن، مراعيًا علامات الترقيم.']
+        ].map((item,i)=>'<section class="exam-question"><div class="q-head"><span class="q-title">س'+(i+1)+'/ ('+item[0]+')</span><span class="q-grade">٢٠ درجة</span></div><div class="question-content">'+item.slice(1).map(text=>'<div class="q-unit"><p class="q-text">'+text+'</p></div>').join('')+'<div class="q-unit answer-line"></div></div></section>').join('');
+        return page.outerHTML;
+      }finally{doc=original;}
+    }
+    function renderPaperTemplates(){
+      const panel=$('templatesPanel');if(!panel)return;
+      const focused=document.activeElement?.closest('#templatesPanel [data-action]');
+      const focusAction=focused?.dataset.action,focusTemplate=focused?.dataset.templateId;
+      const current=paperTemplate(doc.settings.paperTemplate),templates=M.PAPER_TEMPLATES.filter(item=>item.id!=='original');
+      panel.innerHTML='<section class="paper-templates-intro" aria-labelledby="paperTemplatesHeading"><div class="paper-templates-kicker">'+ic('grid')+'<span>12 تصميمًا اختياريًا · مقاس A4</span></div><h3 id="paperTemplatesHeading">روح ورقتك، بتفاصيل أجمل.</h3><p>اختر تصميمًا يناسب امتحانك، واضغط تطبيق القالب ليظهر على جميع أسئلتك وفي الطباعة. تبقى النصوص والدرجات كما كتبتها.</p><div class="paper-templates-current"><span role="status" aria-live="polite">القالب الحالي: <strong>'+E(current.name)+'</strong></span><button type="button" class="btn secondary" data-action="paper-template-apply" data-template-id="original"'+(current.id==='original'?' hidden':'')+'>العودة إلى القالب الأصلي</button></div></section><div class="paper-templates-grid" aria-label="قوالب ورقة الامتحان">'+templates.map((template,i)=>{
+        const active=template.id===current.id;
+        return '<article class="paper-template-card'+(active?' is-applied':'')+'" data-template-card="'+template.id+'" aria-labelledby="templateTitle-'+template.id+'"><div class="paper-template-thumbnail" aria-hidden="true"><span class="paper-template-number">'+String(i+1).padStart(2,'0')+'</span>'+(active?'<span class="paper-template-badge">'+ic('check')+'مطبّق</span>':'')+paperTemplateThumbnail(template)+'</div><div class="paper-template-card-body"><div class="paper-template-card-heading"><h3 id="templateTitle-'+template.id+'">'+E(template.name)+'</h3><span class="paper-template-tag">'+E(template.category)+'</span></div><p>'+E(template.description)+'</p><div class="paper-template-actions"><button type="button" class="btn '+(active?'soft':'secondary')+' paper-template-apply" data-action="paper-template-apply" data-template-id="'+template.id+'" aria-pressed="'+active+'" aria-label="'+(active?'القالب الحالي: ':'تطبيق قالب ')+E(template.name)+'">'+(active?ic('check')+'القالب الحالي':'تطبيق القالب')+'</button><button type="button" class="icon-btn" data-action="paper-template-preview" data-template-id="'+template.id+'" aria-label="معاينة قالب '+E(template.name)+'" title="معاينة قبل التطبيق">'+ic('eye')+'</button></div></div></article>';
+      }).join('')+'</div><p class="paper-template-footnote">'+ic('info')+'<span>المعاينات المصغرة توضيحية. اضغط رمز العين لرؤية التصميم على أسئلتك قبل تطبيقه. يُحفظ اختيارك تلقائيًا مع الامتحان.</span></p>';
+      if(focusAction){const next=panel.querySelector('[data-action="'+focusAction+'"][data-template-id="'+focusTemplate+'"]');if(next&&!next.hidden)next.focus({preventScroll:true});else panel.querySelector('.paper-template-apply[aria-pressed="true"]')?.focus({preventScroll:true});}
+    }
+    function applyPaperTemplate(id){
+      const template=M.PAPER_TEMPLATES.find(item=>item.id===id);if(!template)return;
+      const desired=paperTemplateSettings(doc.settings,template);
+      if(doc.settings.paperTemplate===id&&doc.settings.frameStyle===desired.frameStyle&&doc.settings.showFrame){toast('هذا القالب مطبّق على ورقتك.');return;}
+      doc.settings=desired;
+      if(doc.variantPlan)doc.variantPlan.fingerprint=S.fingerprint(doc);
+      interaction={source:'doc',kind:'action',key:''};
+      queueUpdate();renderFormat();renderPaperTemplates();renderPreview();
+      toast(id==='original'?'تمت العودة إلى القالب الأصلي.':'تم تطبيق قالب '+template.name+' على جميع الأسئلة.');
+    }
+    function scalePaperTemplatePreview(){
+      const stage=$('paperTemplateProofStage');if(!$('paperTemplateDialog')?.open||!stage)return;
+      const style=getComputedStyle(stage),available=stage.clientWidth-parseFloat(style.paddingLeft)-parseFloat(style.paddingRight);
+      if(available<=0)return;
+      for(const wrap of $('paperTemplateProofPages').children){const page=wrap.firstElementChild;if(!page)continue;const scale=Math.min(available/page.offsetWidth,1);wrap.style.width=(page.offsetWidth*scale)+'px';wrap.style.height=(page.offsetHeight*scale)+'px';page.style.transform='scale('+scale+')';}
+    }
+    async function previewPaperTemplate(id){
+      const template=M.PAPER_TEMPLATES.find(item=>item.id===id);if(!template)return;
+      await fontPromise;await document.fonts.ready;
+      try{
+        const empty=!doc.questions.length,target=M.clone(empty?M.sampleDocument():v5Current());
+        target.settings=paperTemplateSettings(target.settings,template);
+        const pages=v5Pages(target);
+        $('paperTemplateProofHeading').textContent='معاينة قالب '+template.name;
+        $('paperTemplateProofDescription').textContent=empty?'أسئلة توضيحية لمعاينة التصميم. يمكنك تطبيق القالب الآن وإضافة أسئلتك لاحقًا.':'معاينة على أسئلتك الحالية · '+pages.length+' صفحة. اضغط تطبيق القالب لاعتماده.';
+        const deck=$('paperTemplateProofPages');deck.replaceChildren();
+        for(const page of pages){const wrap=document.createElement('div');wrap.className='paper-template-proof-page';wrap.append(page);deck.append(wrap);}
+        const apply=$('paperTemplateProofApply');apply.dataset.templateId=id;apply.textContent='تطبيق قالب '+template.name;
+        $('paperTemplateDialog').showModal();$('paperTemplateProofStage').scrollTop=0;scalePaperTemplatePreview();
+      }catch(error){toast(error.message||'تعذّرت معاينة القالب.');}
+    }
+    document.addEventListener('click',event=>{
+      const button=event.target.closest('[data-action^="paper-template-"]');if(!button)return;
+      if(button.dataset.action==='paper-template-preview')previewPaperTemplate(button.dataset.templateId);
+      if(button.dataset.action==='paper-template-apply'){
+        if(button.closest('#paperTemplateDialog'))$('paperTemplateDialog').close();
+        applyPaperTemplate(button.dataset.templateId);
+      }
+    });
+    $('paperTemplateDialog').addEventListener('click',event=>{
+      if(event.target!==event.currentTarget)return;const r=event.currentTarget.getBoundingClientRect();
+      if(event.clientY<r.top||event.clientY>r.bottom||event.clientX<r.left||event.clientX>r.right)event.currentTarget.close();
+    });
+    window.addEventListener('resize',scalePaperTemplatePreview);
+
+    // Application navigation and progressive disclosure.
     let appRememberedEditor='questions';
     const appOpenGroups={metadata:0,format:0};
     function appGroupPanels(name){
@@ -2642,7 +2854,7 @@ globalThis.WaraqaAuth = (() => {
       document.body.dataset.appTab=activeTab;
       const core=['questions','metadata','format'].includes(activeTab);
       if(core&&!preview)appRememberedEditor=activeTab;
-      const current=preview?'preview':activeTab==='bank'?'bank':activeTab==='archive'?'archive':activeTab==='versions'?'more':'edit';
+      const current=preview?'preview':activeTab==='templates'?'templates':activeTab==='archive'?'archive':['bank','versions'].includes(activeTab)?'more':'edit';
       document.querySelectorAll('[data-app-destination]').forEach(button=>{
         const active=button.dataset.appDestination===current;
         button.classList.toggle('active',active);
@@ -2689,7 +2901,7 @@ globalThis.WaraqaAuth = (() => {
         if(destination){
           const route=destination.dataset.appDestination;
           if(route==='more')return;
-          if(route==='bank'||route==='archive')appNavigate(route);
+          if(route==='templates'||route==='archive')appNavigate(route);
           if(route==='edit')appNavigate(appRememberedEditor);
         }
         const launch=event.target.closest('#appToolsDialog button:not([data-close])');
