@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
-  <meta name="theme-color" content="#FEF7FF">
+  <meta name="theme-color" content="#171420">
   <meta name="description" content="ورقة: مساحة عربية سهلة لكتابة أسئلة الامتحان، توزيع الدرجات ومعاينة ورقة A4 وطباعتها.">
   <title>ورقة — استوديو الامتحانات</title>
   <style>
@@ -862,6 +862,165 @@ html,body{min-height:100%;margin:0}body{overflow-x:hidden}.login-card{border:0!i
   }
 }
 </style>
+<style id="waraqa-trial-and-worksheet">
+[hidden]{display:none!important}
+#print-guidance{display:none}
+.answer-spaces .answer-line{height:var(--answer-line-pitch,8mm)}
+.answer-spaces .match-print-row{grid-template-columns:minmax(0,1fr) minmax(20mm,auto) minmax(0,1fr)}
+.answer-spaces .match-space{min-inline-size:20mm;border:0}
+.answer-spaces .order-answer{inline-size:10mm}
+.choice-circle,.truth-options i{display:inline-block;inline-size:5mm;block-size:5mm;border:1px solid currentColor;vertical-align:middle}
+.choice-circle{border-radius:50%;margin-inline-end:2mm}
+.truth-options{display:inline-flex;gap:3mm;margin-inline-start:4mm;flex-wrap:wrap;max-inline-size:100%;vertical-align:middle}
+.truth-options>span{display:inline-flex;align-items:center;gap:1mm;white-space:nowrap}
+.three-sheet[dir=ltr]{direction:ltr}
+.three-questions .answer-rules .answer-line{block-size:8mm}
+@media print{
+  .author-footer{display:none!important}
+  body:has(#print-root:empty) #print-guidance{display:block!important;padding:18mm;color:#111;background:#fff}
+}
+@media screen{
+  :where(button,input,select,textarea,summary,a):focus-visible{
+    outline:2px solid var(--work-accent,var(--green))!important;
+    outline-offset:3px;
+  }
+  .author-card,#continueGuest,.ux-empty-choices .btn,
+  .work-imports .btn,.app-editor-tools .btn,.work-add,
+  #trialEndedDialog .btn,
+  .topbar [data-theme-toggle],.topbar #moreButton,.topbar .topbar-new,
+  .login-submit,.password-toggle{min-block-size:48px!important}
+  #continueGuest{margin-block-start:12px;width:100%}
+  #app .workspace{padding-block-end:24px!important}
+  .author-footer{
+    max-inline-size:800px;margin-inline:auto;
+    padding:0 16px calc(96px + env(safe-area-inset-bottom));
+  }
+  .author-card{
+    --author-accent:#126047;
+    --author-tint:#e3f5eb;
+    display:grid;grid-template-columns:46px minmax(0,1fr) auto;align-items:center;gap:12px;
+    min-block-size:72px;padding:12px 14px;
+    border:1px solid var(--work-line);border-radius:20px;
+    background:var(--work-card);color:var(--work-text);text-decoration:none;
+  }
+  [data-theme=dark] .author-card{--author-accent:#a9e8c9;--author-tint:#243f34}
+  .author-mark{
+    display:grid;place-items:center;inline-size:46px;block-size:46px;border-radius:15px;
+    background:var(--author-tint);color:var(--author-accent);
+  }
+  .author-mark svg{inline-size:25px;block-size:25px}
+  .author-byline{display:grid;gap:2px;min-inline-size:0;line-height:1.5}
+  .author-byline>span{color:var(--work-muted);font-size:12px}
+  .author-byline strong{font-size:clamp(16px,4vw,19px);font-weight:700;overflow-wrap:anywhere}
+  .author-contact{
+    display:inline-flex;justify-self:end;align-items:center;gap:5px;
+    padding:6px 8px;border-radius:10px;color:var(--author-accent);font-size:13px;font-weight:670;
+  }
+  .author-contact svg{inline-size:16px;block-size:16px;flex:none}
+  .author-card:is(:hover,:focus-visible){border-color:var(--author-accent)}
+  .author-card:is(:hover,:focus-visible) .author-contact{background:var(--author-tint)}
+  @media(max-width:470px){
+    .author-card{grid-template-columns:46px minmax(0,1fr);gap:4px 12px}
+    .author-mark{grid-row:1/3}
+    .author-contact{grid-column:2;justify-self:start;padding:2px 0}
+  }
+  .question-answer-settings{margin-block:12px}
+  .work-add{min-inline-size:48px}
+  .work-imports{flex-wrap:wrap}
+  .work-imports .btn{flex:1 1 112px;justify-content:center;white-space:normal}
+  .app-group>summary:has(.app-group-label){grid-template-columns:minmax(0,1fr) auto}
+  .branch-row>.field:has([data-answer-lines]){grid-column:1/-1;margin:4px 0 8px;max-inline-size:220px}
+  .topbar [data-action=print]{
+    display:inline-flex!important;align-items:center;justify-content:center;
+    min-inline-size:48px;min-block-size:48px;padding:0!important;
+  }
+  @media(min-width:1021px){
+    #app{border-radius:0!important}
+    .author-footer{max-inline-size:1440px;margin-inline:88px auto;padding-inline:24px;padding-block-end:24px}
+    .author-card{max-inline-size:540px}
+  }
+}
+</style>
+<style id="compact-question-style">
+@media screen{
+  #questionsList .compact-question .card-top{
+    min-block-size:0;padding:6px 10px 2px!important;gap:8px!important;
+  }
+  #questionsList .compact-question .question-heading{
+    display:grid;grid-template-columns:minmax(0,1fr) 20px;align-items:center;gap:0 6px;
+    flex:1 1 auto;min-width:0;min-height:48px;padding:4px;
+  }
+  #questionsList .compact-question .question-heading strong{
+    min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  }
+  #questionsList .compact-question .question-heading>.icon,
+  #questionsList .compact-question .question-heading>.mi{grid-column:2;grid-row:1;color:var(--work-muted)}
+  #questionsList .compact-question .question-heading .subtitle{
+    grid-column:1;grid-row:2;-webkit-line-clamp:1;
+  }
+  #questionsList .compact-question .card-content{padding:2px 10px 10px!important}
+  #questionsList .inline-question-grade{
+    display:inline-flex;align-items:center;gap:4px;flex:none;min-block-size:48px;
+    padding-inline-start:8px;border-radius:12px;background:var(--work-nav);color:var(--work-text);
+  }
+  #questionsList .inline-question-grade .field-label{
+    position:static!important;margin:0!important;padding:0!important;background:none!important;
+    color:inherit!important;font-size:12px!important;white-space:nowrap;
+  }
+  #questionsList .inline-question-grade input[data-q=score]{
+    inline-size:56px!important;min-inline-size:0!important;min-block-size:48px!important;
+    margin:0!important;padding:4px!important;text-align:center;font-size:16px!important;
+    background:transparent!important;color:var(--work-text)!important;border:0!important;
+  }
+  #questionsList .compact-question .question-body-field{margin:0!important;padding:0!important}
+  #questionsList .compact-question .textarea-toolbar{
+    position:absolute!important;inline-size:1px;block-size:1px;
+    padding:0!important;margin:-1px!important;overflow:hidden;clip-path:inset(50%);white-space:nowrap;
+  }
+  #questionsList .compact-question textarea[data-q=text]{
+    box-sizing:border-box;display:block;width:100%;min-block-size:78px!important;
+    margin:0!important;padding:9px 10px!important;resize:vertical;
+    border:1px solid var(--work-muted)!important;border-radius:12px!important;
+    background:var(--work-surface)!important;color:var(--work-text)!important;
+    font-size:16px!important;line-height:1.65!important;
+  }
+  #questionsList .question-quick-actions{
+    display:flex;align-items:center;flex-wrap:wrap;gap:4px 8px;margin-block:4px;
+  }
+  #questionsList .question-quick-actions .type-row{
+    display:flex;align-items:center;gap:5px;flex:1 1 154px;margin:0!important;
+    min-inline-size:0;min-block-size:48px;padding:0 6px!important;
+    border:0!important;border-radius:12px!important;background:var(--work-nav)!important;
+  }
+  #questionsList .question-quick-actions .type-row>span:not(.mi){
+    font-size:12px!important;color:var(--work-muted)!important;white-space:nowrap;
+  }
+  #questionsList .question-quick-actions .type-select{
+    flex:1;min-inline-size:0;min-block-size:48px!important;margin:0!important;
+    background-color:transparent!important;color:var(--work-text)!important;
+    border:0!important;font-size:14px!important;padding-inline:4px 14px!important;
+  }
+  #questionsList .question-quick-actions .type-select option{
+    color:var(--work-text);background:var(--work-card);
+  }
+  #questionsList .question-quick-actions button{min-block-size:48px!important;margin:0!important;padding-inline:8px!important}
+  #questionsList .question-settings>summary{
+    display:flex;align-items:center;gap:8px;min-block-size:48px;padding-inline:8px;
+    list-style:none;cursor:pointer;color:var(--work-text);font-size:14px;font-weight:650;
+    border-block-start:1px solid var(--work-line);
+  }
+  #questionsList .question-settings>summary::-webkit-details-marker{display:none}
+  #questionsList .question-settings>summary>span:not(.mi){flex:1}
+  #questionsList .question-settings>summary>:last-child{inline-size:18px;block-size:18px}
+  #questionsList .question-settings[open]>summary>:last-child{transform:rotate(180deg)}
+  #questionsList .question-settings:not([open])>.question-settings-body{display:none}
+  #questionsList .question-settings-body{padding:12px 2px 0}
+  #questionsList .question-settings-body>.form-row{display:block}
+  #questionsList .question-settings-body>.format-buttons{display:flex;flex-wrap:wrap;gap:4px}
+  #questionsList .question-settings-body .format-button{min-block-size:48px}
+  #questionsList .question-settings-body .question-answer-settings .field-hint{display:block!important;margin-block:4px 12px}
+}
+</style>
 </head>
 <body class="auth-locked"><button class="btn v5-login-theme" data-theme-toggle aria-label="تفعيل الوضع الليلي" title="الوضع الليلي"><span data-theme-icon>☾</span></button>
   <svg class="icons" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
@@ -891,12 +1050,13 @@ html,body{min-height:100%;margin:0}body{overflow-x:hidden}.login-card{border:0!i
       <h1 id="loginTitle">تسجيل الدخول</h1>
       <p class="login-description">أدخل بريد الحساب وكلمة المرور المزوّدين لك للمتابعة.</p>
       <p class="login-checking" id="loginChecking" role="status">جارٍ التحقق من الدخول السابق…</p>
-      <form id="loginForm">
-        <label class="field" for="loginEmail"><span class="field-label">بريد الحساب</span><input id="loginEmail" name="username" type="email" inputmode="email" autocomplete="username" dir="ltr" maxlength="254" placeholder="name@example.com" required disabled></label>
-        <label class="field" for="loginPassword"><span class="field-label">كلمة المرور</span><span class="password-field"><input id="loginPassword" name="password" type="password" autocomplete="current-password" dir="ltr" maxlength="200" placeholder="أدخل كلمة المرور" required disabled><button class="password-toggle" type="button" id="toggleLoginPassword" aria-label="إظهار كلمة المرور" aria-pressed="false" disabled>إظهار</button></span></label>
+      <form id="loginForm" aria-describedby="loginError">
+        <label class="field" for="loginEmail"><span class="field-label">بريد الحساب</span><input id="loginEmail" name="username" type="email" inputmode="email" autocomplete="username" dir="ltr" maxlength="254" placeholder="name@example.com" aria-describedby="loginError" required disabled></label>
+        <label class="field" for="loginPassword"><span class="field-label">كلمة المرور</span><span class="password-field"><input id="loginPassword" name="password" type="password" autocomplete="current-password" dir="ltr" maxlength="200" placeholder="أدخل كلمة المرور" aria-describedby="loginError" required disabled><button class="password-toggle" type="button" id="toggleLoginPassword" aria-label="إظهار كلمة المرور" aria-pressed="false" disabled>إظهار</button></span></label>
         <div class="login-error" id="loginError" role="alert" aria-live="polite"></div>
         <button class="btn primary login-submit" type="submit" id="loginSubmit" disabled>دخول إلى المنصة</button>
       </form>
+      <button type="button" class="btn secondary" id="continueGuest">العودة إلى المحرّر</button>
       <div class="login-contact">
         <p class="login-contact-heading">ليس لديك حساب؟</p>
         <a class="login-contact-link" href="https://t.me/Ayman_donia" target="_blank" rel="noopener noreferrer" aria-label="التواصل وطلب اشتراك عبر تيليغرام، Ayman_donia (يفتح في علامة تبويب جديدة)">
@@ -920,15 +1080,11 @@ html,body{min-height:100%;margin:0}body{overflow-x:hidden}.login-card{border:0!i
             <div class="account-menu">الحساب الحالي<span class="account-email" id="accountEmail"></span></div>
             <button class="menu-item" id="logoutButton" type="button">تسجيل الخروج</button>
             <div class="menu-divider"></div>
-            
-            
-            
-            <div class="menu-divider"></div>
             <button class="menu-item" data-action="sample"><svg class="icon"><use href="#i-grid"/></svg>تحميل نموذج امتحان</button>
             <button class="menu-item" data-action="new"><svg class="icon"><use href="#i-plus"/></svg>امتحان جديد</button>
           </div>
         </div>
-        <button class="btn primary" data-action="print"><svg class="icon"><use href="#i-print"/></svg><span>مراجعة وطباعة</span></button>
+        <button class="btn primary" data-action="print" aria-label="طباعة" title="طباعة"><svg class="icon" aria-hidden="true"><use href="#i-print"/></svg></button>
       </div>
     </header>
     <div id="accountMemoryNotice" class="account-memory-notice" role="status" hidden></div>
@@ -953,6 +1109,15 @@ html,body{min-height:100%;margin:0}body{overflow-x:hidden}.login-card{border:0!i
           <button class="sidebar-help" data-action="help"><svg class="icon"><use href="#i-info"/></svg>إرشادات الطباعة</button>
         </aside>
         <section class="editor-column" aria-label="محرر الأسئلة">
+          <section class="md-home" aria-labelledby="workHeading">
+            <div class="work-heading">
+              <h2 class="md-home-title" id="workHeading">الأسئلة</h2>
+              <button type="button" class="work-new sl" data-action="new" aria-label="ورقة امتحان جديدة"><svg class="icon" aria-hidden="true"><use href="#i-paper"/></svg></button>
+            </div>
+            <p class="work-summary"><span><strong id="mdQuestions">0</strong> أسئلة</span><span><strong id="mdScore">0</strong> درجة</span><span><strong id="mdPages">1</strong> صفحة</span></p>
+            <button type="button" class="btn primary work-add sl" data-action="add"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>إضافة سؤال</button>
+            <div class="work-imports"></div>
+          </section>
           <div class="section-bar"><h2 id="editorTitle">الأسئلة والدرجات</h2><span class="counter" id="editorCounter">لا توجد أسئلة بعد</span></div>
           <div class="app-section-tabs" id="appSectionTabs" role="group" aria-label="خطوات إعداد الامتحان">
   <button type="button" data-app-tab="metadata" aria-pressed="false">البيانات</button>
@@ -974,13 +1139,25 @@ html,body{min-height:100%;margin:0}body{overflow-x:hidden}.login-card{border:0!i
         <section class="preview-column" aria-label="معاينة الورقة">
           <div class="preview-panel">
             <div class="preview-top"><div><h2><span class="live-dot"></span>معاينة ورقة الامتحان</h2><small>كما ستظهر عند الطباعة</small></div><div class="preview-actions"><span class="tag">A4</span><button class="icon-btn" id="expandButton" data-action="expand" aria-label="تكبير المعاينة" title="تكبير المعاينة"><svg class="icon"><use href="#i-expand"/></svg></button></div></div>
-            <div class="v5-preview-tools"><div id="v5VariantTabs"></div><button class="btn soft small v5-fit" data-v5="fit" id="v5FitButton">↙ صفحة واحدة</button><button class="btn secondary small" data-v5="review">✓ تدقيق</button></div><div class="preview-stage" id="previewStage"><div id="paperDeck"></div></div>
+            <div class="v5-preview-tools"><div id="v5VariantTabs"></div><button class="btn soft small v5-fit" data-v5="fit" id="v5FitButton">↙ صفحة واحدة</button><button class="btn secondary small" data-action="print">طباعة</button></div><div class="preview-stage" id="previewStage"><div id="paperDeck"></div></div>
             <div class="preview-bottom"><span><svg class="icon"><use href="#i-check"/></svg><span id="previewPages">صفحة واحدة</span></span><button data-action="help">إعدادات الطباعة</button><span>210 × 297 مم</span></div>
           </div>
           <div class="preview-notice"><svg class="icon"><use href="#i-shield"/></svg><span>أسئلتك محفوظة على جهازك. يمكنك تنزيل ملف للرجوع إليه لاحقًا.</span></div>
         </section>
       </div>
     </main>
+    <footer class="author-footer">
+      <a class="author-card" href="https://wa.me/9647732266723">
+        <span class="author-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.5L3.5 20.5l1.4-4.3a8.5 8.5 0 1 1 15.6-4.6Z"/>
+            <path d="m9.6 7.7-1.2.6c-.5.3-.5.7-.4 1.2a8.4 8.4 0 0 0 5.9 5.9c.5.1.9 0 1.1-.4l.7-1.2-2.2-1.1-.7.8a6 6 0 0 1-2.6-2.6l.7-.8-1.3-2.4Z"/>
+          </svg>
+        </span>
+        <span class="author-byline"><span>إعداد المهندس</span><strong>أيمن مناف ذياب</strong></span>
+        <span class="author-contact">التواصل عبر واتساب<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+      </a>
+    </footer>
     <nav class="mobile-switch" aria-label="التنقل الرئيسي"><button type="button" data-app-destination="edit" id="mobileEdit" data-action="mobile-edit" class="active" aria-current="page"><span class="app-nav-icon"><svg class="icon" aria-hidden="true"><use href="#i-edit"/></svg></span><span>ورقتي</span></button><button type="button" data-app-destination="templates"><span class="app-nav-icon"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg></span><span>قوالب جديدة</span></button><button type="button" data-app-destination="preview" id="mobilePreview" data-action="mobile-preview"><span class="app-nav-icon"><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg></span><span>المعاينة</span></button><button type="button" data-app-destination="archive" ><span class="app-nav-icon"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg></span><span>الأرشيف</span></button><button type="button" data-app-destination="more" data-app-open-tools><span class="app-nav-icon"><svg class="icon" aria-hidden="true"><use href="#i-more"/></svg></span><span>المزيد</span></button></nav>
   </div>
   <dialog class="dialog app-tools-dialog" id="appToolsDialog" aria-labelledby="appToolsHeading">
@@ -995,10 +1172,11 @@ html,body{min-height:100%;margin:0}body{overflow-x:hidden}.login-card{border:0!i
     <div class="dialog-actions"><button type="button" class="btn primary" id="paperTemplateProofApply" data-action="paper-template-apply">تطبيق القالب</button><button type="button" class="btn secondary" data-close="paperTemplateDialog">إغلاق المعاينة</button></div>
   </dialog>
 <div class="measurement-root" id="measurementRoot" aria-hidden="true"></div>
+  <div id="print-guidance">لطباعة الورقة، اضغط «طباعة» داخل المحرّر.</div>
   <div id="print-root" aria-hidden="true"></div>
   <div class="toast" id="toast" role="status" aria-live="polite"><span id="toastText"></span><button id="undoButton" hidden>تراجع</button></div>
   <dialog class="dialog" id="confirmDialog" aria-labelledby="confirmTitle" aria-describedby="confirmText"><h2 id="confirmTitle"></h2><p id="confirmText"></p><div class="dialog-actions"><button class="btn primary" id="confirmAccept">متابعة</button><button class="btn secondary" data-close="confirmDialog">إلغاء</button></div></dialog>
-  <dialog class="dialog" id="helpDialog" aria-labelledby="helpHeading"><button class="icon-btn dialog-close" data-close="helpDialog" aria-label="إغلاق"><svg class="icon"><use href="#i-close"/></svg></button><h2 id="helpHeading">ورقتك جاهزة للطباعة</h2><p>اضغط «طباعة الأسئلة»، ثم اختر الطابعة أو «حفظ بتنسيق PDF» من نافذة المتصفح.</p><ol><li>اختر الورق <b>A4</b> والاتجاه <b>عمودي</b>.</li><li>اجعل المقياس <b>100%</b>، والهوامش <b>بلا هوامش</b>.</li><li>أوقف <b>رؤوس الصفحات وتذييلاتها</b> حتى لا يظهر الرابط والتاريخ.</li></ol><div class="help-footnote">إطار الورقة يبعد 8 مم عن الأطراف. إذا غيّرت الخط أو الدرجات، راجع المعاينة قبل الطباعة. </div><div class="dialog-actions" style="margin-top:19px"><button class="btn primary" data-action="print">طباعة الآن</button><button class="btn secondary" data-close="helpDialog">إغلاق</button></div></dialog>
+  <dialog class="dialog" id="helpDialog" aria-labelledby="helpHeading"><button class="icon-btn dialog-close" data-close="helpDialog" aria-label="إغلاق"><svg class="icon"><use href="#i-close"/></svg></button><h2 id="helpHeading">ورقتك جاهزة للطباعة</h2><p>اضغط «طباعة»، ثم اختر الطابعة أو «حفظ بتنسيق PDF» من نافذة المتصفح.</p><ol><li>اختر الورق <b>A4</b> والاتجاه <b>عمودي</b>.</li><li>اجعل المقياس <b>100%</b>، والهوامش <b>بلا هوامش</b>.</li><li>أوقف <b>رؤوس الصفحات وتذييلاتها</b> حتى لا يظهر الرابط والتاريخ.</li></ol><div class="help-footnote">إطار الورقة يبعد 8 مم عن الأطراف. إذا غيّرت الخط أو الدرجات، راجع المعاينة قبل الطباعة. </div><div class="dialog-actions" style="margin-top:19px"><button class="btn primary" data-action="print">طباعة</button><button class="btn secondary" data-close="helpDialog">إغلاق</button></div></dialog>
   <dialog class="dialog equation-dialog" id="equationDialog" aria-labelledby="equationHeading">
     <button type="button" class="icon-btn dialog-close" data-close="equationDialog" aria-label="إغلاق"><svg class="icon"><use href="#i-close"/></svg></button>
     <h2 id="equationHeading">إضافة معادلة رياضية</h2>
@@ -1034,7 +1212,7 @@ html,body{min-height:100%;margin:0}body{overflow-x:hidden}.login-card{border:0!i
     <div class="dialog-actions table-dialog-footer"><button class="btn primary" data-action="table-save">حفظ الجدول</button><button class="btn secondary" data-close="tableDialog">إلغاء</button></div>
   </dialog>
   <dialog class="dialog wide-dialog" id="versionDialog" aria-labelledby="versionHeading"><button class="icon-btn dialog-close" data-close="versionDialog" aria-label="إغلاق">×</button><h2 id="versionHeading">تفاصيل النسخة السابقة</h2><div id="versionDetails"></div><button class="btn secondary" data-close="versionDialog">إغلاق</button></dialog>
-  <dialog class="dialog wide-dialog" id="featuresDialog" aria-labelledby="featuresHeading"><button class="icon-btn dialog-close" data-close="featuresDialog" aria-label="إغلاق">×</button><h2 id="featuresHeading">من البداية إلى الطباعة</h2><div class="v5-info">١. أدخل المادة والصف وبيانات الامتحان.<br>٢. أضف الأسئلة ودرجاتها ومفتاح إجابتها.<br>٣. اختر «مراجعة وطباعة» للتحقق من الورقة وتسليمها.</div><p>ابدأ بنموذج تدريبي من مادتك. من «نماذج A / B / C» أنشئ نسخًا مختلطة ومفاتيح تصحيحها. أدوات الشعر والآيات والقراءة داخل كل سؤال، وزر المظهر أعلى الشاشة يبدّل الوضع الليلي.</p><ol><li><b>الأرشيف:</b> اضغط «حفظ في الأرشيف» ثم ابحث بالمادة والصف والسنة من قسم الأرشيف. تُحفظ تغييرات الامتحان المؤرشف تلقائيًا.</li><li><b>بنك الأسئلة:</b> اختر المادة ثم الصف الدراسي. تتوفر النماذج الحالية في الأول المتوسط؛ اختر الشهر أو الامتحان لتظهر النماذج A وB وC. تتوفر نماذج الصفوف الأخرى في التحديث القادم. اضغط «تحرير النموذج» لتعديل نصوصه ودرجاته وحفظه تلقائيًا في البنك، أو «استخدام نسخة للامتحان» لفتح نسخة مستقلة. يمكنك البحث في الأسئلة كلها وإضافة سؤال منها إلى امتحانك. تضم العربية الجزء الثاني فقط.</li><li><b>الصور والجداول:</b> أضفها داخل السؤال، واضبط وصفها وموضعها. يدعم محرر الجدول دمج نطاق محدد وفكّه، وعرض الأعمدة والحدود.</li><li><b>المطابقة والترتيب:</b> اختر النوع من قائمة «نوع السؤال». رتّب العمود الثاني للمطابقة مستقلًا، أو اخلطه. تظهر فراغات الإجابات عند الطباعة.</li><li><b>الترويسة:</b> ارفع الشعار وحرّك الحقول والأعمدة من «بيانات الامتحان»، ثم احفظ قالبًا باسم واضح.</li><li><b>التراجع والنسخ:</b> استعمل زري التراجع والإعادة أو Ctrl+Z وCtrl+Shift+Z (أو Ctrl+Y). تُحفظ نسخة تلقائية كل دقيقة عند وجود تغييرات، وقبل تبديل الامتحان. يمكنك حفظ نسخة يدويًا واستعادتها من «سجل النسخ».</li><li><b>النسخة الاحتياطية:</b> نزّل نسخة شاملة من قائمة الملف، ثم افتحها بالزر «فتح ملف / نسخة احتياطية» لاستيراد محتوياتها. تُضاف البيانات إلى المحتوى الحالي.</li></ol><p>البيانات محفوظة في هذا المتصفح وعلى هذا الجهاز لكل حساب. احتفظ بنسخة JSON لنقلها إلى جهاز آخر أو حمايتها عند مسح بيانات المتصفح. تسجيل الدخول في ملف HTML مستقل هو قفل محلي؛ الاستضافة بحسابات آمنة تتطلب خادمًا.</p><button class="btn primary" data-close="featuresDialog">فهمت</button></dialog>
+  <dialog class="dialog wide-dialog" id="featuresDialog" aria-labelledby="featuresHeading"><button class="icon-btn dialog-close" data-close="featuresDialog" aria-label="إغلاق">×</button><h2 id="featuresHeading">من البداية إلى الطباعة</h2><div class="v5-info">١. أدخل المادة والصف وبيانات الامتحان.<br>٢. أضف الأسئلة ودرجاتها ومفتاح إجابتها.<br>٣. افتح المعاينة لتتحقق من الورقة، ثم اضغط «طباعة».</div><p>ابدأ بنموذج تدريبي من مادتك. من «نماذج A / B / C» أنشئ نسخًا مختلطة ومفاتيح تصحيحها. أدوات الشعر والآيات والقراءة داخل كل سؤال، وزر المظهر أعلى الشاشة يبدّل الوضع الليلي.</p><ol><li><b>الأرشيف:</b> اضغط «حفظ في الأرشيف» ثم ابحث بالمادة والصف والسنة من قسم الأرشيف. تُحفظ تغييرات الامتحان المؤرشف تلقائيًا.</li><li><b>بنك الأسئلة:</b> اختر المادة ثم الصف الدراسي. تتوفر النماذج الحالية في الأول المتوسط؛ اختر الشهر أو الامتحان لتظهر النماذج A وB وC. تتوفر نماذج الصفوف الأخرى في التحديث القادم. اضغط «تحرير النموذج» لتعديل نصوصه ودرجاته وحفظه تلقائيًا في البنك، أو «استخدام نسخة للامتحان» لفتح نسخة مستقلة. يمكنك البحث في الأسئلة كلها وإضافة سؤال منها إلى امتحانك. تضم العربية الجزء الثاني فقط.</li><li><b>الصور والجداول:</b> أضفها داخل السؤال، واضبط وصفها وموضعها. يدعم محرر الجدول دمج نطاق محدد وفكّه، وعرض الأعمدة والحدود.</li><li><b>المطابقة والترتيب:</b> اختر النوع من قائمة «نوع السؤال». رتّب العمود الثاني للمطابقة مستقلًا، أو اخلطه. تظهر فراغات الإجابات عند الطباعة.</li><li><b>الترويسة:</b> ارفع الشعار وحرّك الحقول والأعمدة من «بيانات الامتحان»، ثم احفظ قالبًا باسم واضح.</li><li><b>التراجع والنسخ:</b> استعمل زري التراجع والإعادة أو Ctrl+Z وCtrl+Shift+Z (أو Ctrl+Y). تُحفظ نسخة تلقائية كل دقيقة عند وجود تغييرات، وقبل تبديل الامتحان. يمكنك حفظ نسخة يدويًا واستعادتها من «سجل النسخ».</li><li><b>النسخة الاحتياطية:</b> نزّل نسخة شاملة من قائمة الملف، ثم افتحها بالزر «فتح ملف / نسخة احتياطية» لاستيراد محتوياتها. تُضاف البيانات إلى المحتوى الحالي.</li></ol><p>البيانات محفوظة في هذا المتصفح وعلى هذا الجهاز لكل حساب. احتفظ بنسخة JSON لنقلها إلى جهاز آخر أو حمايتها عند مسح بيانات المتصفح. تسجيل الدخول في ملف HTML مستقل هو قفل محلي؛ الاستضافة بحسابات آمنة تتطلب خادمًا.</p><button class="btn primary" data-close="featuresDialog">فهمت</button></dialog>
   <input type="file" id="imageInput" accept="image/png,image/jpeg,image/webp,image/gif" hidden>
   <input type="file" id="logoInput" accept="image/png,image/jpeg,image/webp,image/gif" hidden>
 
@@ -1634,17 +1812,24 @@ globalThis.WaraqaStudio = (() => {
   function normalize(raw){
     const d=B.normalize(raw);d.platformVersion=6;
     d.threeModels=Array.from({length:3},(_,i)=>Array.from({length:5},(_,j)=>text(raw.threeModels?.[i]?.[j],4000)));
+    if(raw.settings?.answerSpaces===true)d.settings.answerSpaces=true;
+    if(raw.settings?.compactAnswerDefaults===true)d.settings.compactAnswerDefaults=true;
     d.settings.mathLanguage=raw.settings?.mathLanguage==='en'?'en':'ar';
     d.variantCode=/^[A-D]$/.test(raw.variantCode||'')?raw.variantCode:'';
     d.questions.forEach((q,i)=>{
       const s=raw.questions[i]||{};
+      if(Number.isInteger(s.answerSpaceLines))q.answerSpaceLines=Math.min(50,Math.max(0,s.answerSpaceLines));
       q.answer=text(s.answer,10000);q.lockOrder=s.lockOrder===true;
       q.shuffleBranches=s.shuffleBranches!==false;q.shuffleChoices=s.shuffleChoices!==false;
       q.blocks=blocks(s.blocks);q.visuals=WaraqaVisual.normalizeAll(s.visuals);
       const seen=new Set();
       q.choiceIds=q.choices.map((_,j)=>{let id=s.choiceIds?.[j];if(!B.validId(id)||seen.has(id))id=B.uid();seen.add(id);return id;});
       q.correctChoiceId=q.choiceIds.includes(s.correctChoiceId)?s.correctChoiceId:'';
-      q.branches.forEach((b,j)=>{b.answer=text(s.branches?.[j]?.answer,6000);});
+      q.branches.forEach((b,j)=>{
+        const original=s.branches?.[j];
+        b.answer=text(original?.answer,6000);
+        if(Number.isInteger(original?.answerSpaceLines))b.answerSpaceLines=Math.min(50,Math.max(0,original.answerSpaceLines));
+      });
     });
     d.variantPlan=null;
     const v=raw.variantPlan;
@@ -1658,7 +1843,14 @@ globalThis.WaraqaStudio = (() => {
     return d;
   }
   function fingerprint(d){
-    const s=JSON.stringify({metadata:d.metadata,settings:d.settings,header:d.header,questions:d.questions});
+    const {answerSpaces,compactAnswerDefaults,...settings}=d.settings;
+    const questions=d.questions.map(question=>{
+      // Keep the field order used by existing saved plans.
+      return Object.fromEntries(Object.keys(question)
+        .filter(key=>key!=='answerSpaceLines')
+        .map(key=>[key,key==='branches'?question.branches.map(({answerSpaceLines,...branch})=>branch):question[key]]));
+    });
+    const s=JSON.stringify({metadata:d.metadata,settings,header:d.header,questions});
     // Two independent 32-bit accumulators detect stale plans; not a security hash.
     let a=2166136261,b=5381;
     for(let i=0;i<s.length;i++){a=Math.imul(a^s.charCodeAt(i),16777619);b=Math.imul(b,33)^s.charCodeAt(i);}
@@ -1707,7 +1899,7 @@ globalThis.WaraqaStudio = (() => {
     if(B.isBranch(q)&&q.branches.length)return q.branches.map((b,i)=>B.label(i,q.branchStyle,s)+') '+(b.answer||'لم تُحدَّد الإجابة')).join('\n');
     return q.answer||'';
   }
-  function answerDoc(d){const copy=clone(d);copy.variantPlan=null;copy.metadata.title=(d.settings.language==='en'?'Answer key — ':'نموذج الإجابة — ')+d.metadata.title;copy.questions=copy.questions.map(q=>({...q,type:'essay',text:answer(q,d.settings)||(d.settings.language==='en'?'Answer not specified':'لم تُحدَّد الإجابة'),score:B.gradeOf(q),autoGrade:false,branches:[],choices:[],blocks:[],visuals:[],assets:[],answerLines:0,pageBreak:false}));return copy;}
+  function answerDoc(d){const copy=clone(d);copy.variantPlan=null;delete copy.settings.answerSpaces;copy.metadata.title=(d.settings.language==='en'?'Answer key — ':'نموذج الإجابة — ')+d.metadata.title;copy.questions=copy.questions.map(q=>({...q,type:'essay',text:answer(q,d.settings)||(d.settings.language==='en'?'Answer not specified':'لم تُحدَّد الإجابة'),score:B.gradeOf(q),autoGrade:false,branches:[],choices:[],blocks:[],visuals:[],assets:[],answerLines:0,pageBreak:false}));return copy;}
   function blockUnits(q,s){return (q.blocks||[]).flatMap(b=>{
     if(b.kind==='poetry')return b.lines.map((l,i)=>({kind:'poetry',...l,title:i===0?b.title:'',text:'',blockId:b.id}));
     return b.text.split('\n').filter(l=>l.trim()).map((line,i,a)=>({kind:b.kind,text:line,title:i===0?b.title:'',index:b.start+i,language:b.language,first:i===0,last:i===a.length-1,blockId:b.id}));
@@ -1719,11 +1911,11 @@ globalThis.WaraqaStudio = (() => {
     if(!d.metadata.grade.trim())add('warning','أضف الصف الدراسي.');
     if(Math.abs(B.total(d)-d.metadata.expectedScore)>.001)add('warning','مجموع الدرجات '+B.total(d)+'، والدرجة المطلوبة '+d.metadata.expectedScore+'.');
     d.questions.forEach((q,i)=>{
-      const label='السؤال '+(i+1)+': ';
+      const label='السؤال '+(i+1)+' — ';
       const norm=v=>v.normalize('NFKC').replace(/[\u064B-\u065F\u0670]/g,'').replace(/\s+/g,' ').trim();
       const key=norm([q.text,...q.branches.map(b=>b.text),...q.choices,...(q.visuals||[]).map(v=>JSON.stringify(v,(k,x)=>k==='id'?undefined:x)),...(q.blocks||[]).map(b=>b.text||b.lines.map(l=>l.first+' '+l.second).join(' '))].join(' '));
-      if(key&&seen.has(key))add('warning',label+'محتوى مكرر مع السؤال '+seen.get(key)+'.',q);else if(key)seen.set(key,i+1);
-      if(!q.text.trim()&&!q.branches.length&&!q.assets.length&&!q.blocks.length&&!(q.visuals||[]).length)add('error',label+'نص السؤال فارغ.',q);
+      if(key&&seen.has(key))add('warning',label+'محتوى مكرر مع السؤال '+(seen.get(key))+'.',q);else if(key)seen.set(key,i+1);
+      if(!q.text.trim()&&!q.branches.length&&!q.choices.some(c=>c.trim())&&!q.pairs.length&&!q.ordering.length&&!q.assets.length&&!q.blocks.length&&!(q.visuals||[]).length)add('error',label+'نص السؤال فارغ.',q);
       if(B.gradeOf(q)<=0)add('warning',label+'لم تُخصَّص درجة.',q);
       q.branches.forEach((b,j)=>{if(!b.text.trim())add('error',label+'الفرع '+(j+1)+' بلا نص.',q);if(b.score<=0)add('warning',label+'الفرع '+(j+1)+' بلا درجة.',q);});
       if(B.isBranch(q)&&!q.branches.length)add('error',label+'أضف فرعًا واحدًا على الأقل.',q);
@@ -1822,7 +2014,7 @@ globalThis.WaraqaStudio = (() => {
 // One database, isolated records per account and realm. Writes commit atomically.
 globalThis.WaraqaRepository = {
   async open(scope) {
-    let db=null;
+    let db=null,dbError;
     try {
       db=await new Promise((resolve,reject)=>{
         const request=indexedDB.open('waraqa-platform-v3',1);
@@ -1830,7 +2022,7 @@ globalThis.WaraqaRepository = {
         request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error);request.onblocked=()=>reject(new Error('أغلق النوافذ القديمة وأعد فتح المنصة.'));
       });
       db.onversionchange=()=>db.close();
-    } catch {}
+    } catch(error) {dbError=error;}
     const memory=new Map(), fallbackKey='waraqa.platform.'+scope;
     if(!db){try{const raw=JSON.parse(localStorage.getItem(fallbackKey)||'[]');if(Array.isArray(raw))for(const item of raw)if(item?.scope===scope)memory.set(item.key,item);}catch{}}
     const key=(kind,id)=>JSON.stringify([scope,kind,id]);
@@ -1854,7 +2046,24 @@ globalThis.WaraqaRepository = {
         catch(error){try{tx.abort();}catch{}reject(error);}
       });
     }
-    return {mode:db?'indexeddb':'local',list,get,batch,put:(kind,id,value)=>batch([{kind,id,value}]),remove:(kind,id)=>batch([{kind,id,remove:true}])};
+    function trialUsage(cost=0){
+      if(!db)return Promise.reject(new Error('تعذّر الوصول إلى عدّاد الطباعة في IndexedDB'+(dbError?.name? ' ('+dbError.name+')':'')+'.'));
+      return new Promise((resolve,reject)=>{
+        const tx=db.transaction('records',cost?'readwrite':'readonly'),store=tx.objectStore('records');
+        const recordKey=key('trial','printed'),request=store.get(recordKey);
+        let remaining,accepted;
+        tx.oncomplete=()=>resolve({remaining,accepted});
+        tx.onabort=()=>reject(tx.error||new Error('تعذّر حفظ عدّاد الطباعة.'));
+        request.onsuccess=()=>{
+          const used=request.result?.value??0;
+          if(!Number.isInteger(used)||used<0||used>5){tx.abort();return;}
+          accepted=cost<=5-used;
+          remaining=5-used-(accepted?cost:0);
+          if(accepted&&cost)store.put({key:recordKey,scope,kind:'trial',value:used+cost});
+        };
+      });
+    }
+    return {trialUsage,mode:db?'indexeddb':'local',list,get,batch,put:(kind,id,value)=>batch([{kind,id,value}]),remove:(kind,id)=>batch([{kind,id,remove:true}])};
   }
 };
 
@@ -1934,11 +2143,12 @@ globalThis.WaraqaCatalog = (() => {
   <script id="waraqa-account-storage">
 'use strict';
 globalThis.WaraqaAccountStorage = {
-  keyFor(account,realm,seed){return 'waraqa.exam.'+realm+'.user.'+account.id+(seed?'.'+seed.id:'.v1');},
+  keyFor(account,realm,seed){return 'waraqa.exam.'+realm+(account?'.user.'+account.id:'.guest')+(seed?'.'+seed.id:'.v1');},
   load(storage,{account,realm,seed,model}){
     const key=this.keyFor(account,realm,seed),fallback=seed?model.normalize(seed):model.defaultDocument();
     const saved=storage.getItem(key);
     if(saved){const raw=JSON.parse(saved);return{document:model.migrateSavedDocument(raw),migrated:raw.experienceVersion!==2};}
+    if(!account)return{document:fallback,migrated:false};
     const legacyKey=seed?'waraqa.exam.'+seed.id:'waraqa.exam.v1',ownerKey='waraqa.legacy-owner.'+realm;
     const legacy=storage.getItem(legacyKey),owner=storage.getItem(ownerKey);
     if(legacy&&(!owner||owner===account.id)){
@@ -1954,8 +2164,8 @@ globalThis.WaraqaAccountStorage = {
   </script>
   <script id="waraqa-theme">
 (()=>{
-  let theme='light';try{theme=localStorage.getItem('waraqa.studio.theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch{}
-  function apply(){document.documentElement.dataset.theme=theme;document.querySelectorAll('[data-theme-toggle]').forEach(b=>{b.setAttribute('aria-label',theme==='dark'?'تفعيل الوضع النهاري':'تفعيل الوضع الليلي');b.setAttribute('aria-pressed',String(theme==='dark'));b.querySelector('[data-theme-icon]').textContent=theme==='dark'?'☀':'☾';});document.querySelector('.v5-login-theme').hidden=!document.body.classList.contains('auth-locked');}
+  let theme='dark';try{if(localStorage.getItem('waraqa.studio.theme')==='light')theme='light';}catch{}
+  function apply(){document.documentElement.dataset.theme=theme;document.querySelector('meta[name="theme-color"]').content=theme==='dark'?'#171420':'#FEF7FF';document.querySelectorAll('[data-theme-toggle]').forEach(b=>{b.setAttribute('aria-label',theme==='dark'?'تفعيل الوضع النهاري':'تفعيل الوضع الليلي');b.setAttribute('aria-pressed',String(theme==='dark'));b.querySelector('[data-theme-icon]').textContent=theme==='dark'?'☀':'☾';});document.querySelector('.v5-login-theme').hidden=!document.body.classList.contains('auth-locked');}
   apply();new MutationObserver(apply).observe(document.body,{attributes:true,attributeFilter:['class']});
   document.addEventListener('click',e=>{if(!e.target.closest('[data-theme-toggle]'))return;theme=theme==='dark'?'light':'dark';try{localStorage.setItem('waraqa.studio.theme',theme);}catch{}apply();});
 })();
@@ -1968,7 +2178,7 @@ globalThis.WaraqaAuth = (() => {
   const SESSION_KEY='waraqa.auth.session.'+config.realmId;
   const PREFIX_LOGIN='waraqa-login-v1:',PREFIX_SESSION='waraqa-session-v1:';
   const $=id=>document.getElementById(id);
-  let user=null,busy=false,finishReady;
+  let user=null,busy=false,finishReady,switchToAccount=async(account,memory)=>unlock(account,memory);
   const ready=new Promise(resolve=>{finishReady=resolve;});
   const encode=value=>new TextEncoder().encode(value);
   const hex=bytes=>Array.from(new Uint8Array(bytes),b=>b.toString(16).padStart(2,'0')).join('');
@@ -2010,32 +2220,53 @@ globalThis.WaraqaAuth = (() => {
     user={id:account.id,email:account.email};$('loginPassword').value='';
     $('loginScreen').hidden=true;$('app').hidden=false;$('app').inert=false;$('app').setAttribute('aria-hidden','false');
     document.body.classList.remove('auth-locked');
+    document.querySelector('.v5-login-theme').hidden=true;
     $('accountEmail').textContent=user.email;
     const notice=$('accountMemoryNotice');
+    notice.hidden=memory==='persistent';
+    $('logoutButton').hidden=false;
     if(memory!=='persistent'){
       notice.hidden=false;
       notice.textContent=memory==='temporary'?'تم الدخول. يمنع المتصفح حفظ الدخول الدائم؛ سيُتذكّر الحساب داخل هذه النافذة فقط.':'تم الدخول. يمنع المتصفح حفظ الدخول؛ ستحتاج إلى إدخال الحساب عند فتح الموقع مرة أخرى.';
     }
-    finishReady(user);$('tab-questions').focus({preventScroll:true});
+    finishReady(user);requestAnimationFrame(()=>document.querySelector('.work-add')?.focus({preventScroll:true}));
   }
-  function showLogin(message=''){
-    $('loginChecking').hidden=true;$('loginError').textContent=message;setBusy(false);$('loginEmail').focus();
+  function openGuest(){
+    $('loginScreen').hidden=true;
+    $('app').hidden=false;$('app').inert=false;$('app').setAttribute('aria-hidden','false');
+    document.body.classList.remove('auth-locked');
+    document.querySelector('.v5-login-theme').hidden=true;
+    $('accountEmail').textContent='ضيف';$('logoutButton').hidden=true;
+    finishReady(null);
   }
+  function showLogin(){
+    for(const dialog of document.querySelectorAll('dialog[open]'))dialog.close();
+    $('loginScreen').hidden=false;$('app').hidden=true;$('app').inert=true;$('app').setAttribute('aria-hidden','true');
+    document.body.classList.add('auth-locked');
+    document.querySelector('.v5-login-theme').hidden=false;
+    $('loginChecking').hidden=true;$('loginError').textContent='';
+    setBusy(false);$('loginEmail').focus();
+  }
+  $('continueGuest').addEventListener('click',()=>{openGuest();document.querySelector('.work-add')?.focus();});
   async function login(email,password){
     const normalized=String(email).trim().toLowerCase();
     const account=config.accounts.find(item=>item.email===normalized);
+    if(!globalThis.crypto?.subtle)throw new Error('يلزم اتصال HTTPS لتسجيل الدخول.');
     if(!account)return{ok:false};
     const proof=await passwordProof(account,String(password));
     if(!proof.valid)return{ok:false};
-    const memory=remember(account,proof.token);unlock(account,memory);return{ok:true,account:user,memory};
+    const memory=remember(account,proof.token);
+    await switchToAccount(account,memory);
+    return{ok:true,account:user,memory};
   }
   $('loginForm').addEventListener('submit',async event=>{
     event.preventDefault();if(busy)return;
     if(!$('loginForm').reportValidity())return;
     setBusy(true);$('loginError').textContent='';
+    for(const id of ['loginEmail','loginPassword'])$(id).removeAttribute('aria-invalid');
     try{
       const result=await login($('loginEmail').value,$('loginPassword').value);
-      if(!result.ok){$('loginError').textContent='بريد الحساب أو كلمة المرور غير صحيحة.';$('loginPassword').value='';setBusy(false);$('loginPassword').focus();}
+      if(!result.ok){for(const id of ['loginEmail','loginPassword'])$(id).setAttribute('aria-invalid','true');$('loginError').textContent='بريد الحساب أو كلمة المرور غير صحيحة.';$('loginPassword').value='';setBusy(false);$('loginPassword').focus();}
     }catch{$('loginError').textContent='تعذّر تسجيل الدخول. افتح الملف مباشرة أو عبر HTTPS في متصفح حديث.';setBusy(false);}
   });
   $('toggleLoginPassword').addEventListener('click',()=>{
@@ -2049,11 +2280,13 @@ globalThis.WaraqaAuth = (() => {
   }
   globalThis.addEventListener('storage',async event=>{if(user&&event.key===SESSION_KEY){try{const saved=readSavedSession(),account=await validateSession(saved?.session);if(!account||account.id!==user.id)globalThis.location.reload();}catch{globalThis.location.reload();}}});
   const initialized=(async()=>{
-    if(!globalThis.crypto?.subtle){$('loginChecking').hidden=true;$('loginError').textContent='يلزم متصفح حديث. افتح الملف مباشرة أو عبر اتصال HTTPS لتفعيل الدخول.';return;}
-    try{const saved=readSavedSession(),account=await validateSession(saved?.session);if(account){unlock(account,saved.memory);return;}}catch{}
-    clearSavedSession();showLogin();
+    if(globalThis.crypto?.subtle){
+      try{const saved=readSavedSession(),account=await validateSession(saved?.session);if(account){unlock(account,saved.memory);return;}}catch{}
+      clearSavedSession();
+    }
+    openGuest();
   })();
-  return{ready,initialized,login,logout,validateSession,realmId:config.realmId,get currentUser(){return user;}};
+  return{ready,initialized,login,logout,validateSession,showLogin,onGuestLogin(handler){switchToAccount=async(account,memory)=>{await handler(account);unlock(account,memory);};},realmId:config.realmId,get currentUser(){return user;}};
 })();
 
   </script>
@@ -2062,14 +2295,34 @@ globalThis.WaraqaAuth = (() => {
   WaraqaAuth.ready.then(async account=>{
     const M=WaraqaModel,$=id=>document.getElementById(id),E=M.escape,ic=n=>'<svg class="icon" aria-hidden="true"><use href="#i-'+n+'"/></svg>';
     const seed=(()=>{try{return JSON.parse($('embedded-exam').textContent||'null');}catch{return null;}})();
-    const storageKey=WaraqaAccountStorage.keyFor(account,WaraqaAuth.realmId,seed);
-    const recoveryKey=storageKey+'.recovery.v1';
-    const repository=await WaraqaRepository.open(storageKey);
-    let doc=seed?M.normalize(seed):M.defaultDocument(),storageAvailable=true,migratedSaved=false,durableSnapshot='',recoveredDraft=false;
-    try{const stored=await repository.get('draft','current');if(stored)doc=M.normalize(stored);else{const loaded=WaraqaAccountStorage.load(localStorage,{account,realm:WaraqaAuth.realmId,seed,model:M});doc=loaded.document;migratedSaved=true;}}catch{storageAvailable=false;}
-    if(storageAvailable)durableSnapshot=JSON.stringify(doc);
-    // A synchronous checkpoint protects edits when the browser closes before IndexedDB commits.
-    try{const recovery=JSON.parse(localStorage.getItem(recoveryKey)||'null');if(recovery?.version===1&&typeof recovery.data==='string'&&recovery.data!==durableSnapshot){doc=M.validateImport(JSON.parse(recovery.data));migratedSaved=true;recoveredDraft=true;}}catch{}
+    async function loadWorkspace(owner){
+      const storageKey=WaraqaAccountStorage.keyFor(owner,WaraqaAuth.realmId,seed);
+      const recoveryKey=storageKey+'.recovery.v1',repository=await WaraqaRepository.open(storageKey);
+      let doc=seed?M.normalize(seed):M.defaultDocument(),storageAvailable=true,migratedSaved=false,durableSnapshot='',recoveredDraft=false;
+      try{
+        const stored=await repository.get('draft','current');
+        if(stored)doc=M.normalize(stored);
+        else if(owner){
+          doc=WaraqaAccountStorage.load(localStorage,{account:owner,realm:WaraqaAuth.realmId,seed,model:M}).document;
+          migratedSaved=true;
+        }
+        durableSnapshot=JSON.stringify(doc);
+      }catch{storageAvailable=false;}
+      // A synchronous checkpoint protects edits when the browser closes before IndexedDB commits.
+      try{
+        const recovery=JSON.parse(localStorage.getItem(recoveryKey)||'null');
+        if(recovery?.version===1&&typeof recovery.data==='string'&&recovery.data!==durableSnapshot){
+          doc=M.validateImport(JSON.parse(recovery.data));migratedSaved=true;recoveredDraft=true;
+        }
+      }catch{}
+      const libraryState={exams:[],bank:[],headers:[],versions:[],models:[]};
+      for(const [field,kind] of Object.entries({exams:'exam',bank:'bank',headers:'header',versions:'version',models:'model'})){
+        try{libraryState[field]=await repository.list(kind);}catch{storageAvailable=false;}
+      }
+      return {recoveryKey,repository,doc,storageAvailable,durableSnapshot,migratedSaved,recoveredDraft,libraryState};
+    }
+    let {recoveryKey,repository,doc,storageAvailable,durableSnapshot,migratedSaved,recoveredDraft,libraryState}=await loadWorkspace(account);
+    const trialRepository=account?null:repository;
     let selected=doc.questions[0]?.id||null,activeTab='questions',saveTimer,previewTimer,toastTimer,undoAction=null,confirmationAction=null,lastPages=[],renderIssue=null,oldTitle=document.title,navigation=null;
     const fontPromise=Promise.allSettled(['Waraqa Amiri','Waraqa Naskh','Waraqa Sans'].flatMap(f=>[400,700].map(w=>document.fonts.load(w+' 20px "'+f+'"','ورقة'))));
     const typeNames={essay:'سؤال مقالي',branches:'سؤال بفروع',choice:'اختيار من متعدد',truefalse:'صح أو خطأ',blanks:'أسئلة الفراغات',matching:'صل بين العمودين',ordering:'ترتيب الخطوات أو الأحداث'};
@@ -2096,6 +2349,13 @@ globalThis.WaraqaAuth = (() => {
         }catch{storageAvailable=false;setStatus('تعذّر الحفظ التلقائي — نزّل نسخة',true);return false;}
       });saveChain=job;return job;
     }
+    function setAnswerSpaces(enabled){
+      if(enabled)doc.settings.answerSpaces=true;else delete doc.settings.answerSpaces;
+      const counterpart=$('formatPanel').querySelector('[data-setting="answerSpaces"]');
+      if(counterpart)counterpart.checked=enabled;
+      queueUpdate();renderPreview();
+      if($('threeModelsDialog').open)threePreview();
+    }
     function queueUpdate(){if(interaction.source==='bank')return;v5Invalidate();recordHistory();setStatus(storageAvailable?'جارٍ الحفظ…':'الحفظ التلقائي غير متاح',!storageAvailable);clearTimeout(saveTimer);saveTimer=setTimeout(save,400);updateSummary();clearTimeout(previewTimer);previewTimer=setTimeout(renderPreview,130);}
     function toast(message,undo=null){clearTimeout(toastTimer);$('toastText').textContent=message;undoAction=undo;$('undoButton').hidden=!undo;$('toast').classList.add('show');toastTimer=setTimeout(()=>{$('toast').classList.remove('show');undoAction=null;},undo?9000:4000);}
     $('undoButton').addEventListener('click',()=>{if(undoAction){const action=undoAction;undoAction=null;$('toast').classList.remove('show');action();}});
@@ -2107,9 +2367,12 @@ globalThis.WaraqaAuth = (() => {
       '<div class="panel-card"><h3>ترويسة ورقة الامتحان</h3><p class="panel-description">الجهة والمدرسة في بداية الترويسة، وعنوان الامتحان في الوسط.</p>'+inputField('الدولة','country',m.country)+inputField('الوزارة','ministry',m.ministry)+inputField('مديرية التربية','directorate',m.directorate)+inputField('اسم المدرسة','school',m.school,{placeholder:'اكتب اسم المدرسة (اختياري)'})+'<div class="divider"></div>'+inputField('البسملة أو العبارة العلوية','basmala',m.basmala)+inputField('عنوان الامتحان','title',m.title)+inputField('العام الدراسي','year',m.year)+'</div>'+
       '<div class="panel-card"><h3>تفاصيل الامتحان</h3><p class="panel-description">تظهر هذه البيانات في الطرف الآخر من الترويسة حسب لغة الورقة.</p><div class="form-row equal">'+inputField('الصف / المرحلة','grade',m.grade)+inputField('المادة','subject',m.subject)+'</div><div class="form-row equal">'+inputField('تاريخ الامتحان','date',m.date,{type:'date'})+inputField('مدة الامتحان','duration',m.duration)+'</div>'+inputField('الدرجة الكلية','expectedScore',m.expectedScore,{type:'number',min:0,max:10000,step:.5})+'</div>'+
       '<div class="panel-card"><h3>ملاحظة وتوقيع</h3><p class="panel-description">الملاحظة أسفل الترويسة، واسم المدرّس أسفل الصفحة.</p>'+inputField('ملاحظة للطلاب','note',m.note,{multiline:true,rows:2})+inputField('لقب المعلّم في التوقيع','teacherLabel',m.teacherLabel,{placeholder:'مثال: مدرس المادة، معلم المادة، معلم العضو'})+inputField('اسم المعلّم','teacher',m.teacher)+inputField('عبارة ختامية','footer',m.footer)+'</div>';const essentials=$('metadataPanel').children[1];$('metadataPanel').prepend(essentials);renderHeaderTools();appGroupPanels('metadata');}
+    function answerSpaceField(label,value,placeholder,attrs){
+      return '<label class="field"><span class="field-label">'+label+'</span><input type="number" min="0" max="50" step="1" '+attrs+' value="'+(value??'')+'" placeholder="'+placeholder+'" ></label>';
+    }
     function renderFormat(){
       const s=doc.settings,activeFrame=s.showFrame?s.frameStyle:'none';
-      $('formatPanel').innerHTML='<div class="panel-card"><h3>مراجعة وطباعة</h3><p class="panel-description">راجع الدرجات والأسئلة، واحتوِ الزيادة البسيطة في صفحة واحدة قبل الطباعة.</p><div class="collection-actions"><button class="btn primary small" data-v5="review">✓ تدقيق وطباعة</button><button class="btn secondary small" data-v5="fit">↙ احتواء في صفحة</button></div></div>'+
+      $('formatPanel').innerHTML='<div class="panel-card"><h3>الطباعة</h3>'+checkField('مساحات للإجابة على الورقة','answerSpaces',s.answerSpaces)+'<div class="collection-actions"><button class="btn primary small" data-action="print">طباعة</button><button class="btn secondary small" data-v5="fit">↙ احتواء في صفحة</button></div></div>'+
         '<div class="panel-card"><h3>لغة الورقة واتجاهها</h3><p class="panel-description">اختر الإنجليزية لعرض الورقة من اليسار إلى اليمين. اكتب بيانات الامتحان وأسئلته باللغة المطلوبة.</p><label class="field"><span class="field-label">لغة الأسئلة</span><select id="paperLanguage" data-setting="language"><option value="ar"'+(s.language==='ar'?' selected':'')+'>العربية — من اليمين إلى اليسار</option><option value="en"'+(s.language==='en'?' selected':'')+'>English — من اليسار إلى اليمين</option></select></label></div>'+
         '<div class="panel-card"><h3>شكل حدود الصفحة</h3><p class="panel-description">اختر الإطار الذي يعجبك، أو «بلا إطار» لإلغاء الحدود الخارجية. يظهر اختيارك في المعاينة والطباعة.</p><div class="frame-choices" role="group" aria-label="شكل حدود الصفحة">'+Object.entries(M.FRAME_STYLES).map(([key,name])=>'<button type="button" class="frame-choice" data-action="frame-style" data-style="'+key+'" aria-pressed="'+(activeFrame===key)+'"><span class="frame-swatch swatch-'+key+'" aria-hidden="true"></span><span>'+name+'</span></button>').join('')+'</div></div>'+
         '<div class="panel-card"><h3>خط ورقة الأسئلة</h3><p class="panel-description">غيّر الخط وحجمه والمسافات، وراجع النتيجة مباشرة في المعاينة.</p><label class="field"><span class="field-label">خط الطباعة</span><select data-setting="font"><option value="amiri"'+(s.font==='amiri'?' selected':'')+'>أميري / خط إنجليزي كلاسيكي</option><option value="naskh"'+(s.font==='naskh'?' selected':'')+'>نسخ / Times New Roman</option><option value="sans"'+(s.font==='sans'?' selected':'')+'>خط حديث / Arial</option></select></label>'+
@@ -2125,8 +2388,8 @@ globalThis.WaraqaAuth = (() => {
       if(bankDraft&&interaction.source==='bank'){renderBankEditor();return;}
       const list=$('questionsList'),english=doc.settings.language==='en';
       const language='<div class="language-status"><span>'+(english?'الورقة الإنجليزية · من اليسار إلى اليمين':'الورقة العربية · من اليمين إلى اليسار')+'</span><button type="button" data-action="language-settings">تغيير اللغة</button></div>';
-      if(!doc.questions.length){list.innerHTML=language+'<div class="empty-editor">'+ic('edit')+'<h3>ابدأ بسؤالك الأول</h3><p>اكتب سؤالًا مقاليًا، أو فروعًا، أو اختيارات، أو فراغات.<br>يمكنك إدراج معادلات رياضية داخل أي سؤال.</p><button class="btn primary" data-action="add">'+ic('plus')+'إنشاء سؤال جديد</button></div>';return;}
       list.innerHTML=language+doc.questions.map((q,i)=>questionCard(q,i)).join('');
+      list.querySelectorAll('.question-card').forEach(uxDecorateQuestion);
     }
     function questionCard(q,i,forceOpen=false){
       const open=forceOpen||q.id===selected,english=doc.settings.language==='en',dir=english?'ltr':'rtl';
@@ -2139,44 +2402,80 @@ globalThis.WaraqaAuth = (() => {
       let body='<div class="card-content"><div class="form-row"><label class="field"><span class="field-label">عنوان / موضوع السؤال</span><input data-q="title" dir="'+dir+'" maxlength="200" value="'+E(q.title)+'" placeholder="'+(english?'Example: Algebra':'مثال: قواعد اللغة العربية')+'"></label><label class="field"><span class="field-label">الدرجة</span><input data-q="score" type="number" min="0" max="10000" step=".5" value="'+M.gradeOf(q)+'"'+(M.isBranch(q)&&q.autoGrade?' readonly title="الدرجة هي مجموع درجات الفروع؛ أوقف الجمع التلقائي لتعديلها"':'')+'></label></div>'+
         '<div class="field question-body-field"><div class="textarea-toolbar"><label class="field-label" for="body-'+q.id+'">نص السؤال</label><span class="format-buttons"><button class="format-button" type="button" data-action="bold" data-id="'+q.id+'"><b>عريض</b></button><button class="format-button underlined" type="button" data-action="underline" data-id="'+q.id+'">تسطير</button><button class="format-button math-button" type="button" data-action="equation" data-target="body-'+q.id+'">∑ معادلة</button>'+(q.type==='blanks'?'<button class="format-button" type="button" data-action="insert-blank" data-target="body-'+q.id+'">أضف فراغًا</button>':'')+'</span></div><textarea id="body-'+q.id+'" data-q="text" dir="'+dir+'" maxlength="30000" rows="3" placeholder="'+(english?'Write your question here…':'اكتب سؤالك هنا…')+'">'+E(q.text)+'</textarea></div>'+
         '<div class="type-row">'+ic('grid')+'<span>نوع السؤال</span><select class="type-select" data-q="type" aria-label="نوع السؤال">'+Object.entries(typeNames).map(([key,name])=>'<option value="'+key+'"'+(q.type===key?' selected':'')+'>'+name+'</option>').join('')+'</select></div>';
+      if(q.type==='essay'||q.type==='branches'){
+        const hint='<p class="field-hint" id="answerSpaceHint-'+q.id+'">تُستخدم هذه الأسطر عند تفعيل مساحات الإجابة. اترك الحقل فارغًا ليُضبط العدد حسب المساحة، أو اكتب 0 لإلغاء الأسطر.</p>';
+        body+='<div class="question-answer-settings">'+hint+(q.type==='essay'?answerSpaceField('أسطر الإجابة على الورقة',q.answerSpaceLines,q.answerLines||'تلقائي','data-answer-lines aria-describedby="answerSpaceHint-'+q.id+'"'):'')+'</div>';
+      }
       if(q.type==='blanks')body+='<p class="blank-help">اكتب تعليمات السؤال هنا، والجمل في الفروع أدناه. ضع المؤشر مكان الإجابة واضغط «أضف فراغًا». يمكنك أيضًا كتابة ___ أو [[فراغ]] داخل الجملة.</p>';
       if(M.isBranch(q))body+='<div class="branch-list">'+q.branches.map((branch,j)=>{
         const target='branch-'+q.id+'-'+j;
-        return'<div class="branch-row"><span class="branch-letter">'+M.label(j,q.branchStyle,doc.settings)+')</span><textarea id="'+target+'" class="branch-text" dir="'+dir+'" data-branch="'+j+'" data-branch-field="text" maxlength="30000" rows="1" aria-label="نص الفرع '+(j+1)+'" placeholder="'+(q.type==='blanks'?(english?'The capital of Iraq is ___.':'عاصمة العراق هي ___.'):(english?'Write the statement…':'نص الفرع…'))+'">'+E(branch.text)+'</textarea><input class="branch-score" data-branch="'+j+'" data-branch-field="score" type="number" min="0" max="10000" step=".5" value="'+branch.score+'" aria-label="درجة الفرع '+(j+1)+'"><span class="branch-tools"><button type="button" class="icon-btn" data-action="equation" data-target="'+target+'" title="إدراج معادلة في الفرع" aria-label="إدراج معادلة في الفرع '+(j+1)+'">∑</button>'+(q.type==='blanks'?'<button type="button" class="icon-btn blank-tool" data-action="insert-blank" data-target="'+target+'" title="أضف فراغًا" aria-label="أضف فراغًا في الفرع '+(j+1)+'">___</button>':'')+'<button class="icon-btn danger" data-action="delete-branch" data-id="'+q.id+'" data-index="'+j+'" aria-label="حذف الفرع '+(j+1)+'">'+ic('close')+'</button></span></div>';
+        return'<div class="branch-row"><span class="branch-letter">'+M.label(j,q.branchStyle,doc.settings)+')</span><textarea id="'+target+'" class="branch-text" dir="'+dir+'" data-branch="'+j+'" data-branch-field="text" maxlength="30000" rows="1" aria-label="نص الفرع '+(j+1)+'" placeholder="'+(q.type==='blanks'?(english?'The capital of Iraq is ___.':'عاصمة العراق هي ___.'):(english?'Write the statement…':'نص الفرع…'))+'">'+E(branch.text)+'</textarea><input class="branch-score" data-branch="'+j+'" data-branch-field="score" type="number" min="0" max="10000" step=".5" value="'+branch.score+'" aria-label="درجة الفرع '+(j+1)+'"><span class="branch-tools"><button type="button" class="icon-btn" data-action="equation" data-target="'+target+'" title="إدراج معادلة في الفرع" aria-label="إدراج معادلة في الفرع '+(j+1)+'">∑</button>'+(q.type==='blanks'?'<button type="button" class="icon-btn blank-tool" data-action="insert-blank" data-target="'+target+'" title="أضف فراغًا" aria-label="أضف فراغًا في الفرع '+(j+1)+'">___</button>':'')+'<button class="icon-btn danger" data-action="delete-branch" data-id="'+q.id+'" data-index="'+j+'" aria-label="حذف الفرع '+(j+1)+'">'+ic('close')+'</button></span>'+(q.type==='branches'?answerSpaceField('أسطر إجابة الفرع '+(j+1),branch.answerSpaceLines,'تلقائي','data-answer-lines data-answer-branch="'+j+'" aria-describedby="answerSpaceHint-'+q.id+'"'):'')+'</div>';
       }).join('')+'<button class="branch-add" data-action="add-branch" data-id="'+q.id+'">'+ic('plus')+'إضافة '+(q.type==='blanks'?'جملة فراغات':q.type==='truefalse'?'عبارة':'فرع')+'</button></div>';
       if(q.type==='choice')body+='<div class="branch-list">'+q.choices.map((choice,j)=>{
         const target='choice-'+q.id+'-'+j;
         return'<div class="choice-row"><span class="branch-letter">'+M.label(j,'letters',doc.settings)+')</span><input id="'+target+'" class="choice-text" dir="'+dir+'" data-choice="'+j+'" maxlength="30000" value="'+E(choice)+'" aria-label="الخيار '+(j+1)+'" placeholder="'+(english?'Write the option…':'اكتب الخيار…')+'"><span class="branch-tools"><button class="icon-btn" type="button" data-action="equation" data-target="'+target+'" title="إدراج معادلة في الخيار" aria-label="إدراج معادلة في الخيار '+(j+1)+'">∑</button><button class="icon-btn danger" data-action="delete-choice" data-id="'+q.id+'" data-index="'+j+'" aria-label="حذف الخيار">'+ic('close')+'</button></span></div>';
       }).join('')+'<button class="branch-add" data-action="add-choice" data-id="'+q.id+'">'+ic('plus')+'إضافة خيار</button></div>';
       body+=itemEditor(q,dir)+wvQuestionTools(q)+v5QuestionExtras(q,dir)+'<details class="v5-more-content"><summary>صور، جداول، وتصنيف السؤال</summary>'+assetEditor(q)+classFields(q)+'</details>'+'<button class="btn soft small question-bank-save" data-action="bank-save-question" data-id="'+q.id+'">'+ic('copy')+(q.bankRef?'تحديث السؤال في البنك':'حفظ السؤال في البنك')+'</button>';
-      body+='<details class="card-options"><summary>'+ic('settings')+'أسطر الإجابة وترقيم الفروع</summary><div class="options-content"><div class="form-row equal"><label class="field"><span class="field-label">عدد أسطر الإجابة</span><input data-q="answerLines" type="number" min="0" max="50" value="'+q.answerLines+'"></label>'+(M.isBranch(q)?'<label class="field"><span class="field-label">ترقيم الفروع</span><select data-q="branchStyle"><option value="letters"'+(q.branchStyle==='letters'?' selected':'')+'>'+(english?'A، B، C':'أ، ب، ج')+'</option><option value="numbers"'+(q.branchStyle==='numbers'?' selected':'')+'>1، 2، 3</option></select></label>':'')+'</div>'+
+      body+='<details class="card-options"><summary>'+ic('settings')+'خيارات السؤال وترقيم الفروع</summary><div class="options-content"><div class="form-row equal"><label class="field"><span class="field-label">أسطر يدوية للورقة العادية</span><input data-q="answerLines" type="number" min="0" max="50" value="'+q.answerLines+'"></label>'+(M.isBranch(q)?'<label class="field"><span class="field-label">ترقيم الفروع</span><select data-q="branchStyle"><option value="letters"'+(q.branchStyle==='letters'?' selected':'')+'>'+(english?'A، B، C':'أ، ب، ج')+'</option><option value="numbers"'+(q.branchStyle==='numbers'?' selected':'')+'>1، 2، 3</option></select></label>':'')+'</div>'+
         (q.type==='blanks'?'<label class="field"><span class="field-label">طول الفراغ (مم)</span><input data-q="blankWidth" type="number" min="10" max="80" value="'+q.blankWidth+'"></label>':'')+
         checkField('بدء السؤال في صفحة جديدة','pageBreak',q.pageBreak,'q')+(M.isBranch(q)?checkField('جمع درجات الفروع تلقائيًا','autoGrade',q.autoGrade,'q'):'')+'</div></details></div>';
       return'<article class="question-card selected" data-question="'+q.id+'">'+header+body+'</article>';
     }
-    function updateSummary(){updateModelContext();const n=doc.questions.length,total=M.total(doc),expected=doc.metadata.expectedScore;$('totalScore').textContent=total;$('expectedScore').textContent=expected;$('questionCount').textContent=n+' أسئلة';$('editorCounter').textContent=activeTab==='questions'?(n?n+' أسئلة':'لا توجد أسئلة بعد'):activeTab==='templates'?'12 قالبًا':'';$('documentContext').textContent=[doc.metadata.subject,doc.metadata.grade].filter(Boolean).join(' · ')||'ورقة امتحان جديدة';$('addQuestion').hidden=activeTab!=='questions'||n===0;$('scoreMeter').style.width=(expected>0?Math.min(100,total/expected*100):100)+'%';$('scoreMeter').style.background=Math.abs(total-expected)<.001?'#709781':'#c5a06c';$('scoreWarning').hidden=n===0||Math.abs(total-expected)<.001;$('scoreWarning').textContent='مجموع الدرجات '+total+'، والدرجة المطلوبة '+expected+'.';uxSync();}
+    function updateSummary(){updateModelContext();const imports=document.querySelector('.work-imports');if(imports)imports.hidden=doc.questions.length>0;const n=doc.questions.length,total=M.total(doc),expected=doc.metadata.expectedScore;$('totalScore').textContent=total;$('expectedScore').textContent=expected;$('questionCount').textContent=n+' أسئلة';$('editorCounter').textContent=activeTab==='questions'?(n?n+' أسئلة':'لا توجد أسئلة بعد'):activeTab==='templates'?'12 قالبًا':'';$('documentContext').textContent=[doc.metadata.subject,doc.metadata.grade].filter(Boolean).join(' · ')||'ورقة امتحان جديدة';$('addQuestion').hidden=activeTab!=='questions'||n===0;$('scoreMeter').style.width=(expected>0?Math.min(100,total/expected*100):100)+'%';$('scoreMeter').style.background=Math.abs(total-expected)<.001?'#709781':'#c5a06c';$('scoreWarning').hidden=n===0||Math.abs(total-expected)<.001;$('scoreWarning').textContent='مجموع الدرجات '+total+'، والدرجة المطلوبة '+expected+'.';uxSync();}
     function setTab(tab,focus=false,record=true){if(tab==='bank'&&activeTab!=='bank')resetCatalogView();activeTab=tab;for(const b of document.querySelectorAll('[data-tab]')){const active=b.dataset.tab===tab;b.classList.toggle('active',active);b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1;if(active&&focus)b.focus();}for(const name of ['questions','metadata','format','archive','bank','versions','templates'])$(name+'Panel').hidden=name!==tab;$('editorTitle').textContent={questions:'الأسئلة والدرجات',metadata:'بيانات الامتحان',format:'التنسيق والطباعة',archive:'أرشيف الامتحانات',bank:'بنك الأسئلة',versions:'سجل النسخ',templates:'قوالب جديدة'}[tab];if(tab==='templates')renderPaperTemplates();if(tab==='archive')renderArchive();if(tab==='bank')renderBank();if(tab==='versions')renderVersions();$('addQuestion').hidden=tab!=='questions';$('editorScroll').scrollTop=0;updateSummary();appSyncNavigation();if(record)trackView();}
     function renderEditor(){renderMetadata();renderFormat();renderQuestions();if(activeTab==='templates')renderPaperTemplates();updateSummary();}
     function setDocument(next){v5Active='base';undoAction=null;$('undoButton').hidden=true;doc=M.normalize(next);resetHistory();selected=doc.questions[0]?.id||null;renderEditor();setTab('questions',false,false);trackView(true);queueUpdate();}
+    function answerRules(lines){
+      return '<div class="answer-rules" aria-hidden="true">'+
+        '<div class="q-unit answer-line"></div>'.repeat(lines)+'</div>';
+    }
+    function worksheetUnits(q,answerLayout){
+      const settings=doc.settings,enabled=settings.answerSpaces===true;
+      const units=M.unitsFor(q,settings).filter(unit=>unit.kind!=='line');
+      let branchIndex=0;
+      for(const unit of units){
+        if(unit.kind==='branch'){
+          const branch=q.branches[branchIndex++];
+          if(enabled&&q.type==='branches')unit.answerLines=branch.answerSpaceLines??answerLayout.branchLines;
+          if(enabled&&q.type==='truefalse'){unit.truthBoxes=true;unit.suffix='';}
+        }
+        if(enabled&&unit.kind==='choice')unit.choiceCircle=true;
+      }
+      const lines=enabled&&q.type==='essay'?(q.answerSpaceLines??(q.answerLines||answerLayout.essayLines)):
+        enabled&&q.type==='branches'?0:q.answerLines;
+      if(lines){
+        const lastText=units.findLast(unit=>unit.kind==='text');
+        const last=enabled&&q.type==='essay'?(lastText||units.at(-1)):units.at(-1);
+        if(last)last.answerLines=(last.answerLines||0)+lines;
+        else units.push({kind:'text',text:'',answerLines:lines});
+      }
+      return units;
+    }
     function unitHTML(unit){
+      return unitContentHTML(unit)+(unit.answerLines?answerRules(unit.answerLines):'');
+    }
+    function unitContentHTML(unit){
       if(unit.kind==='visual'||unit.kind==='visual-row')return WaraqaVisual.render(unit.visual,unit.startRow||0,unit.endRow??null,unit.first!==false);
       const special=v5Unit(unit);if(special!==null)return special;
-      if(unit.kind==='line')return'<div class="q-unit answer-line"></div>';
       if(unit.kind==='image')return imageHTML(unit.asset);
       if(unit.kind==='table')return tableHTML(unit.asset,unit.startRow,unit.endRow,unit.first);
       if(unit.kind==='matching')return '<div class="match-print-row"><div class="match-cell"><strong>'+M.number(unit.index+1,doc.settings)+') </strong>'+M.formatText(unit.left)+'</div><span class="match-space"></span><div class="match-cell"><strong>'+M.label(unit.index,'letters',doc.settings)+') </strong>'+M.formatText(unit.right)+'</div></div>';
       if(unit.kind==='ordering')return '<div class="order-print-row">'+(unit.continuation?'':'<span class="order-answer" aria-label="ترتيب الخطوة"></span>')+'<div class="q-text">'+(unit.html??M.formatText(unit.text))+'</div></div>';
-      const text=(unit.label?'<span>'+E(unit.label)+' </span>':'')+(unit.html??M.formatText(unit.text,unit))+E(unit.suffix||'');
+      const english=doc.settings.language==='en';
+      const choices=unit.choiceCircle&&!unit.continuation?'<span class="choice-circle" aria-hidden="true"></span>':'';
+      const truth=unit.truthBoxes?'<span class="truth-options">'+(english?['True','False']:['صح','خطأ']).map(label=>'<span><i aria-hidden="true"></i>'+label+'</span>').join('')+'</span>':'';
+      const text=choices+(unit.label?'<span>'+E(unit.label)+' </span>':'')+(unit.html??M.formatText(unit.text,unit))+E(unit.suffix||'')+truth;
       return'<div class="q-unit'+(!unit.text&&!unit.label?' blank-line':'')+'"><p class="q-text">'+text+'</p>'+(doc.settings.showGrades&&unit.kind==='branch'&&unit.score!=null?'<span class="q-grade">'+M.degree(unit.score,doc.settings)+'</span>':'')+'</div>';
     }
     function questionHTML(q,index,units,continued=false){
       const english=doc.settings.language==='en';
       return'<section class="exam-question"><div class="q-head"><span class="q-title">'+M.questionLabel(index+1,doc.settings)+' '+(q.title?'('+E(q.title)+')':'')+(continued?(english?' (continued)':' (تابع)'):'')+'</span>'+(doc.settings.showGrades&&!continued?'<span class="q-grade">'+M.degree(M.gradeOf(q),doc.settings)+'</span>':'')+'</div><div class="question-content">'+unitsHTML(units)+'</div></section>';
     }
-    function pageElement(pageIndex=0,totalPages=1){
+    function pageElement(pageIndex=0,totalPages=1,answerPitch=8){
       const m=doc.metadata,s=doc.settings,english=s.language==='en',p=document.createElement('div'),frame=s.showFrame?s.frameStyle:'none';
       const t=english?{grade:'Grade',subject:'Subject',date:'Date',duration:'Time',note:'Note',student:'Student name',section:'Section',total:'Total marks',page:'Page',of:'of'}:{grade:'الصف',subject:'المادة',date:'التاريخ',duration:'الزمن',note:'ملاحظة',student:'اسم الطالب',section:'الشعبة',total:'مجموع الدرجات',page:'الصفحة',of:'من'};
-      p.className='exam-page frame-'+frame+(frame==='none'?' no-frame':'');
+      p.className='exam-page frame-'+frame+(frame==='none'?' no-frame':'')+(s.answerSpaces?' answer-spaces':'');
+      if(s.answerSpaces)p.style.setProperty('--answer-line-pitch',answerPitch+'mm');
       const template=paperTemplate(s.paperTemplate);p.dataset.paperTemplate=template.id;p.style.setProperty('--paper-accent',template.accent);p.style.setProperty('--paper-soft',template.soft);
       p.dir=english?'ltr':'rtl';p.lang=english?'en':'ar';
       const fonts=english?{amiri:"Georgia,'Times New Roman',serif",naskh:"'Times New Roman',serif",sans:'Arial,sans-serif'}:{amiri:"'Waraqa Amiri','Traditional Arabic',serif",naskh:"'Waraqa Naskh','Traditional Arabic',serif",sans:"'Waraqa Sans',Tahoma,sans-serif"};
@@ -2203,14 +2502,17 @@ globalThis.WaraqaAuth = (() => {
     }
     function splitLargeUnit(unit,maxHeight,content){
       let tokens=(unit.runs||M.richRuns(unit.text)).flatMap(run=>run.atomic?[run]:(run.text.match(/\s+|\S+/gu)||[]).map(text=>({...run,text})));
-      if(!tokens.length)return[unit];
+      while(tokens.length&&!tokens.at(-1).atomic&&!tokens.at(-1).text.trim())tokens.pop();
+      if(!tokens.length)throw new Error('مساحة الإجابة أطول من الصفحة. قلّل عدد الأسطر.');
       const pieces=[];let start=0;
       while(start<tokens.length){
         let low=start+1,high=tokens.length,best=start;
-        const sample={...unit,continuation:pieces.length>0,label:pieces.length?'':unit.label,score:pieces.length?null:unit.score,suffix:''};
+        const sample={...unit,continuation:pieces.length>0,label:pieces.length?'':unit.label,score:pieces.length?null:unit.score,suffix:'',answerLines:0,truthBoxes:false};
         while(low<=high){
           const mid=Math.floor((low+high)/2);
-          content.innerHTML=unitHTML({...sample,suffix:mid===tokens.length?(unit.suffix||''):'',html:M.runsHTML(tokens.slice(start,mid),unit)});
+          const last=mid===tokens.length;
+          content.innerHTML=unitHTML({...sample,suffix:last?unit.suffix:'',answerLines:last?unit.answerLines:0,
+            truthBoxes:last&&unit.truthBoxes,html:M.runsHTML(tokens.slice(start,mid),unit)});
           fitMath(content);
           if(content.getBoundingClientRect().height<=maxHeight+.1){best=mid;low=mid+1;}else high=mid-1;
         }
@@ -2218,21 +2520,61 @@ globalThis.WaraqaAuth = (() => {
           const token=tokens[start];
           if(token.atomic)throw new Error('المعادلة أطول من مساحة الصفحة. قلّل حجم الخط أو قسّمها إلى معادلتين.');
           const chars=Array.from(token.text);
-          if(chars.length<=1)throw new Error('حجم الخط كبير بالنسبة للمساحة المتاحة.');
+          if(chars.length<=1)throw new Error(unit.answerLines?'قلّل عدد أسطر الإجابة أو قسّم المحتوى.':'حجم الخط كبير بالنسبة للمساحة المتاحة.');
           const cut=Math.max(1,Math.floor(chars.length/2));
           tokens.splice(start,1,{...token,text:chars.slice(0,cut).join('')},{...token,text:chars.slice(cut).join('')});continue;
         }
-        pieces.push({...sample,text:tokens.slice(start,best).map(run=>run.text).join(''),html:M.runsHTML(tokens.slice(start,best),unit)});
+        if((unit.answerLines||unit.truthBoxes)&&best<tokens.length){
+          // Keep a readable ending with the answer area when a paragraph spans pages.
+          let tailStart=tokens.length,tailLength=0;
+          while(tailStart>start+1&&tailLength<28)tailLength+=tokens[--tailStart].text.trim().length;
+          best=Math.min(best,tailStart);
+        }
+        const portion=tokens.slice(start,best);
+        pieces.push({...sample,text:portion.map(run=>run.text).join(''),html:M.runsHTML(portion,unit)});
         start=best;
       }
-      if(unit.suffix)pieces[pieces.length-1].suffix=unit.suffix;
+      Object.assign(pieces.at(-1),{suffix:unit.suffix,answerLines:unit.answerLines,truthBoxes:unit.truthBoxes});
       return pieces;
     }
-    function measureGroups(measurePage,capacity){const body=measurePage.querySelector('.exam-questions'),groups=[];for(let index=0;index<doc.questions.length;index++){const q=doc.questions[index],raw=M.unitsFor(q,doc.settings);body.innerHTML=questionHTML(q,index,[],false);let section=body.firstElementChild,content=section.querySelector('.question-content');const overhead=section.getBoundingClientRect().height;body.innerHTML=questionHTML(q,index,[],true);const continuedOverhead=body.firstElementChild.getBoundingClientRect().height;body.innerHTML=questionHTML(q,index,[],false);section=body.firstElementChild;content=section.querySelector('.question-content');const maxUnit=capacity-Math.max(overhead,continuedOverhead)-1;const units=[];for(const unit of raw){content.innerHTML=unitHTML(unit);fitMath(content);const height=content.getBoundingClientRect().height;if(height>maxUnit){if(['table','image','matching','poetry','quran','passage','visual','visual-row'].includes(unit.kind))throw new Error('هناك رسم أو قالب أو مرفق أطول من مساحة الصفحة. قلّل ارتفاع الرسم أو أسطر القالب أو طول نصه.');for(const piece of splitLargeUnit(unit,maxUnit,content)){content.innerHTML=unitHTML(piece);fitMath(content);units.push({...piece,height:content.getBoundingClientRect().height});}}else units.push({...unit,height});}groups.push({q,index,units,overhead,continuedOverhead,pageBreak:q.pageBreak});}body.replaceChildren();return groups;}
+    function measureGroups(measurePage,capacity,answerLayout){
+      const body=measurePage.querySelector('.exam-questions'),groups=[];
+      for(let index=0;index<doc.questions.length;index++){
+        const q=doc.questions[index],raw=worksheetUnits(q,answerLayout);
+        body.innerHTML=questionHTML(q,index,[],true);
+        const continuedOverhead=body.firstElementChild.getBoundingClientRect().height;
+        body.innerHTML=questionHTML(q,index,[],false);
+        const section=body.firstElementChild,content=section.querySelector('.question-content');
+        const overhead=section.getBoundingClientRect().height,maxUnit=capacity-Math.max(overhead,continuedOverhead)-1;
+        const units=[];
+        const heightOf=unit=>{
+          content.innerHTML=unitHTML(unit);fitMath(content);
+          return content.getBoundingClientRect().height;
+        };
+        try{
+          if(maxUnit<=0)throw new Error('عنوان السؤال أطول من المساحة المتاحة.');
+          for(const unit of raw){
+            const height=heightOf(unit);
+            if(height<=maxUnit){units.push({...unit,height});continue;}
+            if(!['text','branch','choice','ordering'].includes(unit.kind))throw new Error('المحتوى ومساحة إجابته أكبر من الصفحة. قلّل المساحة أو قسّم المحتوى.');
+            for(const piece of splitLargeUnit(unit,maxUnit,content)){
+              const height=heightOf(piece);
+              if(height>maxUnit)throw new Error('قلّل مساحة الإجابة أو قسّم المحتوى.');
+              units.push({...piece,height});
+            }
+          }
+        }catch(error){
+          error.questionId=q.id;
+          error.message='السؤال '+(index+1)+' — '+error.message;
+          throw error;
+        }
+        groups.push({q,index,units,overhead,continuedOverhead,pageBreak:q.pageBreak});
+      }
+      body.replaceChildren();
+      return groups;
+    }
     function renderPreview(){v5RenderPreview();}
     function scalePreview(){const stage=$('previewStage'),style=getComputedStyle(stage),width=Math.max(0,stage.clientWidth-parseFloat(style.paddingLeft)-parseFloat(style.paddingRight));if(!width)return;for(const wrap of $('paperDeck').children){const page=wrap.firstElementChild;if(!page?.classList.contains('exam-page'))continue;const scale=Math.min(width/page.offsetWidth,1);wrap.style.width=(page.offsetWidth*scale)+'px';wrap.style.height=(page.offsetHeight*scale)+'px';page.style.transform='scale('+scale+')';}}
-    function preparePrint(){v5PreparePrint();}
-    async function print(){v5Review();}
     function filename(ext){return'ورقة-'+(doc.metadata.subject||'أسئلة').replace(/[\\/:*?"<>|]/g,'-')+'.'+ext;}
     function download(content,mime,name){const blob=new Blob([content],{type:mime}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),6000);}
     function qFor(el){const id=el.closest('[data-question]')?.dataset.question;return docQuestion(id,el.closest('#bankEditorDialog')?'bank':'doc');}
@@ -2338,10 +2680,6 @@ globalThis.WaraqaAuth = (() => {
     $('equationDialog').addEventListener('close',()=>{equationTarget=null;});
 
     // Account-scoped collections and reversible editing.
-    let libraryState={exams:[],bank:[],headers:[],versions:[],models:[]};
-    for(const [field,kind]of Object.entries({exams:'exam',bank:'bank',headers:'header',versions:'version',models:'model'})){
-      try{libraryState[field]=await repository.list(kind);}catch{storageAvailable=false;}
-    }
     let interaction={source:'doc',key:'',kind:'action'},bankDraft=null,imageTarget=null,tableTarget=null,tableDraft=null,tableSelection=null;
     let historyPast=[],historyFuture=[],historyCurrent=JSON.stringify(doc),historyGroup='',historyTime=0;
     let saveChain=Promise.resolve(),versionChain=Promise.resolve();
@@ -2352,7 +2690,7 @@ globalThis.WaraqaAuth = (() => {
     const itemDate=value=>new Date(value).toLocaleString('ar-IQ',{dateStyle:'medium',timeStyle:'short'});
     document.addEventListener('input',captureInteraction,true);
     document.addEventListener('click',captureInteraction,true);
-    function captureInteraction(event){const el=event.target;interaction={source:el.closest?.('#bankEditorDialog')?'bank':'doc',kind:event.type==='input'?'input':'action',key:[el.closest?.('[data-question]')?.dataset.question,el.dataset.q,el.dataset.meta,el.dataset.setting,el.dataset.branch,el.dataset.branchField,el.dataset.choice,el.dataset.classify,el.dataset.asset,el.dataset.assetField,el.dataset.pair,el.dataset.pairField,el.dataset.order,el.dataset.action].filter(x=>x!=null).join(':')};}
+    function captureInteraction(event){const el=event.target;interaction={source:el.closest?.('#bankEditorDialog')?'bank':'doc',kind:event.type==='input'?'input':'action',key:[el.closest?.('[data-question]')?.dataset.question,el.dataset.q,el.dataset.meta,el.dataset.setting,el.dataset.branch,el.dataset.branchField,el.dataset.answerBranch,el.hasAttribute('data-answer-lines')?'answer-lines':null,el.dataset.choice,el.dataset.classify,el.dataset.asset,el.dataset.assetField,el.dataset.pair,el.dataset.pairField,el.dataset.order,el.dataset.action].filter(x=>x!=null).join(':')};}
     function updateHistoryButtons(){$('historyUndo').disabled=!historyPast.length;$('historyRedo').disabled=!historyFuture.length;}
     function recordHistory(){
       const next=JSON.stringify(doc);if(next===historyCurrent)return;
@@ -2506,9 +2844,9 @@ globalThis.WaraqaAuth = (() => {
     }
     function unitsHTML(units){
       let result='';for(let i=0;i<units.length;i++){
-        const u=units[i];if(u.kind==='visual-row'){let end=u.endRow,j=i+1;while(j<units.length&&units[j].kind==='visual-row'&&units[j].visual.id===u.visual.id&&units[j].startRow===end){end=units[j].endRow;j++;}result+=WaraqaVisual.render(u.visual,u.startRow,end,u.first);i=j-1;continue;}if(u.kind!=='table'){result+=unitHTML(u);continue;}
+        const u=units[i];if(u.kind==='visual-row'){let end=u.endRow,j=i+1;while(j<units.length&&units[j].kind==='visual-row'&&units[j].visual.id===u.visual.id&&units[j].startRow===end){end=units[j].endRow;j++;}result+=WaraqaVisual.render(u.visual,u.startRow,end,u.first);if(units[j-1].answerLines)result+=answerRules(units[j-1].answerLines);i=j-1;continue;}if(u.kind!=='table'){result+=unitHTML(u);continue;}
         let end=u.endRow,j=i+1;while(j<units.length&&units[j].kind==='table'&&units[j].asset.id===u.asset.id&&units[j].startRow===end){end=units[j].endRow;j++;}
-        result+=tableHTML(u.asset,u.startRow,end,u.first);i=j-1;
+        result+=tableHTML(u.asset,u.startRow,end,u.first);if(units[j-1].answerLines)result+=answerRules(units[j-1].answerLines);i=j-1;
       }return result;
     }
     async function readImage(file){
@@ -2820,14 +3158,14 @@ globalThis.WaraqaAuth = (() => {
       });
     });
 
-    document.addEventListener('input',event=>{const el=event.target;if(el.dataset.meta){const key=el.dataset.meta;doc.metadata[key]=key==='expectedScore'?M.num(el.value):el.value;queueUpdate();return;}if(el.dataset.setting){const key=el.dataset.setting;doc.settings[key]=el.type==='checkbox'?el.checked:el.type==='range'?Number(el.value):el.value;if(el.type==='range')el.nextElementSibling.textContent=el.value+' '+({fontSize:'pt',gap:'mm'}[key]||'');if(key==='language'){renderEditor();$('paperLanguage')?.focus({preventScroll:true});}queueUpdate();return;}const q=qFor(el);if(!q)return;if(el.dataset.q){const key=el.dataset.q;q[key]=el.type==='checkbox'?el.checked:el.type==='number'?M.num(el.value,0,key==='answerLines'?50:key==='blankWidth'?80:10000):el.value;if(key==='answerLines')q[key]=Math.round(q[key]);if(key==='blankWidth')q[key]=M.num(q[key],10,80,28);if(key==='score')q.autoGrade=false;if(key==='title'){const heading=el.closest('[data-question]').querySelector('.question-heading strong');heading.textContent='السؤال '+(bankDraft&&q===bankDraft.question?1:doc.questions.indexOf(q)+1)+(q.title?' · '+q.title:'');}if(key==='type'){if(M.isBranch(q)&&!q.branches.length)q.branches=[{id:M.uid(),text:'',score:10},{id:M.uid(),text:'',score:10}];if(q.type==='blanks'){q.branchStyle='numbers';if(!q.text)q.text=doc.settings.language==='en'?'Fill in the blanks:':'املأ الفراغات الآتية:';q.branches.forEach(b=>{if(!b.text)b.text='[[فراغ]]';});}if(q.type==='choice'&&!q.choices.length){q.choices=['',''];q.choiceIds=q.choices.map(()=>M.uid());q.correctChoiceId='';}if(q.type==='matching'&&!q.pairs.length)q.pairs=[{left:'',right:''},{left:'',right:''}];if(q.type==='ordering'&&!q.ordering.length)q.ordering=['',''];renderQuestions();}if(key==='autoGrade'||key==='branchStyle')renderQuestions();queueUpdate();return;}if(el.dataset.branch!=null){const b=q.branches[Number(el.dataset.branch)];if(!b)return;b[el.dataset.branchField]=el.dataset.branchField==='score'?M.num(el.value):el.value;const parentScore=el.closest('[data-question]').querySelector('[data-q="score"]');if(parentScore&&q.autoGrade)parentScore.value=M.gradeOf(q);queueUpdate();return;}if(el.dataset.choice!=null){q.choices[Number(el.dataset.choice)]=el.value;queueUpdate();}});
+    document.addEventListener('input',event=>{const el=event.target;if(el.dataset.meta){const key=el.dataset.meta;doc.metadata[key]=key==='expectedScore'?M.num(el.value):el.value;queueUpdate();return;}if(el.dataset.setting){const key=el.dataset.setting;if(key==='answerSpaces')return;doc.settings[key]=el.type==='checkbox'?el.checked:el.type==='range'?Number(el.value):el.value;if(el.type==='range')el.nextElementSibling.textContent=el.value+' '+({fontSize:'pt',gap:'mm'}[key]||'');if(key==='language'){renderEditor();$('paperLanguage')?.focus({preventScroll:true});}queueUpdate();return;}const q=qFor(el);if(!q)return;if(el.dataset.q){const key=el.dataset.q;q[key]=el.type==='checkbox'?el.checked:el.type==='number'?M.num(el.value,0,key==='answerLines'?50:key==='blankWidth'?80:10000):el.value;if(key==='answerLines')q[key]=Math.round(q[key]);if(key==='blankWidth')q[key]=M.num(q[key],10,80,28);if(key==='score')q.autoGrade=false;if(key==='title'){const heading=el.closest('[data-question]').querySelector('.question-heading strong');heading.textContent='السؤال '+(bankDraft&&q===bankDraft.question?1:doc.questions.indexOf(q)+1)+(q.title?' · '+q.title:'');}if(key==='type'){if(M.isBranch(q)&&!q.branches.length)q.branches=[{id:M.uid(),text:'',score:10},{id:M.uid(),text:'',score:10}];if(q.type==='blanks'){q.branchStyle='numbers';if(!q.text)q.text=doc.settings.language==='en'?'Fill in the blanks:':'املأ الفراغات الآتية:';q.branches.forEach(b=>{if(!b.text)b.text='[[فراغ]]';});}if(q.type==='choice'&&!q.choices.length){q.choices=['',''];q.choiceIds=q.choices.map(()=>M.uid());q.correctChoiceId='';}if(q.type==='matching'&&!q.pairs.length)q.pairs=[{left:'',right:''},{left:'',right:''}];if(q.type==='ordering'&&!q.ordering.length)q.ordering=['',''];renderQuestions();}if(key==='autoGrade'||key==='branchStyle')renderQuestions();queueUpdate();return;}if(el.dataset.branch!=null){const b=q.branches[Number(el.dataset.branch)];if(!b)return;b[el.dataset.branchField]=el.dataset.branchField==='score'?M.num(el.value):el.value;const parentScore=el.closest('[data-question]').querySelector('[data-q="score"]');if(parentScore&&q.autoGrade)parentScore.value=M.gradeOf(q);queueUpdate();return;}if(el.dataset.choice!=null){q.choices[Number(el.dataset.choice)]=el.value;queueUpdate();}});
     document.addEventListener('change',event=>{if(event.target.matches('input[type=number]')){const el=event.target,q=qFor(el);if(el.dataset.meta==='expectedScore')el.value=doc.metadata.expectedScore;if(q&&el.dataset.q)el.value=q[el.dataset.q];if(q&&el.dataset.branchField==='score')el.value=q.branches[Number(el.dataset.branch)].score;if(q&&el.dataset.assetField==='width')el.value=q.assets.find(a=>a.id===el.dataset.asset)?.width??el.value;if(el.dataset.logo==='width'&&doc.header.logo)el.value=doc.header.logo.width;if(tableDraft&&el.dataset.tableWidth!=null)el.value=tableDraft.widths[Number(el.dataset.tableWidth)];if(tableDraft&&el.id==='tableBorderWidth')el.value=tableDraft.borderWidth;if(tableDraft&&el.id==='tableRowHeight')el.value=tableDraft.rowHeightMm;}});
     document.addEventListener('click',event=>{const close=event.target.closest('[data-close]');if(close){$(close.dataset.close).close();return;}const tab=event.target.closest('[data-tab]');if(tab){document.body.classList.remove('mobile-preview');setTab(tab.dataset.tab);return;}const button=event.target.closest('[data-action]');if(!button){if(!event.target.closest('.menu-anchor'))closeMenu();const card=event.target.closest('.question-card.collapsed');if(card){selected=card.dataset.question;renderQuestions();trackView();}return;}const action=button.dataset.action,id=button.dataset.id,q=docQuestion(id,interaction.source),index=doc.questions.indexOf(q);if(action!=='menu')closeMenu();
       switch(action){
         case'menu':$('moreMenu').hidden=!$('moreMenu').hidden;$('moreButton').setAttribute('aria-expanded',String(!$('moreMenu').hidden));break;
         case'print':print();break;
         case'help':$('helpDialog').showModal();break;
-        case'select':selected=selected===id?null:id;renderQuestions();trackView();break;
+        case'select':selected=selected===id?null:id;renderQuestions();trackView();if(event.detail===0)$('questionsList').querySelector('[data-action="select"][data-id="'+id+'"]')?.focus({preventScroll:true});break;
         case'add':if(doc.questions.length>=200){toast('الحد الأقصى 200 سؤال في الامتحان الواحد.');break;}const added=M.blankQuestion();doc.questions.push(added);selected=added.id;document.body.classList.remove('mobile-preview','fullscreen-preview');setTab('questions');renderQuestions();queueUpdate();setTimeout(()=>{const card=$('body-'+added.id)?.closest('.question-card');card?.scrollIntoView({behavior:'smooth',block:'nearest'});$('body-'+added.id)?.focus({preventScroll:true});},20);break;
         case'delete':if(q){const deleted=M.clone(q),examId=doc.id;doc.questions.splice(index,1);selected=doc.questions[Math.min(index,doc.questions.length-1)]?.id||null;renderQuestions();queueUpdate();toast('تم حذف السؤال.',()=>{
           if(doc.id!==examId||doc.questions.some(item=>item.id===deleted.id))return;
@@ -2836,6 +3174,13 @@ globalThis.WaraqaAuth = (() => {
         });}break;
         case'duplicate':if(q&&doc.questions.length<200){const copied=M.clone(q);copied.id=M.uid();copied.bankRef='';copied.assets.forEach(a=>a.id=M.uid());copied.pageBreak=false;copied.branches.forEach(b=>b.id=M.uid());doc.questions.splice(index+1,0,copied);selected=copied.id;renderQuestions();trackView();queueUpdate();toast('تم نسخ السؤال.');}else if(q)toast('الحد الأقصى 200 سؤال.');break;
         case'move-up':case'move-down':if(M.moveQuestion(doc,id,action==='move-up'?-1:1)){renderQuestions();queueUpdate();}break;
+        case'add-first-branch':{
+          if(q?.type!=='essay')break;
+          q.type='branches';
+          if(!q.branches.length)q.branches.push({id:M.uid(),text:'',score:q.score});
+          renderQuestions();queueUpdate();$('branch-'+q.id+'-0')?.focus();
+          break;
+        }
         case'add-branch':if(q&&q.branches.length<100){q.branches.push({id:M.uid(),text:'',score:10});renderQuestions();queueUpdate();}else toast('الحد الأقصى 100 فرع.');break;
         case'delete-branch':if(q){q.branches.splice(Number(button.dataset.index),1);renderQuestions();queueUpdate();}break;
         case'add-choice':if(q&&q.choices.length<50){q.choices.push('');q.choiceIds.push(M.uid());renderQuestions();queueUpdate();}else toast('الحد الأقصى 50 اختيارًا.');break;
@@ -2889,12 +3234,25 @@ globalThis.WaraqaAuth = (() => {
         }
       }catch(error){toast(error instanceof SyntaxError?'تعذّرت قراءة الملف. اختر JSON محفوظًا من ورقة.':error.message);}
     });
-    document.addEventListener('keydown',event=>{if(event.key==='Escape'&&closeTransientViews())event.preventDefault();const tab=event.target.closest('[role=tab]');if(tab&&['ArrowDown','ArrowUp','ArrowRight','ArrowLeft','Home','End'].includes(event.key)){event.preventDefault();const tabs=[...document.querySelectorAll('[data-tab]')],i=tabs.indexOf(tab);let next=event.key==='Home'?0:event.key==='End'?tabs.length-1:(i+(['ArrowDown','ArrowLeft'].includes(event.key)?1:-1)+tabs.length)%tabs.length;setTab(tabs[next].dataset.tab,true);}if((event.ctrlKey||event.metaKey)&&(event.key.toLowerCase()==='s'||event.code==='KeyS')){event.preventDefault();save();download(JSON.stringify(doc,null,2),'application/json;charset=utf-8',filename('json'));}});
+    document.addEventListener('keydown',event=>{if(event.key==='Escape'&&printBusy){event.preventDefault();return;}if(event.key==='Escape'&&closeTransientViews())event.preventDefault();const tab=event.target.closest('[role=tab]');if(tab&&['ArrowDown','ArrowUp','ArrowRight','ArrowLeft','Home','End'].includes(event.key)){event.preventDefault();const tabs=[...document.querySelectorAll('[data-tab]:not([hidden])')],i=tabs.indexOf(tab);let next=event.key==='Home'?0:event.key==='End'?tabs.length-1:(i+(['ArrowDown','ArrowLeft'].includes(event.key)?1:-1)+tabs.length)%tabs.length;setTab(tabs[next].dataset.tab,true);}if((event.ctrlKey||event.metaKey)&&(event.key.toLowerCase()==='s'||event.code==='KeyS')){event.preventDefault();save();download(JSON.stringify(doc,null,2),'application/json;charset=utf-8',filename('json'));}});
     $('logoutButton').addEventListener('click',async()=>{if(!await save()){toast('تعذّر حفظ آخر تعديل. نزّل ملف الأسئلة قبل تسجيل الخروج.');return;}await versionChain.catch(()=>{});WaraqaAuth.logout();});window.addEventListener('waraqa:before-logout',()=>{checkpointDraft();save();closeTransientViews();$('print-root').replaceChildren();});
-    window.addEventListener('beforeprint',()=>{try{preparePrint();}catch(error){toast(error.message);}});window.addEventListener('afterprint',()=>{document.title=oldTitle;});window.addEventListener('pagehide',()=>{checkpointDraft();save();});document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden'){checkpointDraft();save();}});window.addEventListener('beforeunload',event=>{if(!checkpointDraft()){event.preventDefault();event.returnValue='';}});window.addEventListener('resize',scalePreview);new ResizeObserver(scalePreview).observe($('previewStage'));
+    window.addEventListener('beforeprint',()=>{
+      if(printAuthorized)return;
+      $('print-root').replaceChildren();
+      if(WaraqaAuth.currentUser){
+        try{$('print-root').replaceChildren(...v5Pages(v5Current()));return;}catch{}
+      }
+      if(!WaraqaAuth.currentUser)printGuidancePending=true;
+    });
+    window.addEventListener('afterprint',()=>{
+      printAuthorized=false;$('print-root').replaceChildren();document.title=oldTitle;
+      if(printGuidancePending){printGuidancePending=false;toast('استخدم زر «طباعة» من داخل المحرّر.');}
+      if(trialPromptAfterPrint){trialPromptAfterPrint=false;showTrialEnded();}
+    });window.addEventListener('pagehide',()=>{checkpointDraft();save();});document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden'){checkpointDraft();save();}});window.addEventListener('beforeunload',event=>{if(!checkpointDraft()){event.preventDefault();event.returnValue='';}});window.addEventListener('resize',scalePreview);new ResizeObserver(scalePreview).observe($('previewStage'));
         // Studio tools share the editor's persistence, history and pagination pipeline.
     const S=WaraqaStudio;
-    let v5Active='base',v5PrintJob=null,v5BlockTarget=null,v5BlockDraft=null,v5FitBusy=false,v5LastFit=null;
+    let printAuthorized=false,printGuidancePending=false,printBusy=false,trialPromptAfterPrint=false;
+    let v5Active='base',v5BlockTarget=null,v5BlockDraft=null,v5FitBusy=false;
     const v5Button=(label,action,cls='secondary',attrs='')=>'<button type="button" class="btn '+cls+'" data-v5="'+action+'" '+attrs+'>'+label+'</button>';
     function v5Invalidate(){
       if(doc.variantPlan&&doc.variantPlan.fingerprint!==S.fingerprint(doc)){doc.variantPlan=null;v5Active='base';}
@@ -2929,15 +3287,61 @@ globalThis.WaraqaAuth = (() => {
       return null;
     }
     function v5Pages(target){
+      const hasWritingSpace=target.settings.answerSpaces&&target.questions.some(q=>q.type==='essay'||q.type==='branches'||q.answerLines);
+      const layouts=[{pitch:8,essayLines:6,branchLines:3}];
+      if(hasWritingSpace){
+        layouts.push({pitch:7.25,essayLines:6,branchLines:3},{pitch:6.5,essayLines:6,branchLines:3});
+        if(target.questions.length>=4)layouts.push({pitch:7.25,essayLines:5,branchLines:3},{pitch:6.5,essayLines:5,branchLines:3});
+        if(target.settings.compactAnswerDefaults)layouts.push({pitch:7.25,essayLines:4,branchLines:2},{pitch:6.5,essayLines:4,branchLines:2});
+      }
+      let best=null,firstError;
+      for(const layout of layouts){
+        try{
+          const pages=measurePages(target,layout);
+          if(!best||pages.length<best.length)best=pages;
+          if(best.length===1||target.questions.length<3)break;
+        }catch(error){
+          firstError??=error;
+        }
+      }
+      if(!best)throw firstError;
+      return best;
+    }
+    function measurePages(target,answerLayout){
+      const answerPitch=answerLayout.pitch;
       const original=doc,root=$('measurementRoot');doc=target;
       try{
-        root.replaceChildren();const measurePage=pageElement(0,2);root.append(measurePage);
-        const capacity=measurePage.querySelector('.exam-questions').clientHeight-3;
+        const measurePage=pageElement(0,1,answerPitch);
+        root.replaceChildren(measurePage);
+        const capacityOf=page=>page.querySelector('.exam-questions').clientHeight-3;
+        let capacity=capacityOf(measurePage);
         if(capacity<90)throw new Error('الترويسة طويلة جدًا. اختصرها أو قلّل حجم الخط.');
-        const groups=measureGroups(measurePage,capacity),plans=M.planPages(groups,capacity);
-        const pages=plans.map((plan,index)=>{const p=pageElement(index,plans.length),body=p.querySelector('.exam-questions');body.innerHTML=plan.fragments.map(f=>{const g=groups[f.groupIndex];return questionHTML(g.q,g.index,f.unitIndices.map(i=>g.units[i]),f.continued);}).join('');return p;});
+        let groups=measureGroups(measurePage,capacity,answerLayout),plans=M.planPages(groups,capacity);
+        if(plans.length>1){
+          // Multi-page sheets reserve room for a page number in the footer.
+          const numberedPage=pageElement(0,plans.length,answerPitch);
+          root.replaceChildren(numberedPage);
+          capacity=capacityOf(numberedPage);
+          groups=measureGroups(numberedPage,capacity,answerLayout);
+          plans=M.planPages(groups,capacity);
+        }
+        const pages=plans.map((plan,index)=>{
+          const page=pageElement(index,plans.length,answerPitch);
+          page.querySelector('.exam-questions').innerHTML=plan.fragments.map(fragment=>{
+            const group=groups[fragment.groupIndex];
+            return questionHTML(group.q,group.index,fragment.unitIndices.map(i=>group.units[i]),fragment.continued);
+          }).join('');
+          return page;
+        });
         root.replaceChildren(...pages);fitMath(root);
-        for(const p of pages){const body=p.querySelector('.exam-questions');if(Array.from(body.children).some(q=>q.getBoundingClientRect().bottom>body.getBoundingClientRect().bottom+1))throw new Error('تجاوز سؤال المساحة المتاحة. قلّل الخط أو قسّم محتواه.');}
+        for(const [index,page] of pages.entries()){
+          const body=page.querySelector('.exam-questions'),bottom=body.getBoundingClientRect().bottom;
+          const overflow=[...body.children].findIndex(q=>q.getBoundingClientRect().bottom>bottom+1);
+          if(overflow<0)continue;
+          const group=groups[plans[index].fragments[overflow].groupIndex];
+          const error=new Error('السؤال '+(group.index+1)+' — قلّل مساحة الإجابة أو قسّم المحتوى.');
+          error.questionId=group.q.id;throw error;
+        }
         return pages;
       }finally{doc=original;root.replaceChildren();}
     }
@@ -2947,66 +3351,126 @@ globalThis.WaraqaAuth = (() => {
         lastPages=v5Pages(v5Current());const deck=$('paperDeck');deck.replaceChildren();
         for(const page of lastPages){const wrap=document.createElement('div');wrap.className='paper-wrap';wrap.append(page);deck.append(wrap);}
         scalePreview();uxSync();$('pageCount').textContent=lastPages.length+' صفحة';$('previewPages').textContent=lastPages.length===1?'صفحة واحدة':lastPages.length+' صفحات';renderIssue=null;
-        if($('v5FitButton'))$('v5FitButton').textContent=lastPages.length>1?'↙ احتواء في صفحة':'↙ صفحة واحدة';
+        if($('v5FitButton'))$('v5FitButton').textContent='احتواء في صفحة';
         v5UpdateVariants();
       }catch(error){renderIssue=error.message;lastPages=[];$('paperDeck').innerHTML='<div class="preview-error" role="alert">'+E(error.message)+'</div>';uxSync();$('pageCount').textContent='—';$('previewPages').textContent='راجع التنسيق';$('print-root').replaceChildren();}
     }
-    function v5PrintDocuments(job=v5PrintJob){
-      const all=job?.scope==='all'&&doc.variantPlan;
-      const docs=all?doc.variantPlan.plans.map(p=>S.materialize(doc,p)):[v5Current()];
-      return job?.kind==='answers'?docs.map(S.answerDoc):docs;
+    function showTrialEnded(){
+      if(WaraqaAuth.currentUser||!$('loginScreen').hidden||$('trialEndedDialog').open)return;
+      for(const dialog of document.querySelectorAll('dialog[open]'))dialog.close();
+      $('trialEndedDialog').showModal();
     }
-    function v5PreparePrint(){
-      if(v5PrintJob?.kind==='three'){$('print-root').replaceChildren(threeSheet());return;}
-      const pages=v5PrintDocuments().flatMap(v5Pages);
-      $('print-root').replaceChildren(...pages);document.title=(v5PrintJob?.kind==='answers'?'الإجابات-':'الأسئلة-')+(doc.metadata.subject||'ورقة');
+    function preparePrintJob(scope){
+      if(scope==='three'){
+        const questions=doc.threeModels.map(model=>model.filter(text=>text.trim()));
+        if(questions.some(model=>!model.length))throw new Error('أضف سؤالًا واحدًا على الأقل في كل نموذج من النماذج الثلاثة.');
+        const sheet=threeSheet();
+        const root=$('measurementRoot');root.replaceChildren(sheet);
+        try{
+          if(!threeCheck(sheet))throw new Error('تجاوز أحد النماذج المساحة المتاحة في A4. اختصره أو استخدم الطباعة العادية.');
+        }finally{root.replaceChildren();}
+        return {pages:[sheet],count:questions.flat().length};
+      }
+      const combined=scope==='all'||scope==='keys';
+      const keys=scope==='key'||scope==='keys';
+      const targets=combined&&doc.variantPlan?doc.variantPlan.plans.map(plan=>S.materialize(doc,plan)):[v5Current()];
+      for(const target of targets){
+        const issue=S.inspect(target).find(item=>item.level==='error');
+        if(issue)throw new Error((combined&&target.variantCode?'النموذج '+target.variantCode+' — ':'')+issue.message);
+      }
+      const pages=targets.flatMap(target=>{
+        try{return v5Pages(keys?S.answerDoc(target):target);}
+        catch(error){
+          if(combined&&target.variantCode)error.message='النموذج '+target.variantCode+' — '+error.message;
+          throw error;
+        }
+      });
+      return {pages,count:targets.reduce((n,target)=>n+target.questions.length,0)};
     }
-    async function v5ExecutePrint(kind='questions',scope='current'){
-      await fontPromise;await document.fonts.ready;
+    async function readPrintTrial(count=0){
+      try{return await trialRepository.trialUsage(count);}
+      catch(error){
+        throw new Error('تعذّر التحقق من تجربة الطباعة. '+error.message+' اسمح بتخزين بيانات الموقع ثم أعد المحاولة.');
+      }
+    }
+    function showPrintFailure(message){
+      const dialog=document.querySelector('dialog[open]');
+      if(!dialog){toast(message);return;}
+      let alert=dialog.querySelector('.direct-print-error');
+      if(!alert){
+        alert=document.createElement('p');alert.className='equation-error direct-print-error';
+        alert.setAttribute('role','alert');
+        const actions=dialog.querySelector('.dialog-actions');
+        if(actions)actions.before(alert);else dialog.append(alert);
+      }
+      alert.textContent=message;
+    }
+    async function print(scope='current'){
+      if(printBusy||printAuthorized)return;
+      printBusy=true;
       try{
-        if(!doc.questions.length){toast('أضف سؤالًا واحدًا على الأقل قبل الطباعة.');return;}
-        v5PrintJob={kind,scope};v5PreparePrint();
-        for(const d of document.querySelectorAll('dialog[open]'))d.close();
-        document.body.classList.remove('fullscreen-preview');await save();window.print();
-      }catch(error){v5PrintJob=null;$('print-root').replaceChildren();toast(error.message);}
-    }
-    function v5Issues(){
-      const issues=S.inspect(doc);if(renderIssue)issues.unshift({level:'error',message:renderIssue,id:''});
-      return issues;
-    }
-    function v5Review(){
-      renderPreview();const issues=v5Issues(),errors=issues.filter(x=>x.level==='error').length,warnings=issues.filter(x=>x.level==='warning').length;
-      $('v5ReviewBody').innerHTML='<div class="v5-check-stats"><div class="v5-check-stat"><strong>'+doc.questions.length+'</strong><span>أسئلة</span></div><div class="v5-check-stat"><strong>'+M.total(doc)+'</strong><span>درجة</span></div><div class="v5-check-stat"><strong>'+(lastPages.length||'—')+'</strong><span>صفحات النموذج المعروض</span></div></div>'+
-        (issues.length?'<div class="v5-info">'+errors+' أخطاء · '+warnings+' ملاحظات تستحق المراجعة. اضغط الملاحظة للانتقال إلى السؤال.</div><div class="v5-review-scroll">'+issues.map(i=>'<button class="v5-issue" data-level="'+i.level+'" data-v5="issue-go" data-id="'+E(i.id)+'"><span>'+E(i.message)+'</span><small>'+({error:'خطأ',warning:'مراجعة',info:'معلومة'})[i.level]+'</small></button>').join('')+'</div>':'<div class="v5-ready">✓ اجتازت الورقة فحوص الدرجات والتكرار والإجابات.</div>')+
-        '<p class="v5-help">الفحص محلي للهيكل والتنسيق؛ راجع صحة المحتوى والإجابات بنفسك. للطباعة: A4، مقياس 100%، بلا هوامش، مع إيقاف رؤوس الصفحات وتذييلاتها.</p>'+
-        (lastPages.length>1?'<div class="v5-info">الورقة تمتد إلى '+lastPages.length+' صفحات. يمكن تجربة الاحتواء مع الحفاظ على حجم خط مقروء.</div>':'')+
-        '<div class="dialog-actions">'+v5Button('↙ احتواء تلقائي في صفحة','fit','soft')+v5Button('عرض مفتاح الإجابة','answers','secondary')+'</div>'+
-        '<div class="dialog-actions sticky">'+v5Button('طباعة '+(v5Active==='base'?'الأسئلة':'النموذج '+v5Active),'print-current','primary',(!doc.questions.length||renderIssue?'disabled':''))+(doc.variantPlan?v5Button('طباعة كل النماذج','print-all','secondary'):'')+v5Button('طباعة الإجابات','print-answers','secondary')+'</div>';
-      if(!$('v5ReviewDialog').open)$('v5ReviewDialog').showModal();
+        for(const alert of document.querySelectorAll('.direct-print-error'))alert.remove();
+        if(typeof window.print!=='function')throw new Error('الطباعة غير متاحة في هذا المتصفح.');
+        if(!WaraqaAuth.currentUser&&(await readPrintTrial()).remaining===0){showTrialEnded();return;}
+        await fontPromise;await document.fonts.ready;
+        const job=preparePrintJob(scope);
+        if(!WaraqaAuth.currentUser){
+          const result=await readPrintTrial(job.count);
+          if(!result.accepted){
+            if(result.remaining===0)showTrialEnded();
+            else showPrintFailure('يتجاوز هذا الطلب حدّ الطباعة المجانية. قلّل عدد الأسئلة في الطلب.');
+            return;
+          }
+          trialPromptAfterPrint=result.remaining===0;
+        }
+        $('print-root').replaceChildren(...job.pages);
+        document.title=(scope==='key'||scope==='keys'?'الإجابات-':'الأسئلة-')+(doc.metadata.subject||'ورقة');
+        for(const dialog of document.querySelectorAll('dialog[open]'))dialog.close();
+        document.body.classList.remove('fullscreen-preview');
+        printAuthorized=true;
+        window.print();
+      }catch(error){
+        showPrintFailure(error.message);
+        $('print-root').replaceChildren();printAuthorized=false;document.title=oldTitle;
+        if(trialPromptAfterPrint){trialPromptAfterPrint=false;showTrialEnded();}
+      }finally{
+        printBusy=false;
+      }
     }
     async function v5Fit(){
       if(v5FitBusy)return;await fontPromise;await document.fonts.ready;
       if(!doc.questions.length){toast('أضف الأسئلة أولًا.');return;}
       if(doc.questions.some((q,i)=>i>0&&q.pageBreak)){toast('يوجد فاصل صفحة يدوي. أوقف «بدء السؤال في صفحة جديدة» قبل الاحتواء.');return;}
-      const before=M.clone(doc.settings),examId=doc.id,signature=S.fingerprint(doc);
+      const before=M.clone(doc.settings),examId=doc.id,snapshot=JSON.stringify(doc);
       const targets=doc.variantPlan?doc.variantPlan.plans.map(p=>S.materialize(doc,p)):[doc];
       let originalCount;try{originalCount=Math.max(...targets.map(d=>v5Pages(d).length));}catch{}
       if(originalCount===1){toast('ورقتك موجودة في صفحة واحدة بالفعل.');return;}
       v5FitBusy=true;document.querySelectorAll('[data-v5="fit"]').forEach(b=>b.disabled=true);
       toast('جارٍ موازنة حجم الخط والمسافات…');
       try{
-        const minimum=Math.min(before.fontSize,Math.max(12,before.fontSize-2));
-        const at=t=>({...before,fontSize:+(before.fontSize-(before.fontSize-minimum)*t).toFixed(2),lineHeight:+(before.lineHeight-(before.lineHeight-Math.min(before.lineHeight,1.3))*t).toFixed(3),gap:+(before.gap-(before.gap-Math.min(before.gap,1.5))*t).toFixed(2)});
-        const test=t=>{try{return targets.every(target=>v5Pages({...target,settings:at(t)}).length===1);}catch{return false;}};
+        const minimum=Math.min(before.fontSize,11);
+        const at=(t,compact)=>({
+          ...before,...(compact?{compactAnswerDefaults:true}:{}),
+          fontSize:+(before.fontSize-(before.fontSize-minimum)*t).toFixed(2),
+          lineHeight:+(before.lineHeight-(before.lineHeight-Math.min(before.lineHeight,1.3))*t).toFixed(3),
+          gap:+(before.gap-(before.gap-Math.min(before.gap,1.5))*t).toFixed(2)
+        });
+        const test=(t,compact)=>{try{return targets.every(target=>v5Pages({...target,settings:at(t,compact)}).length===1);}catch{return false;}};
         await new Promise(requestAnimationFrame);
-        if(!test(1)){toast('المحتوى أكبر من صفحة عند الحد المقروء. بقي التنسيق كما هو؛ اختصر المحتوى أو استخدم أكثر من صفحة.');return;}
-        let low=0,high=1;for(let i=0;i<10;i++){const mid=(low+high)/2;if(test(mid))high=mid;else low=mid;}
-        if(doc.id!==examId||S.fingerprint(doc)!==signature){toast('تغيّرت الورقة أثناء الفحص؛ أعد المحاولة.');return;}
-        v5LastFit={examId,settings:before};doc.settings=at(Math.min(1,high+.004));if(doc.variantPlan)doc.variantPlan.fingerprint=S.fingerprint(doc);
+        let compact=before.compactAnswerDefaults===true;
+        if(!test(1,compact)){
+          compact=before.answerSpaces===true&&!compact;
+          if(!compact||!test(1,compact)){
+            toast('المحتوى أكبر من صفحة عند الحد المقروء. قلّل الأسطر اليدوية أو استخدم أكثر من صفحة.');return;
+          }
+        }
+        let low=before.fontSize>minimum?Math.min(1,.5/(before.fontSize-minimum)):0,high=1;
+        for(let i=0;i<10;i++){const mid=(low+high)/2;if(test(mid,compact))high=mid;else low=mid;}
+        if(JSON.stringify(doc)!==snapshot){toast('تغيّرت الورقة أثناء الفحص؛ أعد المحاولة.');return;}
+        doc.settings=at(Math.min(1,high+.004),compact);if(doc.variantPlan)doc.variantPlan.fingerprint=S.fingerprint(doc);
         interaction={source:'doc',kind:'action',key:''};queueUpdate();renderFormat();renderPreview();
-        toast('تم الاحتواء: خط '+doc.settings.fontSize+' نقطة، ومسافة '+doc.settings.gap+' مم.',()=>{if(doc.id===examId){doc.settings=before;if(doc.variantPlan)doc.variantPlan.fingerprint=S.fingerprint(doc);renderFormat();queueUpdate();renderPreview();}});
-        if($('v5ReviewDialog').open)v5Review();
-      }finally{v5FitBusy=false;document.querySelectorAll('[data-v5="fit"]').forEach(b=>b.disabled=false);}
+        toast('تم الاحتواء بخط '+doc.settings.fontSize+' نقطة.'+(compact&&!before.compactAnswerDefaults?' تم تكثيف مساحات الإجابة الافتراضية.':''),()=>{if(doc.id===examId){doc.settings=before;if(doc.variantPlan)doc.variantPlan.fingerprint=S.fingerprint(doc);renderFormat();queueUpdate();renderPreview();}});
+        }finally{v5FitBusy=false;document.querySelectorAll('[data-v5="fit"]').forEach(b=>b.disabled=false);}
     }
     function v5Samples(){
       $('v5SamplesBody').innerHTML='<div class="v5-info">اختر مادة لتجربة أدواتها. سيُحفظ امتحانك الحالي في الأرشيف قبل فتح النموذج. هذه أمثلة تعريفية قابلة للتعديل وليست اختبارات معتمدة للمنهج.</div><div class="v5-subjects">'+S.subjects.map(s=>'<button class="v5-subject" data-v5="sample-load" data-subject="'+s.id+'"><span class="v5-subject-icon">'+s.icon+'</span><strong>'+s.name+'</strong><small>'+s.hint+'</small><small>٤ أسئلة · ٢٠ درجة ←</small></button>').join('')+'</div>';
@@ -3018,7 +3482,7 @@ globalThis.WaraqaAuth = (() => {
     }
     function v5VariantsHTML(){
       const v=doc.variantPlan;if(!v)return '';
-      return '<div class="v5-result" role="status">✓ '+v.plans.length+' نماذج مختلفة، بالأسئلة والدرجات نفسها.'+(v.skipped.length?' ثُبّت الخلط الداخلي للأسئلة '+v.skipped.join('، ')+' لوجود إحالات نصية.':'')+'</div><div class="v5-variant-cards">'+v.plans.map(p=>'<div class="v5-variant-card"><strong>'+p.code+'</strong><span>'+doc.questions.length+' أسئلة · '+M.total(doc)+' درجة</span>'+v5Button('معاينة','preview-generated','secondary small','data-code="'+p.code+'"')+'</div>').join('')+'</div><div class="dialog-actions">'+v5Button('طباعة النماذج','review-all','primary')+v5Button('مفاتيح الإجابة','answers','secondary')+v5Button('تنزيل الحزمة','export-variants','secondary')+'</div><p class="field-hint">الحزمة للمعلّم وتضم مفاتيح الإجابة. وزّع مطبوعات الأسئلة على الطلاب.<br>أي تعديل جديد على الأصل يلغي خطط الخلط القديمة. أعد توليد النماذج بعد إتمام تعديلاتك.</p>';
+      return '<div class="v5-result" role="status">✓ '+v.plans.length+' نماذج مختلفة، بالأسئلة والدرجات نفسها.'+(v.skipped.length?' ثُبّت الخلط الداخلي للأسئلة '+v.skipped.join('، ')+' لوجود إحالات نصية.':'')+'</div><div class="v5-variant-cards">'+v.plans.map(p=>'<div class="v5-variant-card"><strong>'+p.code+'</strong><span>'+doc.questions.length+' أسئلة · '+M.total(doc)+' درجة</span>'+v5Button('معاينة','preview-generated','secondary small','data-code="'+p.code+'"')+'</div>').join('')+'</div><div class="dialog-actions">'+v5Button('طباعة كل النماذج','print-all','primary')+v5Button('مفاتيح الإجابة','answers','secondary')+v5Button('تنزيل الحزمة','export-variants','secondary')+'</div><p class="field-hint">الحزمة للمعلّم وتضم مفاتيح الإجابة. وزّع مطبوعات الأسئلة على الطلاب.<br>أي تعديل جديد على الأصل يلغي خطط الخلط القديمة. أعد توليد النماذج بعد إتمام تعديلاتك.</p>';
     }
     function v5Generate(){
       try{
@@ -3062,7 +3526,7 @@ globalThis.WaraqaAuth = (() => {
     function threeSheet(){
       const page=document.createElement('div');page.className='three-sheet';page.dir=doc.settings.language==='en'?'ltr':'rtl';
       const m=doc.metadata,english=doc.settings.language==='en';
-      page.innerHTML=doc.threeModels.map(questions=>'<section class="three-model"><div class="three-header"><strong>'+[m.subject,m.grade].filter(Boolean).map(E).join(' · ')+'</strong></div><div class="three-student">'+(english?'Student name:':'اسم الطالب:')+' ........................................................</div><ol class="three-questions">'+questions.filter(q=>q.trim()).map(q=>'<li><span>'+E(q)+'</span></li>').join('')+'</ol></section>').join('');
+      page.innerHTML=doc.threeModels.map(questions=>'<section class="three-model"><div class="three-header"><strong>'+[m.subject,m.grade].filter(Boolean).map(E).join(' · ')+'</strong></div><div class="three-student">'+(english?'Student name:':'اسم الطالب:')+' ........................................................</div><ol class="three-questions">'+questions.filter(q=>q.trim()).map(q=>'<li><span>'+E(q)+'</span>'+(doc.settings.answerSpaces?answerRules(1):'')+'</li>').join('')+'</ol></section>').join('');
       return page;
     }
     function threeCheck(sheet){
@@ -3075,27 +3539,23 @@ globalThis.WaraqaAuth = (() => {
     }
     function threePreview(){
       const preview=$('threeModelsPreview'),sheet=threeSheet();preview.replaceChildren(sheet);
-      const valid=threeCheck(sheet);$('threeModelsError').textContent=valid?'':'المحتوى أطول من المساحة المتاحة لأحد النماذج. اختصر الأسئلة أو بيانات الترويسة قبل الطباعة.';
+      const valid=threeCheck(sheet);$('threeModelsError').textContent=valid?'':'تجاوز أحد النماذج المساحة المتاحة في A4. اختصره أو استخدم الطباعة العادية.';
       return valid;
     }
     function threeOpen(){
       $('threeModelsEditor').innerHTML=doc.threeModels.map((questions,i)=>'<details class="three-editor"'+(!i?' open':'')+'><summary>النموذج '+('ABC'[i])+' — حتى خمسة أسئلة</summary><div>'+questions.map((q,j)=>'<label class="field"><span class="field-label">السؤال '+(j+1)+'</span><textarea rows="2" maxlength="4000" data-three-model="'+i+'" data-three-question="'+j+'" placeholder="اكتب السؤال '+(j+1)+'">'+E(q)+'</textarea></label>').join('')+'</div></details>').join('');
       $('threeModelsDialog').showModal();threePreview();
     }
-    async function threePrint(){
-      await fontPromise;await document.fonts.ready;
-      if(doc.threeModels.some(questions=>!questions.some(q=>q.trim()))){$('threeModelsError').textContent='أضف سؤالًا واحدًا على الأقل في كل نموذج من النماذج الثلاثة.';return;}
-      if(!threePreview())return;
-      v5PrintJob={kind:'three'};const root=$('print-root');root.replaceChildren(threeSheet());
-      $('threeModelsDialog').close();await save();window.print();
-    }
     function v5AddDialogs(){
       const dialog=(id,title,body,cls='v5-wide')=>'<dialog class="dialog '+cls+'" id="'+id+'" aria-labelledby="'+id+'Heading"><button class="icon-btn dialog-close" data-close="'+id+'" aria-label="إغلاق">×</button><h2 id="'+id+'Heading">'+title+'</h2>'+body+'</dialog>';
       document.body.insertAdjacentHTML('beforeend',
+        dialog('trialEndedDialog','انتهت تجربة الطباعة المجانية',
+          '<p>سجّل الدخول لمواصلة الطباعة.</p><div class="dialog-actions">'+
+          '<button type="button" class="btn primary" id="trialSignIn">تسجيل الدخول</button>'+
+          '<button type="button" class="btn secondary" data-close="trialEndedDialog">لاحقًا</button></div>')+
         dialog('v5SamplesDialog','جرّب المنصة بمادة تُدرّسها','<p>نماذج قصيرة تكشف لك الأدوات أثناء استخدامها.</p><div id="v5SamplesBody"></div>')+
         dialog('v5VariantsDialog','امتحان واحد. نماذج متعددة.','<p>أنشئ من ٢ إلى ٤ نماذج متكافئة. يُحفظ النموذج A بترتيب الأصل، وتُخلط النماذج التالية مع إعادة ربط الإجابات.</p><label class="field"><span class="field-label">عدد النماذج</span><select id="v5VariantCount"><option value="2">نموذجان · A / B</option><option value="3" selected>ثلاثة · A / B / C</option><option value="4">أربعة · A / B / C / D</option></select></label><label class="checkbox"><input id="v5ShuffleQuestions" type="checkbox" checked>خلط ترتيب الأسئلة المستقلة</label><label class="checkbox"><input id="v5ShuffleBranches" type="checkbox" checked>خلط الفروع المستقلة داخل السؤال</label><label class="checkbox"><input id="v5ShuffleChoices" type="checkbox" checked>خلط خيارات الاختيار من متعدد</label><div class="v5-help">يبقى المحتوى والدرجات كما هما. ثبّت الأسئلة المرتبطة من «ضوابط خلط هذا السؤال». تبقى خطوات الترتيب وعناصر المطابقة بترتيبها المقصود.</div>'+v5Button('✦ إنشاء النماذج الآن','generate','primary')+'<div id="v5GenerateResult" aria-live="polite"></div>')+
         dialog('threeModelsDialog','ثلاثة نماذج مختلفة في ورقة واحدة','<p>اكتب أسئلة كل نموذج بصورة مستقلة (حتى خمسة أسئلة لكل نموذج). تظهر النماذج الثلاثة في صفحة A4 واحدة، وتعرض ترويسة كل نموذج اسم المادة والصف فقط.</p><div id="threeModelsEditor"></div><div class="three-preview-heading">معاينة الورقة</div><p class="field-hint">تحقّق من المعاينة قبل الطباعة، ثم قصّ الورقة على الخطوط الفاصلة.</p><div class="three-preview-scroll"><div id="threeModelsPreview"></div></div><p id="threeModelsError" class="equation-error" role="alert"></p><div class="dialog-actions sticky">'+v5Button('طباعة النماذج الثلاثة','three-print','primary')+'<button class="btn secondary" data-close="threeModelsDialog">إغلاق</button></div>')+
-        dialog('v5ReviewDialog','مراجعة أخيرة قبل الطباعة','<p>الدرجات، اكتمال الأسئلة، التكرار، ومساحة الورقة في مكان واحد.</p><div id="v5ReviewBody"></div>')+
         dialog('v5AnswersDialog','مفتاح الإجابة','<p>الإجابات محفوظة مع محتواها، وتتبع ترتيب النموذج الذي تختاره.</p><label class="field"><span class="field-label">النموذج</span><select id="v5AnswerVersion"></select></label><div id="v5AnswerBody"></div><div class="dialog-actions sticky">'+v5Button('طباعة المفتاح المعروض','print-key-selected','primary')+v5Button('طباعة كل المفاتيح','print-keys-all','secondary')+'</div>')+
         dialog('v5BlockDialog','محتوى متخصص','<h3 id="v5BlockTitle"></h3><div id="v5BlockBody"></div><div id="v5BlockError" class="equation-error" role="alert"></div><div class="dialog-actions">'+v5Button('حفظ المقطع','block-save','primary')+'<button class="btn secondary" data-close="v5BlockDialog">إلغاء</button></div>')
       );
@@ -3103,6 +3563,16 @@ globalThis.WaraqaAuth = (() => {
     }
     function v5Init(){
       v5AddDialogs();
+      $('trialSignIn').addEventListener('click',WaraqaAuth.showLogin);
+      document.addEventListener('input',event=>{
+        const el=event.target;
+        if(el.dataset.setting==='answerSpaces'){setAnswerSpaces(el.checked);return;}
+        if(!el.hasAttribute('data-answer-lines')||!el.validity.valid)return;
+        const q=qFor(el),target=el.dataset.answerBranch==null?q:q?.branches[+el.dataset.answerBranch];
+        if(!target)return;
+        if(el.value==='')delete target.answerSpaceLines;else target.answerSpaceLines=el.valueAsNumber;
+        queueUpdate();
+      });
       document.addEventListener('input',event=>{
         const el=event.target,q=qFor(el);
         if(el.dataset.threeModel!=null){doc.threeModels[+el.dataset.threeModel][+el.dataset.threeQuestion]=el.value;queueUpdate();threePreview();return;}
@@ -3127,18 +3597,14 @@ globalThis.WaraqaAuth = (() => {
           if(a==='variants')v5Variants();
           if(a==='three-models')threeOpen();
           if(a==='place-value'){let target=doc.questions.find(q=>q.id===selected)||doc.questions[0];if(!target){target=M.blankQuestion();doc.questions.push(target);selected=target.id;renderQuestions();queueUpdate();}wvOpen(target,'doc','template',null,'placevalue');}
-          if(a==='three-print')await threePrint();
+          if(a==='three-print')await print('three');
           if(a==='generate')v5Generate();
           if(a==='preview-version'||a==='preview-generated'){v5Active=b.dataset.code;renderPreview();if(a==='preview-generated'){$('v5VariantsDialog').close();if(innerWidth<=740)document.querySelector('[data-action="mobile-preview"]').click();}}
           if(a==='answers')v5Answers();
-          if(a==='review'||a==='review-all'){if($('v5VariantsDialog').open)$('v5VariantsDialog').close();v5Review();}
           if(a==='fit')await v5Fit();
-          if(a==='issue-go'){if(b.dataset.id){selected=b.dataset.id;$('v5ReviewDialog').close();document.querySelector('[data-action="mobile-edit"]').click();setTab('questions');renderQuestions();$('body-'+selected)?.focus();}else{$('v5ReviewDialog').close();setTab('metadata');}}
-          if(a==='print-current')await v5ExecutePrint();
-          if(a==='print-all')await v5ExecutePrint('questions','all');
-          if(a==='print-answers')await v5ExecutePrint('answers');
-          if(a==='print-key-selected'){v5Active=$('v5AnswerVersion').value;await v5ExecutePrint('answers');}
-          if(a==='print-keys-all')await v5ExecutePrint('answers','all');
+          if(a==='print-all')await print('all');
+          if(a==='print-key-selected'){v5Active=$('v5AnswerVersion').value;renderPreview();await print('key');}
+          if(a==='print-keys-all')await print('keys');
           if(a==='export-variants'&&doc.variantPlan){download(JSON.stringify({format:'waraqa-variant-bundle',version:1,document:doc},null,2),'application/json;charset=utf-8',filename('نماذج.json'));toast('تم تنزيل الحزمة. افتحها لاحقًا من «فتح ملف».');}
           if(a==='block-new')v5OpenBlock(q,b.dataset.kind,null,source);
           if(a==='block-edit'){const block=q?.blocks.find(x=>x.id===b.dataset.block);if(block)v5OpenBlock(q,block.kind,block,source);}
@@ -3148,10 +3614,9 @@ globalThis.WaraqaAuth = (() => {
           if(a==='block-save')v5SaveBlock();
         });
       });
-      document.addEventListener('keydown',event=>{if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='p'){event.preventDefault();v5Review();}});
+      document.addEventListener('keydown',event=>{if((event.ctrlKey||event.metaKey)&&(event.key.toLowerCase()==='p'||event.code==='KeyP')){event.preventDefault();if(!$('loginScreen').hidden)return;print();}});
       try{if(localStorage.getItem('waraqa.studio.welcome')==='hidden')$('v5StartBanner').hidden=true;}catch{}
       v5UpdateVariants();
-      window.addEventListener('afterprint',()=>{v5PrintJob=null;});
     }
 
     // Visual tools use the same question records, account storage and undo history.
@@ -3434,9 +3899,59 @@ globalThis.WaraqaAuth = (() => {
         ['الورقة',[['بيانات الامتحان','paper','data-ux-route="metadata"'],['تنسيق الورقة','settings','data-ux-route="format"'],['قوالب الورقة','layout','data-ux-route="templates"'],['معاينة الورقة','eye','data-action="mobile-preview"']]],
         ['الأسئلة والنماذج',[['بنك الأسئلة','books','data-ux-route="bank"'],['٣ نماذج في ورقة','paper','data-v5="three-models"'],['جدول القيمة المكانية','grid','data-v5="place-value"'],['نماذج متعددة A / B','shuffle','data-v5="variants"'],['مفتاح الإجابة','key','data-v5="answers"'],['نماذج جاهزة','paper','data-v5="samples"'],['الرسومات والقوالب','shapes','data-wv-action="demo-open"']]],
         ['الحفظ والنسخ',[['امتحاناتي','folder','data-ux-route="archive"'],['حفظ في الأرشيف','archive','data-action="archive-save"'],['سجل النسخ','history','data-ux-route="versions"'],['حفظ نسخة','copy','data-action="version-save"']]],
-        ['الملفات والطباعة',[['تدقيق وطباعة','print','data-v5="review"'],['احتواء في صفحة','fit','data-v5="fit"'],['امتحان جديد','plus','data-action="new"']]]
+        ['الملفات والطباعة',[['طباعة','print','data-action="print"'],['احتواء في صفحة','fit','data-v5="fit"'],['استيراد ملف','folder','data-action="import"'],['تنزيل ملف الأسئلة','paper','data-action="export-json"'],['تنزيل نسخة احتياطية','copy','data-action="backup-export"'],['امتحان جديد','plus','data-action="new"']]]
       ];
       return groups.map(([title,items])=>'<section class="ux-tools-section"><h3 class="ux-tools-heading">'+title+'</h3><div class="ux-tools-group">'+items.map(([label,icon,attrs])=>uxButton(label,icon,attrs+' data-ux-tool="'+label+'"')).join('')+'</div></section>').join('');
+    }
+    function compactQuestionCard(card,content){
+      const heading=card.querySelector('.question-heading');
+      const collapse=card.querySelector('.collapse-icon');
+      heading.append(collapse.firstElementChild);
+      collapse.remove();
+      card.classList.add('compact-question');
+      if(!content)return;
+
+      heading.querySelector('.subtitle').remove();
+      const grade=content.querySelector('[data-q="score"]').closest('label');
+      grade.className='inline-question-grade';
+      card.querySelector('.question-summary-meta').replaceWith(grade);
+      const titleRow=content.querySelector('.form-row');
+      const bodyField=content.querySelector('.question-body-field');
+      const formatter=bodyField.querySelector('.format-buttons');
+      const type=content.querySelector('.type-row');
+      const answerSettings=content.querySelector('.question-answer-settings');
+
+      const quick=document.createElement('div');
+      quick.className='question-quick-actions';
+      type.querySelector('.icon')?.remove();
+      quick.append(type);
+      const blankButton=formatter.querySelector('[data-action="insert-blank"]');
+      if(blankButton)quick.append(blankButton);
+      if(type.querySelector('select').value==='essay'){
+        quick.insertAdjacentHTML('beforeend','<button type="button" class="btn soft" data-action="add-first-branch" data-id="'+card.dataset.question+'">'+ic('plus')+'إضافة فرع</button>');
+      }
+
+      const settings=document.createElement('details');
+      settings.className='question-settings';
+      settings.innerHTML='<summary>'+uxIcon('more')+'<span>إعدادات السؤال</span>'+uxIcon('down')+'</summary><div class="question-settings-body"></div>';
+      const settingsBody=settings.lastElementChild;
+      settingsBody.append(titleRow,formatter);
+      formatter.setAttribute('role','group');
+      formatter.setAttribute('aria-label','تنسيق نص السؤال');
+      if(answerSettings){
+        for(const field of content.querySelectorAll('.branch-row .field:has([data-answer-lines])'))answerSettings.append(field);
+      }
+      const mainSections='.question-body-field,.branch-list,.matching-editor,.ordering-editor,.blank-help';
+      for(const section of [...content.children])if(!section.matches(mainSections))settingsBody.append(section);
+      const actions=card.querySelector('.question-actions');
+      if(actions)settingsBody.append(actions);
+      const text=bodyField.querySelector('textarea');
+      text.rows=2;
+      if(type.querySelector('select').value==='branches'){
+        text.placeholder=text.dir==='ltr'?'Optional instructions for the branches…':'تعليمات الفروع (اختياري)…';
+      }
+      bodyField.after(quick);
+      content.append(settings);
     }
     function uxDecorateQuestion(card){
       if(card.dataset.uxReady)return;card.dataset.uxReady='true';
@@ -3451,8 +3966,13 @@ globalThis.WaraqaAuth = (() => {
           options.append(actions);card.append(options);
         }else card.append(actions);
       }
-      const content=card.querySelector('.card-content');if(!content)return;
-      const type=content.querySelector('.type-row');if(type)content.prepend(type);
+      const content=card.querySelector('.card-content');
+      const compact=card.closest('#questionsList');
+      if(!content){
+        if(compact)compactQuestionCard(card);
+        return;
+      }
+      const type=content.querySelector('.type-row');if(type&&!compact)content.prepend(type);
       const palette=document.createElement('details');palette.className='ux-insert';palette.setAttribute('aria-label','إضافة محتوى للسؤال');
       palette.innerHTML='<summary>'+uxIcon('plus')+'إضافة محتوى للسؤال<span>صورة، جدول، رسم والمزيد</span></summary><div class="ux-insert-grid"></div><div class="ux-table-presets"><span>جدول سريع</span></div>';
       const grid=palette.querySelector('.ux-insert-grid');
@@ -3483,19 +4003,18 @@ globalThis.WaraqaAuth = (() => {
       content.querySelectorAll('details.v5-answers>summary').forEach(s=>{s.textContent='الإجابة النموذجية';});
       const options=[...content.querySelectorAll('details.card-options')];
       options.forEach(d=>{const s=d.querySelector('summary');if(s?.textContent.includes('إضافية'))s.innerHTML=uxIcon('settings')+'أسطر الإجابة وترقيم الفروع';if(s?.textContent.includes('ضوابط خلط'))s.textContent='ترتيب السؤال وخلط الخيارات';});
+      if(compact)compactQuestionCard(card,content);
     }
     function uxDecorate(){
       document.querySelectorAll('.question-card').forEach(uxDecorateQuestion);
-      document.querySelectorAll('.empty-editor:not([data-ux-ready])').forEach(el=>{
-        el.dataset.uxReady='true';el.querySelector('h3').textContent='سؤالك الأول';
-        const row=document.createElement('div');row.className='ux-empty-choices';
-        const add=el.querySelector('[data-action="add"]');add.innerHTML=uxIcon('plus')+'سؤال جديد';row.append(add);
-        row.insertAdjacentHTML('beforeend',uxButton('من بنك الأسئلة','books','data-ux-route="bank"'));el.append(row);
-      });
+
     }
     function uxInit(){
       document.querySelector('.workspace-head').innerHTML='<div><h1 id="uxPageTitle">ورقتي</h1></div><div class="head-meta">'+uxIcon('paper')+'<span id="documentContext"></span></div><button class="ux-mobile-new" type="button" data-action="new">'+uxIcon('plus')+'امتحان جديد</button>';
       const nav=document.querySelector('.nav-tabs');
+      for(const tab of ['archive','templates','versions'])$('tab-'+tab).hidden=true;
+      document.querySelector('.work-imports').innerHTML=uxButton('استيراد ملف','folder','data-action="import"')+
+        uxButton('بنك الأسئلة','books','data-ux-route="bank"');
       const labels={questions:['edit','الأسئلة'],metadata:['paper','بيانات الامتحان'],format:['settings','تنسيق الورقة'],archive:['folder','امتحاناتي'],templates:['layout','قوالب الورقة'],versions:['history','سجل النسخ']};
       // Preserve the existing tab IDs and ARIA relationships.
       ['questions','metadata','format','templates','archive','versions'].forEach(name=>{
@@ -3504,11 +4023,10 @@ globalThis.WaraqaAuth = (() => {
       nav.insertAdjacentHTML('beforeend','<button type="button" class="nav-tab ux-route" data-ux-route="bank"><span class="nav-num">'+uxIcon('books')+'</span><span>بنك الأسئلة</span></button>');
       const bank=nav.lastElementChild;nav.insertBefore(bank,$('tab-templates'));
       document.querySelector('.sidebar-label').textContent='مساحة العمل';
-      document.querySelector('.app-more-nav').innerHTML='<span class="nav-num">'+uxIcon('grid')+'</span><span>جميع الأدوات</span>';
+      document.querySelector('.app-more-nav').innerHTML='<span class="nav-num">'+uxIcon('grid')+'</span><span>الأدوات</span>';
       document.querySelector('.sidebar').insertAdjacentHTML('beforeend','<div class="ux-sidebar-bottom"><span class="ux-avatar">'+uxIcon('user')+'</span><div>مساحة المعلّم<small>ورقة · استوديو الامتحانات</small></div></div>');
       $('tab-archive').style.marginTop='22px';
       $('tab-templates').style.marginTop='0';$('tab-templates').hidden=true;
-      document.querySelectorAll('[data-action="print"] span').forEach(s=>{s.textContent='طباعة';});
       const sections=$('appSectionTabs');sections.innerHTML='<button type="button" data-app-tab="questions" class="active" aria-pressed="true">الأسئلة</button><button type="button" data-app-tab="metadata" aria-pressed="false">بيانات الامتحان</button><button type="button" data-app-tab="format" aria-pressed="false">تنسيق الورقة</button>';
       $('appToolsHeading').textContent='جميع الأدوات';
       $('appToolActions').innerHTML='<label class="field ux-tools-search"><span class="field-label">بحث في الأدوات</span><input type="search" id="uxToolsSearch" placeholder="اسم الأداة" autocomplete="off"></label><section id="uxModelTools" class="ux-tools-section" hidden></section>'+uxToolGroups()+'<div id="uxToolsEmpty" class="ux-tool-empty" hidden>لا توجد نتائج</div>';
@@ -3519,13 +4037,13 @@ globalThis.WaraqaAuth = (() => {
         ['preview','eye','المعاينة','id="mobilePreview" data-action="mobile-preview" data-app-destination="preview"'],
         ['more','grid','الأدوات','data-app-destination="more" data-app-open-tools']
       ].map(([name,icon,label,attrs])=>'<button type="button" '+attrs+'><span class="app-nav-icon">'+uxIcon(icon)+'</span><span>'+label+'</span></button>').join('');
-      const printReview=document.querySelector('.v5-preview-tools [data-v5="review"]');
-      printReview.className='btn primary small ux-preview-print';
-      printReview.innerHTML=uxIcon('print')+'<span>تدقيق وطباعة</span>';
+      const printButton=document.querySelector('.v5-preview-tools [data-action="print"]');
+      printButton.className='btn primary small ux-preview-print';
+      printButton.innerHTML=uxIcon('print')+'<span>طباعة</span>';
       document.querySelector('.preview-top h2').innerHTML='<span class="live-dot"></span>معاينة الورقة';
       const previewHelp=document.querySelector('.preview-bottom [data-action="help"]');previewHelp.dataset.uxRoute='format';delete previewHelp.dataset.action;previewHelp.textContent='إعدادات الورقة';
       $('helpHeading').textContent='طباعة الامتحان';
-      $('v5SamplesDialogHeading').textContent='نماذج جاهزة';$('v5VariantsDialogHeading').textContent='نماذج متعددة';$('v5ReviewDialogHeading').textContent='تدقيق وطباعة';
+      $('v5SamplesDialogHeading').textContent='نماذج جاهزة';$('v5VariantsDialogHeading').textContent='نماذج متعددة';
       $('equationSource').previousElementSibling.textContent='صيغة المعادلة';
       $('loginTitle').textContent='تسجيل الدخول';$('loginEmail').placeholder='name@example.com';
       document.querySelector('.login-contact-title').textContent='طلب اشتراك';
@@ -3559,7 +4077,7 @@ globalThis.WaraqaAuth = (() => {
         group.dataset.appGroup=name;group.dataset.groupIndex=index;group.name='app-'+name+'-sections';
         group.open=appOpenGroups[name]===index;
         const summary=document.createElement('summary');
-        summary.innerHTML='<span class="app-group-number" aria-hidden="true">'+String(index+1).padStart(2,'0')+'</span><span class="app-group-label">'+E(heading.textContent)+'</span>'+ic('down');
+        summary.innerHTML='<span class="app-group-label">'+E(heading.textContent)+'</span>'+ic('down');
         heading.remove();const body=document.createElement('div');body.className='app-group-body';
         while(card.firstChild)body.append(card.firstChild);
         group.append(summary,body);card.replaceWith(group);
@@ -3594,7 +4112,7 @@ globalThis.WaraqaAuth = (() => {
       const utility=document.querySelector('.utility-bar');
       const toolbar=document.createElement('div');toolbar.className='app-editor-tools';
       toolbar.append(utility.querySelector('.history-actions'));
-      toolbar.insertAdjacentHTML('beforeend','<button class="btn app-tablet-preview" data-action="mobile-preview">'+ic('eye')+'معاينة الورقة</button><button class="btn" data-v5="three-models">٣ نماذج في ورقة</button><button class="btn" data-app-open-tools>'+ic('settings')+'أدوات الامتحان</button>');
+      toolbar.insertAdjacentHTML('beforeend','<button class="btn app-tablet-preview" data-action="mobile-preview">'+ic('eye')+'معاينة الورقة</button><button class="btn" data-app-open-tools>'+ic('settings')+'أدوات الامتحان</button>');
       const editor=document.querySelector('.editor-column');editor.insertBefore(toolbar,$('editorScroll'));
       $('appToolActions').append(utility);$('appToolActions').append($('v5StartBanner'));
       document.addEventListener('toggle',event=>{
@@ -4097,6 +4615,7 @@ source_number هو رقم السؤال الرئيسي كما يظهر في ال�
         const trigger=event.target.closest('[data-ai-image-open],[data-ai-text-open]');if(!trigger)return;
         textMode=trigger.hasAttribute('data-ai-text-open');abort();drafts=[];imageData='';reviewNote='';renderReview();error('');
         el('aiTextInput').value='';el('aiTextWrap').hidden=!textMode;el('aiChooseImage').hidden=textMode;el('aiImagePreview').hidden=true;el('aiImageName').textContent='اختيار صورة الأسئلة';
+        if(!el('aiPrivacy'))el('aiImageTitle').insertAdjacentHTML('afterend','<p id="aiPrivacy" class="field-hint">هذه الأداة اختيارية وتحتاج إلى الإنترنت. عند تشغيلها، يُرسل النص أو الصورة إلى مزوّد الذكاء الاصطناعي لمعالجته.</p>');
         el('aiImageTitle').textContent=textMode?'كتابة أسئلة بالذكاء الاصطناعي':'الأسئلة من صورة';busy(false);
         if($('appToolsDialog').open)$('appToolsDialog').close();
         sourceExam=doc.id;error('');el('aiOriginal').open=false;if(!node.open)node.showModal();if(textMode)el('aiTextInput').focus({preventScroll:true});
@@ -4105,15 +4624,35 @@ source_number هو رقم السؤال الرئيسي كما يظهر في ال�
       if(repaired.some((q,i)=>q!==doc.questions[i])){
         doc.questions=repaired;renderEditor();queueUpdate();
       }
-      const home=document.querySelector('.md-home');
-      home?.querySelector('.work-imports').insertAdjacentHTML('beforeend',
-        '<button type="button" class="btn ai-home-action" data-ai-image-open>'+ic('image')+'<span>الأسئلة من صورة</span></button>'+
-        '<button type="button" class="btn ai-home-action" data-ai-text-open>'+ic('edit')+'<span>كتابة أسئلة بالذكاء الاصطناعي</span></button>');
+      
       document.querySelector('.ux-tools-group')?.insertAdjacentHTML('beforeend','<button type="button" class="btn" data-ai-text-open data-ux-tool="كتابة أسئلة بالذكاء الاصطناعي">كتابة أسئلة بالذكاء الاصطناعي</button>');
       document.querySelector('.ux-tools-group')?.insertAdjacentHTML('beforeend','<button type="button" class="btn" data-ai-image-open data-ux-tool="الأسئلة من صورة">'+ic('image')+'<span>الأسئلة من صورة</span></button>');
     }
 
     v5Init();wvInit();renderEditor();appInit();uxInit();initImageAI();setTab('questions',false,false);updateHistoryButtons();
+    WaraqaAuth.onGuestLogin(async owner=>{
+      const guest=M.clone(doc);
+      const guestSaved=await save()||checkpointDraft();
+      const next=await loadWorkspace(owner);
+      clearTimeout(saveTimer);clearTimeout(previewTimer);
+      await saveChain;await versionChain;
+      ({recoveryKey,repository,doc,storageAvailable,durableSnapshot,libraryState}=next);
+      interaction={source:'doc',key:'',kind:'action'};bankDraft=null;v5Active='base';
+      selected=doc.questions[0]?.id||null;resetHistory();
+      renderEditor();appNavigate('questions');
+      setStatus(storageAvailable?'محفوظ على هذا الجهاز':'الحفظ التلقائي غير متاح',!storageAvailable);
+      if(next.migratedSaved)save();
+      if(guest.questions.length||guest.threeModels.some(model=>model.some(text=>text.trim()))||guest.metadata.subject||guest.metadata.grade){
+        requestAnimationFrame(()=>confirm('حفظ نسخة من مسودة الضيف؟',guestSaved?'ستجد النسخة في أرشيف الحساب. تبقى مسودة الحساب مفتوحة، وتبقى مسودة الضيف في وضع التجربة.':'تعذّر الحفظ التلقائي لمسودة الضيف. احفظ نسخة منها في أرشيف الحساب.','حفظ نسخة في الحساب',()=>runFeature(async()=>{
+          guest.id=M.uid();guest.bankModelId='';
+          const record={id:guest.id,createdAt:now(),updatedAt:now(),document:guest};
+          await repository.put('exam',record.id,record);
+          libraryState.exams.push(record);
+          toast('حُفظت نسخة مسودة الضيف في الأرشيف.');
+        })));
+      }
+      requestAnimationFrame(renderPreview);
+    });
     if(wvFirstDemo){$('wvDemoBanner').hidden=false;if(innerWidth<=1020)document.body.classList.add('mobile-preview');appSyncNavigation();}
     navigation=WaraqaNavigation.create({env:window,session:M.uid(),getView:captureView,applyView:restoreView,consumeBack:closeTransientViews,beforeExit:async()=>{const saved=await save();if(!saved)toast('تعذّر الحفظ. نزّل ملف الأسئلة قبل المغادرة.');return saved;},requestExit:leave=>{
       save();
@@ -4122,7 +4661,7 @@ source_number هو رقم السؤال الرئيسي كما يظهر في ال�
     if(migratedSaved)save();if(recoveredDraft)toast('تم استرجاع آخر تعديلاتك بعد إغلاق الصفحة.');
     if(!storageAvailable)setStatus('الحفظ التلقائي غير متاح',true);
     fontPromise.then(()=>document.fonts.ready).then(()=>{renderPreview();if(!storageAvailable)toast('تعذّر الحفظ التلقائي.');});
-  }).catch(()=>{const notice=document.getElementById('accountMemoryNotice');notice.hidden=false;notice.textContent='تعذّر تحميل المحرّر. حدّث الصفحة وحاول مرة أخرى.';});
+  }).catch(error=>{console.error('تعذّر تحميل محرّر ورقة.',error);const notice=document.getElementById('accountMemoryNotice');notice.hidden=false;notice.textContent='تعذّر تحميل المحرّر. حدّث الصفحة وحاول مرة أخرى.';});
   
 </script>
 <script>
@@ -4159,17 +4698,9 @@ const empty=document.querySelector('.empty-editor');if(empty&&!empty.querySelect
 const title=document.getElementById('uxPageTitle')?.textContent==='ورقتي'?'ورقة':document.getElementById('uxPageTitle')?.textContent;const brand=document.querySelector('.topbar .brand-name');if(title&&brand&&brand.textContent!==title)brand.textContent=title;
 const q=document.querySelector('#questionCount')?.textContent||'0';const score=document.querySelector('#totalScore')?.textContent||'0';const pages=document.querySelector('#pageCount')?.textContent||'1';for(const [id,value] of [['mdQuestions',q.replace(/[^0-9٠-٩]/g,'')||'0'],['mdScore',score],['mdPages',pages.replace(/[^0-9٠-٩]/g,'')||'1']]){const el=document.getElementById(id);if(el&&el.textContent!==value)el.textContent=value;}
 }
-function init(){
-const section=document.querySelector('.editor-column');
-if(section&&!document.querySelector('.md-home'))section.insertAdjacentHTML('afterbegin',
-  '<section class="md-home" aria-labelledby="workHeading"><div class="work-heading"><h1 class="md-home-title" id="workHeading">الأسئلة</h1>'+
-  '<button type="button" class="work-new sl" data-action="new" title="ورقة امتحان جديدة" aria-label="ورقة امتحان جديدة">'+symbol('description')+'</button></div>'+
-  '<p class="work-summary"><span><strong id="mdQuestions">0</strong> أسئلة</span><span><strong id="mdScore">0</strong> درجة</span><span><strong id="mdPages">1</strong> صفحة</span></p>'+
-  '<button type="button" class="btn primary work-add sl" data-action="add">'+symbol('add')+'إضافة سؤال</button><div class="work-imports"></div></section>');
-decorate();}
-let pending=false;const schedule=()=>{if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;init();});};
+let pending=false;const schedule=()=>{if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;decorate();});};
 new MutationObserver(schedule).observe(document.body,{childList:true,subtree:true});new MutationObserver(schedule).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
-document.addEventListener('click',()=>requestAnimationFrame(()=>decorate()));init();
+document.addEventListener('click',()=>requestAnimationFrame(()=>decorate()));decorate();
 })();
 </script>
 </body>
