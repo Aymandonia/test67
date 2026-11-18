@@ -747,7 +747,7 @@ html,body{min-height:100%;margin:0}body{overflow-x:hidden}.login-card{border:0!i
   .editor-column,.preview-column {width:100%;min-width:0}
   .sidebar,.add-question,.preview-notice {display:none!important}
   .md-home {margin:0 0 18px;padding:16px;border-radius:20px;background:var(--work-accent-soft);color:var(--work-on-soft)}
-  .work-heading,.work-summary,.work-imports {display:flex;align-items:center;gap:8px}
+  .work-heading,.work-summary {display:flex;align-items:center;gap:8px}
   .work-heading {justify-content:space-between;gap:12px}
   .md-home-title {margin:0;font:650 24px/1.35 var(--font)}
   .work-new {display:grid;place-items:center;width:48px;height:48px;border-radius:16px;color:inherit;background:var(--work-card)}
@@ -757,8 +757,6 @@ html,body{min-height:100%;margin:0}body{overflow-x:hidden}.login-card{border:0!i
   .work-summary span + span::before {content:'·';margin-inline-end:8px}
   .work-add,.ux-preview-print {min-height:52px!important;background:var(--work-accent)!important;color:var(--work-on-accent)!important;border:0!important;border-radius:16px!important;font-size:15px!important;font-weight:700!important;box-shadow:none!important}
   .work-add {width:100%;justify-content:center;gap:8px}
-  .work-imports {align-items:stretch;margin-top:10px}
-  .work-imports .ai-home-action {display:flex!important;flex:1;width:auto;min-width:0;min-height:52px!important;justify-content:center;gap:6px;padding:8px!important;margin:0;border:0!important;border-radius:12px!important;background:var(--work-card)!important;color:var(--work-text)!important;font-size:13px!important;line-height:1.5;white-space:normal}
   .ai-home-action .icon {width:18px;height:18px;flex:none}
   .app-section-tabs {height:auto!important;gap:4px!important;padding:4px!important;margin:0 0 18px!important;border:0!important;border-radius:18px!important;background:var(--work-nav)!important}
   .app-section-tabs button {height:auto;min-height:48px;flex:1;padding:6px!important;border-radius:14px!important;color:var(--work-muted)!important;font-size:13px!important;white-space:normal}
@@ -842,7 +840,6 @@ html,body{min-height:100%;margin:0}body{overflow-x:hidden}.login-card{border:0!i
   @media(max-width:359px) {
     .workspace {padding-inline:12px!important}
     .card-top {gap:6px!important;padding-inline:8px!important}
-    .work-imports .ai-home-action {font-size:12px!important}
   }
   @media(min-width:1024px) {
     .workspace {max-width:1440px!important;margin-inline:88px auto!important;padding:24px 24px 48px!important}
@@ -885,7 +882,7 @@ html,body{min-height:100%;margin:0}body{overflow-x:hidden}.login-card{border:0!i
     outline-offset:3px;
   }
   .author-card,#continueGuest,.ux-empty-choices .btn,
-  .work-imports .btn,.app-editor-tools .btn,.work-add,
+  .app-editor-tools .btn,.work-add,
   #trialEndedDialog .btn,
   .topbar [data-theme-toggle],.topbar #moreButton,.topbar .topbar-new,
   .login-submit,.password-toggle{min-block-size:48px!important}
@@ -926,8 +923,6 @@ html,body{min-height:100%;margin:0}body{overflow-x:hidden}.login-card{border:0!i
   }
   .question-answer-settings{margin-block:12px}
   .work-add{min-inline-size:48px}
-  .work-imports{flex-wrap:wrap}
-  .work-imports .btn{flex:1 1 112px;justify-content:center;white-space:normal}
   .app-group>summary:has(.app-group-label){grid-template-columns:minmax(0,1fr) auto}
   .branch-row>.field:has([data-answer-lines]){grid-column:1/-1;margin:4px 0 8px;max-inline-size:220px}
   .topbar [data-action=print]{
@@ -1116,7 +1111,6 @@ html,body{min-height:100%;margin:0}body{overflow-x:hidden}.login-card{border:0!i
             </div>
             <p class="work-summary"><span><strong id="mdQuestions">0</strong> أسئلة</span><span><strong id="mdScore">0</strong> درجة</span><span><strong id="mdPages">1</strong> صفحة</span></p>
             <button type="button" class="btn primary work-add sl" data-action="add"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>إضافة سؤال</button>
-            <div class="work-imports"></div>
           </section>
           <div class="section-bar"><h2 id="editorTitle">الأسئلة والدرجات</h2><span class="counter" id="editorCounter">لا توجد أسئلة بعد</span></div>
           <div class="app-section-tabs" id="appSectionTabs" role="group" aria-label="خطوات إعداد الامتحان">
@@ -2421,7 +2415,7 @@ globalThis.WaraqaAuth = (() => {
         checkField('بدء السؤال في صفحة جديدة','pageBreak',q.pageBreak,'q')+(M.isBranch(q)?checkField('جمع درجات الفروع تلقائيًا','autoGrade',q.autoGrade,'q'):'')+'</div></details></div>';
       return'<article class="question-card selected" data-question="'+q.id+'">'+header+body+'</article>';
     }
-    function updateSummary(){updateModelContext();const imports=document.querySelector('.work-imports');if(imports)imports.hidden=doc.questions.length>0;const n=doc.questions.length,total=M.total(doc),expected=doc.metadata.expectedScore;$('totalScore').textContent=total;$('expectedScore').textContent=expected;$('questionCount').textContent=n+' أسئلة';$('editorCounter').textContent=activeTab==='questions'?(n?n+' أسئلة':'لا توجد أسئلة بعد'):activeTab==='templates'?'12 قالبًا':'';$('documentContext').textContent=[doc.metadata.subject,doc.metadata.grade].filter(Boolean).join(' · ')||'ورقة امتحان جديدة';$('addQuestion').hidden=activeTab!=='questions'||n===0;$('scoreMeter').style.width=(expected>0?Math.min(100,total/expected*100):100)+'%';$('scoreMeter').style.background=Math.abs(total-expected)<.001?'#709781':'#c5a06c';$('scoreWarning').hidden=n===0||Math.abs(total-expected)<.001;$('scoreWarning').textContent='مجموع الدرجات '+total+'، والدرجة المطلوبة '+expected+'.';uxSync();}
+    function updateSummary(){updateModelContext();const n=doc.questions.length,total=M.total(doc),expected=doc.metadata.expectedScore;$('totalScore').textContent=total;$('expectedScore').textContent=expected;$('questionCount').textContent=n+' أسئلة';$('editorCounter').textContent=activeTab==='questions'?(n?n+' أسئلة':'لا توجد أسئلة بعد'):activeTab==='templates'?'12 قالبًا':'';$('documentContext').textContent=[doc.metadata.subject,doc.metadata.grade].filter(Boolean).join(' · ')||'ورقة امتحان جديدة';$('addQuestion').hidden=activeTab!=='questions'||n===0;$('scoreMeter').style.width=(expected>0?Math.min(100,total/expected*100):100)+'%';$('scoreMeter').style.background=Math.abs(total-expected)<.001?'#709781':'#c5a06c';$('scoreWarning').hidden=n===0||Math.abs(total-expected)<.001;$('scoreWarning').textContent='مجموع الدرجات '+total+'، والدرجة المطلوبة '+expected+'.';uxSync();}
     function setTab(tab,focus=false,record=true){if(tab==='bank'&&activeTab!=='bank')resetCatalogView();activeTab=tab;for(const b of document.querySelectorAll('[data-tab]')){const active=b.dataset.tab===tab;b.classList.toggle('active',active);b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1;if(active&&focus)b.focus();}for(const name of ['questions','metadata','format','archive','bank','versions','templates'])$(name+'Panel').hidden=name!==tab;$('editorTitle').textContent={questions:'الأسئلة والدرجات',metadata:'بيانات الامتحان',format:'التنسيق والطباعة',archive:'أرشيف الامتحانات',bank:'بنك الأسئلة',versions:'سجل النسخ',templates:'قوالب جديدة'}[tab];if(tab==='templates')renderPaperTemplates();if(tab==='archive')renderArchive();if(tab==='bank')renderBank();if(tab==='versions')renderVersions();$('addQuestion').hidden=tab!=='questions';$('editorScroll').scrollTop=0;updateSummary();appSyncNavigation();if(record)trackView();}
     function renderEditor(){renderMetadata();renderFormat();renderQuestions();if(activeTab==='templates')renderPaperTemplates();updateSummary();}
     function setDocument(next){v5Active='base';undoAction=null;$('undoButton').hidden=true;doc=M.normalize(next);resetHistory();selected=doc.questions[0]?.id||null;renderEditor();setTab('questions',false,false);trackView(true);queueUpdate();}
@@ -4013,8 +4007,6 @@ globalThis.WaraqaAuth = (() => {
       document.querySelector('.workspace-head').innerHTML='<div><h1 id="uxPageTitle">ورقتي</h1></div><div class="head-meta">'+uxIcon('paper')+'<span id="documentContext"></span></div><button class="ux-mobile-new" type="button" data-action="new">'+uxIcon('plus')+'امتحان جديد</button>';
       const nav=document.querySelector('.nav-tabs');
       for(const tab of ['archive','templates','versions'])$('tab-'+tab).hidden=true;
-      document.querySelector('.work-imports').innerHTML=uxButton('استيراد ملف','folder','data-action="import"')+
-        uxButton('بنك الأسئلة','books','data-ux-route="bank"');
       const labels={questions:['edit','الأسئلة'],metadata:['paper','بيانات الامتحان'],format:['settings','تنسيق الورقة'],archive:['folder','امتحاناتي'],templates:['layout','قوالب الورقة'],versions:['history','سجل النسخ']};
       // Preserve the existing tab IDs and ARIA relationships.
       ['questions','metadata','format','templates','archive','versions'].forEach(name=>{
